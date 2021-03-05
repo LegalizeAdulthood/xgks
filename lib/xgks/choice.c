@@ -634,12 +634,13 @@ Gint ginqdefchoice(Gchar *type, Gint dev, Gdefchoice *data)
 #define CurItem idev->data.cho.curcho
 
 #define DisplayLine(pos, str, fg, bg)                                                                                                          \
+    do                                                                                                                                         \
     {                                                                                                                                          \
         XSetForeground(ws->dpy, idev->gc, bg);                                                                                                 \
         XFillRectangle(ws->dpy, ws->win, idev->gc, pos.x, pos.y, MenuWid, MenuIHt);                                                            \
         XSetForeground(ws->dpy, idev->gc, fg);                                                                                                 \
         XDrawString(ws->dpy, ws->win, idev->gc, pos.x + MenuPadH, pos.y + MenuPadV + MFontInfo->ascent, str, (str != NULL) ? strlen(str) : 0); \
-    }
+    } while (0)
 
 Gint XgksChoUpdatePrompt(WS_STATE_ENTRY *ws, INPUT_DEV *idev,
     PromptStatus pstate, XMotionEvent *xmev, int event_id)
@@ -695,7 +696,9 @@ Gint XgksChoUpdatePrompt(WS_STATE_ENTRY *ws, INPUT_DEV *idev,
             for (i = 0; i < number; i++, itempos.y += MenuIHt, menustr++)
             {
                 if (idev->data.cho.curcho == (i + 1))
-                    DisplayLine(itempos, *menustr, MenuBG, MenuFG) else DisplayLine(itempos, *menustr, MenuFG, MenuBG)
+                    DisplayLine(itempos, *menustr, MenuBG, MenuFG);
+                else
+                    DisplayLine(itempos, *menustr, MenuFG, MenuBG);
             }
             break;
         default:
