@@ -81,5 +81,7 @@ add_library(xgks
 target_compile_definitions(xgks PRIVATE "FONTDBDIR=\"${CMAKE_CURRENT_SOURCE_DIR}/../../fontdb\"")
 target_include_directories(xgks PUBLIC ../../include ${X11_INCLUDE_DIR})
 target_link_libraries(xgks PUBLIC ${X11_LIBRARIES} ${LIBM})
+target_folder(xgks "Libraries")
 
 add_executable(mkerrmsg mkerrmsg.c)
+target_folder(mkerrmsg "Tools")

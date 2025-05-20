@@ -1,7 +1,9 @@
 add_executable(mkgksfont mkfont.c)
 target_include_directories(mkgksfont PRIVATE ../include)
+target_folder(mkgksfont "Tools")
 
 add_custom_target(fonts)
+target_folder(fonts "Tools")
 
 set(FONTS r.src R.src b.src B.src i.src I.src sc.src SC.src G.src)
 foreach(fontSource ${FONTS})

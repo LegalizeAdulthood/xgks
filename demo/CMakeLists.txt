@@ -3,6 +3,7 @@ function(gksDemo name)
     add_executable(${name} ${name}.c)
     target_link_libraries(${name} PUBLIC xgks)
     target_include_directories(${name} PUBLIC ${DEMO_DIR})
+    target_folder(${name} "Demos")
 endfunction()
 
 gksDemo(bsort)

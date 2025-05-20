@@ -77,3 +77,4 @@ add_executable(sled
     ws.h
     )
 target_link_libraries(sled PUBLIC xgks)
+target_folder(sled "Demos")
