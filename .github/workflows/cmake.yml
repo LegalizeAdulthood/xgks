@@ -1,0 +1,30 @@
+name: CMake
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+
+    steps:
+    - uses: actions/checkout@v4.1.1
+      with:
+        submodules: true
+
+    - name: Install Prerequisites Linux
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install libx11-dev
+
+    - name: CMake version
+      run: cmake --version
+
+    - name: CMake workflow
+      run: cmake --workflow --preset default
