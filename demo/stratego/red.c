@@ -70,8 +70,7 @@ static Gcobundl co_flashon = { 1.0, 0.0, 0.0 },
 static int pRtB[2]; /* Red to Blue pipe descriptors */
 static int pBtR[2]; /* Blue to Red pipe descriptors */
 
-void main(argc, argv, envp) int argc;
-char *argv[], *envp[];
+int main(int argc, char *argv[], char *envp[])
 {
     int transmit = TRUE; /* transmit or receive flag */
     int quit = FALSE;
@@ -358,7 +357,7 @@ void clearboard(void)
 /* this routine returns the integer value of the coordinates of the sqaure */
 /* picked by the player  */
 
-Gistat picksquare(x, y) int *x, *y;
+Gistat picksquare(int *x, int *y)
 {
     Gistat status;
     Gqloc locrec;

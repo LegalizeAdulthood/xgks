@@ -56,6 +56,8 @@ void select_pt(IDX *transno, Gpoint *pt);
 
 POPUP *get_popup_from_pt(Gpoint pt);
 void set_active_clr_area(AREA clr_area);
+AREA get_area_from_transno(IDX transno); /* finds area from transno and pt */
+MENU_ITEM *get_menu_item_from_pt(AREA area, Gpoint pt);
 
 /*
  * dynamic table of current popups
@@ -93,9 +95,6 @@ void manage_input(void)
     IDX idx;        /* screen_tbl index */
     MENU *pri_menu; /* ptr to menu in
                                            PRI_MENU_AREA */
-
-    AREA get_area_from_transno(); /* finds area from
-                                           transno and pt */
 
     /* display_primary_menu */
 
@@ -318,7 +317,6 @@ void menu_area_exec(AREA area, IDX transno, Gpoint pt)
 
     MENU_ITEM *parent; /* parent menu item of
                                            currmitem */
-    MENU_ITEM *get_menu_item_from_pt();
 
     /* determine which menu item, newmitem, was selected */
 
