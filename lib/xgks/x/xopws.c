@@ -221,7 +221,7 @@ Gint xXgksOpenWs(WS_STATE_PTR wk)
         return (26); /* open window not successful */
     }
 
-    XChangeProperty(wk->dpy, wk->win, XA_WM_NAME, XA_STRING, 8, PropModeReplace, "XGKS", 4);
+    XChangeProperty(wk->dpy, wk->win, XA_WM_NAME, XA_STRING, 8, PropModeReplace, (const unsigned char *) "XGKS", 4);
 
     XMapWindow(dpy, wk->win);
 
