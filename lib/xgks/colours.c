@@ -36,6 +36,7 @@
  * colours.c - functions and data for the colour table.
  *
  */
+#include <stdlib.h>
 
 #include "gks_implem.h"
 
@@ -251,7 +252,6 @@ Gint ginqpredcolourrep(Gchar *ws_type, Gint index, Gcobundl *rep)
     char *server;
     int i;
     Display *dpy;
-    char *getenv();
 
     /* check for proper gks operating state */
     GKSERROR((xgks_state.gks_state == GGKCL), 8, errginqpredcolourrep);

@@ -592,9 +592,7 @@ void XgksOutputToWs(OUT_PRIMI *primi)
  *
  * Well not disable any input devices
  */
-void XgksReDrawWs(ws, primi)
-    WS_STATE_PTR ws;
-OUT_PRIMI *primi;
+void XgksReDrawWs(WS_STATE_PTR ws, OUT_PRIMI *primi)
 {
     switch (primi->pid)
     {

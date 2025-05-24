@@ -73,7 +73,7 @@ void XgksMiniMax(Glimit *bound, Gpoint *pt);
 /*
  *   XgksNewPrimi() - will return a pointer to an empty primitive structure
  */
-OUT_PRIMI *XgksNewPrimi()
+OUT_PRIMI *XgksNewPrimi(void)
 {
     OUT_PRIMI *new;
 
@@ -175,8 +175,7 @@ void XgksDeletePrimi(OUT_PRIMI *head, OUT_PRIMI **insert_pt)
  *                        to open segment or should it be append to ws non segment
  *                        primitive list
  */
-void XgksProcessPrimi(primi)
-    OUT_PRIMI *primi;
+void XgksProcessPrimi(OUT_PRIMI *primi)
 {
     OUT_PRIMI *tmp;
 
@@ -209,8 +208,7 @@ void XgksProcessClip(Glimit *rec)
  * XgksPrimiDump (head)
  *
  */
-void XgksPrimiDump(head)
-    OUT_PRIMI *head;
+void XgksPrimiDump(OUT_PRIMI *head)
 {
     fprintf(stderr, "pids .. ");
     while (head != NULL)
@@ -292,8 +290,7 @@ void XgksMiniMax(Glimit *bound, Gpoint *pt)
  * XgksFreePrimiStruct ( primi ) -- Free the memory associated with primitive sub-structure
  *
  */
-static void XgksFreePrimiStruct(primi)
-    OUT_PRIMI *primi;
+static void XgksFreePrimiStruct(OUT_PRIMI *primi)
 {
     switch (primi->pid)
     {
@@ -330,8 +327,7 @@ static void XgksFreePrimiStruct(primi)
  * XgksDuplicatePrimi -- Input a primitive structure and output a duplicate one
  *                       with real memory.
  */
-OUT_PRIMI *XgksDuplicatePrimi(primi)
-    OUT_PRIMI *primi;
+OUT_PRIMI *XgksDuplicatePrimi(OUT_PRIMI *primi)
 {
     Gint num_pts, cnt;
     Gpoint *new_pts, *old_pts;

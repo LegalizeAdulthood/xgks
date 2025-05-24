@@ -54,10 +54,7 @@ void XgksMoDeferWs(WS_STATE_PTR ws, Gdefmode defer_mode, Girgmode regen_mode);
  *
  * See also: ANSI standard p.79
  */
-Gint gsetdeferst(ws_id, deferral_mode, regen_mode)
-    Gint ws_id;
-Gdefmode deferral_mode;
-Girgmode regen_mode;
+Gint gsetdeferst(Gint ws_id, Gdefmode deferral_mode, Girgmode regen_mode)
 {
     WS_STATE_PTR ws;
 

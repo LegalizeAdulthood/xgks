@@ -949,7 +949,7 @@ static SEG_STATE_PTR XgksFindSeg(Gint name)
 /*
  *   XgksNewSeg() - will return a pointer to an empty segment structure
  */
-static SEG_STATE_PTR XgksNewSeg()
+static SEG_STATE_PTR XgksNewSeg(void)
 {
     SEG_STATE_PTR new;
     Gint i;
@@ -983,8 +983,7 @@ static SEG_STATE_PTR XgksNewSeg()
  *   XgksInstallSeg(seg) -
  *       SEG_STATE_PTR  seg  install seg-> into the segment state hash table
  */
-static void XgksInstallSeg(seg)
-    SEG_STATE_PTR seg;
+static void XgksInstallSeg(SEG_STATE_PTR seg)
 {
     seg->seg_next = segtable[SHASH(seg->segattr.seg)];
     segtable[SHASH(seg->segattr.seg)] = seg;
@@ -1027,7 +1026,7 @@ static SEG_STATE_PTR XgksDeleteSeg(Gint name)
  * XgksNewWsSeg()       allocate memory for workstation segment list return pointer to
  *              the entry
  */
-static WS_SEG_LIST *XgksNewWsSeg()
+static WS_SEG_LIST *XgksNewWsSeg(void)
 {
     WS_SEG_LIST *new;
 
@@ -1119,8 +1118,7 @@ static void XgksRenameWsSeg(WS_STATE_PTR ws, Gint old, Gint new)
  * or maybe it's invisible -- NULL
  *
  */
-OUT_PRIMI *XgksAppendSegPrimi(primi)
-    OUT_PRIMI *primi;
+OUT_PRIMI *XgksAppendSegPrimi(OUT_PRIMI *primi)
 {
     SEG_STATE_PTR seg;
 
@@ -1195,8 +1193,7 @@ void XgksDeleteAllSeg(WS_STATE_PTR ws)
  *    all seg
  *
  */
-void XgksDelAllMoSeg(ws)
-    WS_STATE_PTR ws;
+void XgksDelAllMoSeg(WS_STATE_PTR ws)
 {
     Gint i;
     SEG_STATE_PTR seg;

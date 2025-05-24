@@ -151,7 +151,7 @@ extern GKS_STATE_LIST   xgks_state;     /* this is the gks state list */
  */
 #define REDRAWWS(ws)                                            \
     {                                                           \
-    void XgksCleanUpWsSegList ();                               \
+        void XgksCleanUpWsSegList(WS_STATE_PTR ws);             \
         if ((ws)->wsdus.irgmode == GSUPPRESSED) {               \
                 XgksCleanUpWsSegList ((ws));                    \
                 (ws)->wsdus.nframe = GYES;                      \
