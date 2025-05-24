@@ -49,9 +49,9 @@
 /*
  * forward declare internal functions
  */
-static Gint XgksAllocActiveWs();
-static void XgksDeleteActiveWs();
-static Gint XgksNoActiveWs();
+static Gint XgksAllocActiveWs(Gint ws_id, WS_STATE_PTR ws);
+static void XgksDeleteActiveWs(Gint ws_id);
+static Gint XgksNoActiveWs(void);
 
 /*$F
  * gactivatews(ws_id) - ACTIVATE WORKSTATION
@@ -160,9 +160,7 @@ static Gint XgksNoActiveWs()
  * return INVALID if there's no empty slot
  *
  */
-static Gint XgksAllocActiveWs(ws_id, ws)
-    Gint ws_id;
-WS_STATE_PTR ws;
+static Gint XgksAllocActiveWs(Gint ws_id, WS_STATE_PTR ws)
 {
     Gint i;
 
@@ -182,8 +180,7 @@ WS_STATE_PTR ws;
  * delete <ws_id> from activews[] in gks state list by setting corresponding entry to INVALID
  *
  */
-static void XgksDeleteActiveWs(ws_id)
-    Gint ws_id;
+static void XgksDeleteActiveWs(Gint ws_id)
 {
     Gint i;
 

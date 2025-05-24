@@ -161,9 +161,9 @@ typedef struct ws_struct {
 
 #define NOT_SET (-9.99)
 
-Gwscat XgksWsCategory();
-EWSTYPE XgksWsTypeToEnum( /* Gchar *wstype */ );
-WS_STATE_PTR XgksValidWsId();
+Gwscat XgksWsCategory(WS_STATE_PTR ws);
+EWSTYPE XgksWsTypeToEnum(Gchar *ws_type);
+WS_STATE_PTR XgksValidWsId(Gint ws_id);
 
 #define VALID_WSID(i)   ((i) >= 0)
 #define OPEN_WSID(i)    (XgksValidWsId(i))

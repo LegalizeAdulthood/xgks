@@ -1787,12 +1787,12 @@ static int XgksInSeg(SEG_STATE_PTR seg, Gpoint *pt, Gpoint *pe, Gint m)
  *      is calculated only when an actual sample is done.
  *
  */
-Gpstat XgksFindPickSeg(ws, ndcpt, response, idev, findpickid)
-    WS_STATE_PTR ws;
-Gpoint *ndcpt;
-Gpick *response;
-INPUT_DEV *idev;
-Gint findpickid;
+Gpstat XgksFindPickSeg(
+    WS_STATE_PTR ws,
+    Gpoint *ndcpt,
+    Gpick *response,
+    INPUT_DEV *idev,
+    Gint findpickid)
 {
     SEG_STATE_PTR seg, foundseg = NULL;
     WS_SEG_LIST *WsSeg = ws->seglist;

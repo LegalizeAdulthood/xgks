@@ -43,7 +43,7 @@
 #include "x/colours.h"
 #include "x/xevent.h"
 
-static int loadcache();
+static int loadcache(Display *dpy, Gint index);
 
 Gint XgksMaxColours(Gchar *ws_type);
 
@@ -317,10 +317,7 @@ Gint ginqpredcolourrep(Gchar *ws_type, Gint index, Gcobundl *rep)
     return (OK);
 }
 
-static int
-    loadcache(dpy, index)
-        Display *dpy;
-Gint index;
+static int loadcache(Display *dpy, Gint index)
 {
     Colormap cmap;
     int i, ncolours;
