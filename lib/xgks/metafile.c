@@ -433,6 +433,7 @@ Gint XgksMoOpenWs(WS_STATE_PTR ws)
     fprintf(ws->mfp, "%s%s%s\n", "GKSM", XgksMAuthor(), XgksMDate());
     fprintf(ws->mfp, "%d 0 %zu %zu %zu %zu 1 1", gksm_version, INT_SIZE, INT_SIZE, INT_SIZE, FLOAT_SIZE);
     fprintf(ws->mfp, "%s%s\n", dummy, dummy);
+    return 0;
 }
 
 void XgksMiCloseWs(WS_STATE_PTR ws)
