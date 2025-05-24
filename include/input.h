@@ -144,7 +144,7 @@ typedef enum {
         PROMPTMOVE
 } PromptStatus;
 
-struct WS_STATE_ENTRY;
+typedef struct ws_struct WS_STATE_ENTRY;
 
 void XgksIDevAdd();
 INPUT_DEV *XgksIDevLookup(WS_STATE_ENTRY *ws, Gint dev, Giclass class);
