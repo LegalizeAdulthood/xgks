@@ -1,5 +1,5 @@
 #if !defined(DRAW_MENU_H)
-#define DRAW_MENU_h
+#define DRAW_MENU_H
 
 #include "screen_items.h"
 
