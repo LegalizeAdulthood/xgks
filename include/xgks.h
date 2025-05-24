@@ -1113,7 +1113,6 @@ Gint gsetcharheight(Gfloat height);
 Gint gsetcharspace(Gfloat spacing);
 Gint gsetcharup(Gpoint *up_vector);
 Gint gsetclip(Gclip ind);
-Gint gsetfillcolourind(Gint colour);
 Gint gsetfillcolourind(Gint idx);
 Gint gsetfillind(Gint idx);
 Gint gsetfillintstyle(Gflinter style);
@@ -1194,9 +1193,7 @@ Gint ginqtextextent(Gint ws_id, Gpoint position, Gchar *string, Gextent *extent)
 Gint ginqtextindices(Gint ws_id, Gintlist *idxlist);
 Gint ginqtextrep(Gint ws_id, Gint idx, Gqtype type, Gtxbundl *rep);
 Gint ginqvalst(Gint ws_id, Gint dev, Gvalst *state);
-Gint ginqwsconntype(Gint ws_id, Gwsct *ct);
 Gint ginqwsdeferupdatest(Gint ws_id, Gwsdus *du);
-Gint ginqwsst(Gint ws_id, Gwsstate *state);
 Gint ginqwstran(Gint ws_id, Gwsti *wstran);
 Gint gsetcolourrep(Gint ws_id, Gint idx, Gcobundl *rep);
 Gint gsetdeferst(Gint ws_id, Gdefmode deferral_mode, Girgmode regen_mode);
@@ -1224,7 +1221,6 @@ Gint gupdatews(Gint ws_id, Gregen regenflag);
 /* output primitive function prototypes */
 Gint gcellarray(Grect *rect, Gipoint *dim, Gint row, Gint *colour);
 Gint gfillarea(Gint num_pts, Gpoint *pts);
-Gint ginqtextextent(Gint ws_id, Gpoint position, Gchar *string, Gextent *extent);
 Gint gpolyline(Gint num_pts, Gpoint *pts);
 Gint gpolymarker(Gint num_pts, Gpoint *pts);
 Gint gtext(Gpoint *at, Gchar *string);
@@ -1237,40 +1233,33 @@ Gint ggetpick(Gpick *response);
 Gint ggetstring(Gchar *response);
 Gint ggetstroke(Gstroke *response);
 Gint ggetval(Gfloat *response);
-Gint ginqinputoverflow(Gqueue *overflow);
-Gint ginqmoreevents(Gsimultev *events);
 
 /* CHOICE input function prototypes */
 Gint ginitchoice(Gint ws_id, Gint dev, Gchoice *init, Gint pet, Glimit *area, Gchoicerec *record);
-Gint ginqchoicest(Gint ws_id, Gint dev, Gchoicest *state);
 Gint greqchoice(Gint ws_id, Gint dev, Gchoice *response);
 Gint gsamplechoice(Gint ws_id, Gint dev, Gchoice *response);
 Gint gsetchoicemode(Gint ws_id, Gint dev, Gimode mode, Gesw echo);
 
 /* LOCATOR input function prototypes */
 Gint ginitloc(Gint ws_id, Gint dev, Gloc *init, Gint pet, Glimit *area, Glocrec *record);
-Gint ginqlocst(Gint ws_id, Gint dev, Gqtype type, Glocst *state);
 Gint greqloc(Gint ws_id, Gint dev, Gqloc *response);
 Gint gsampleloc(Gint ws_id, Gint dev, Gloc *response);
 Gint gsetlocmode(Gint ws_id, Gint dev, Gimode mode, Gesw echo);
 
 /* PICK input function prototypes */
 Gint ginitpick(Gint ws_id, Gint dev, Gpick *init, Gint pet, Glimit *area, Gpickrec *record);
-Gint ginqpickst(Gint ws_id, Gint dev, Gqtype type, Gpickst *state);
 Gint greqpick(Gint ws_id, Gint dev, Gpick *response);
 Gint gsamplepick(Gint ws_id, Gint dev, Gpick *response);
 Gint gsetpickmode(Gint ws_id, Gint dev, Gimode mode, Gesw echo);
 
 /* STRING input function prototypes */
 Gint ginitstring(Gint ws_id, Gint dev, Gchar *init, Gint pet, Glimit *area, Gstringrec *record);
-Gint ginqstringst(Gint ws_id, Gint dev, Gstringst *state);
 Gint greqstring(Gint ws_id, Gint dev, Gqstring *response);
 Gint gsamplestring(Gint ws_id, Gint dev, Gchar *response);
 Gint gsetstringmode(Gint ws_id, Gint dev, Gimode mode, Gesw echo);
 
 /* STROKE input device function prototypes */
 Gint ginitstroke(Gint ws_id, Gint dev, Gstroke *init, Gint pet, Glimit *area, Gstrokerec *record);
-Gint ginqstrokest(Gint ws_id, Gint dev, Gqtype type, Gstrokest *state);
 Gint greqstroke(Gint ws_id, Gint dev, Gqstroke *response);
 Gint gsamplestroke(Gint ws_id, Gint dev, Gstroke *response);
 Gint gsetstrokemode(Gint ws_id, Gint dev, Gimode mode, Gesw echo);
@@ -1289,12 +1278,10 @@ Gint gcreateseg(Gint name);
 Gint gdelseg(Gint name);
 Gint gdelsegws(Gint ws_id, Gint name);
 Gint ginqassocws(Gint seg, Gintlist *asswk);
-Gint ginqcurpickid(Gint *pickid);
 Gint ginqnameopenseg(Gint *seg);
 Gint ginqsegattr(Gsegattr *segattr);
 Gint ginqsegnames(Gintlist *segs);
 Gint ginsertseg(Gint seg_id, Gfloat segtran[2][3]);
-Gint gredrawsegws(Gint ws_id);
 Gint grenameseg(Gint old, Gint new);
 Gint gsetpickid(Gint pick_id);
 Gint gsetsegattr(Gint name, Gsegattr *segattr);
@@ -1522,7 +1509,6 @@ errxFillArea,
 errxInqPixelarray
 } Gfuncerrmap;
 
-
 /*
  * British spellings of GKS terms.
  *
