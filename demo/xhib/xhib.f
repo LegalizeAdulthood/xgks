@@ -2210,7 +2210,7 @@ C***********************************************************************GKS27000
 c       define and select window transformation
       call gswn (1, -1.0, 1.0, -1.0, 1.0)
       call gselnt (1)
-      call lines 
+      call lines
       call plot
       CALL GSWN(1,0.0,1.0,0.0,1.0)                                      GKS01860
       CALL GSVP(1,0.0,1.0,0.0,1.0)                                      GKS01870
@@ -4290,7 +4290,7 @@ C***********************************************************************GKS47550
                                                                         GKS47630
                                                                         GKS47640
                                                                         GKS47650
-        subroutine lines 
+        subroutine lines
 
         integer wkid
         integer lintyp
@@ -4507,7 +4507,7 @@ C***********************************************************************GKS47550
 
         do 40 grdfrq = 1, 1
 
-           do 30 if = 0, 3 
+           do 30 if = 0, 3
 
               func = mod (if, 3) + 1
 

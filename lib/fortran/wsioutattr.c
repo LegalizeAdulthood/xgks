@@ -29,7 +29,7 @@
  *	gstxci_   gschh_   gschup_   gstxp_
  *	gstxal_   gsfai_   gsfais_   gsfasi_
  *	gsfaci_   gsasf_   gspkid_
- *       
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -37,44 +37,44 @@
  *
  * August 31 1988
  *
- * $Header: wsioutattr.c,v 4.0 89/08/31 18:37:42 amy Exp $ 
+ * $Header: wsioutattr.c,v 4.0 89/08/31 18:37:42 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/wsioutattr.c,v $
- * 
+ *
  * $Log:	wsioutattr.c,v $
  * Revision 4.0  89/08/31  18:37:42  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.10  89/06/26  16:15:43  amy
  * DCR d1	Declare errfp external for use in error macros.
  * 		gstxfp:  move data declaration to beginning
  * 		of subroutine.
- * 
+ *
  * Revision 1.9  89/02/02  09:59:36  amy
  * PTR c1144	Added Set Pattern Size and Set Pattern Reference Point
  * 		functions.
- * 
+ *
  * Revision 1.8  89/01/20  13:44:52  mike
  * Minor fixes found using verification suite
- * 
+ *
  * Revision 1.7  88/12/05  15:20:54  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.5  88/12/05  14:30:36  todd
  * Changes for Code review II.
- * 
+ *
  * Revision 1.4  88/11/15  15:16:42  bhaim
  * Error handling
- * 
+ *
  * Revision 1.3  88/11/15  13:03:28  bruce
  * *** empty log message ***
- * 
+ *
  * Revision 1.2  88/09/28  11:03:14  bruce
  * Added prologues, changed variable names, and added type casting where needed.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:39  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: wsioutattr.c,v 4.0 89/08/31 18:37:42 amy Exp $";
@@ -133,7 +133,7 @@ gslwsc_ (lwidth)
 float *lwidth;
 {
 
-debug ( ("Set Linewidth Scale Factor %4.1f \n", *lwidth) ); 
+debug ( ("Set Linewidth Scale Factor %4.1f \n", *lwidth) );
 
 gsetlinewidth ((Gfloat)*lwidth);
 
@@ -152,7 +152,7 @@ gsplci_ (coli)
 int *coli;
 {
 
-debug ( ("Set Polyline Color Index %d \n", *coli) ); 
+debug ( ("Set Polyline Color Index %d \n", *coli) );
 
 gsetlinecolorind ((Gint)*coli);
 
@@ -171,7 +171,7 @@ gspmi_ (pmi)
 int *pmi;
 {
 
-debug ( ("Set Polymarker Index %d \n", *pmi) ); 
+debug ( ("Set Polymarker Index %d \n", *pmi) );
 
 gsetmarkerind ((Gint)*pmi);
 
@@ -227,7 +227,7 @@ gspmci_ (coli)
 int *coli;
 {
 
-debug ( ("Set PolyMaker Color Index %d \n", *coli) ); 
+debug ( ("Set PolyMaker Color Index %d \n", *coli) );
 
 gsetmarkercolorind ((Gint)*coli);
 
@@ -246,7 +246,7 @@ gstxi_ (txi)
 int *txi;
 {
 
-debug ( ("Set Text Index %d \n", *txi) ); 
+debug ( ("Set Text Index %d \n", *txi) );
 
 gsettextind ((Gint)*txi);
 
@@ -291,7 +291,7 @@ gschxp_ (chxp)
 float *chxp;
 {
 
-debug ( ("Set Character Expansion Factor %4.1f \n", *chxp) ); 
+debug ( ("Set Character Expansion Factor %4.1f \n", *chxp) );
 
 
 gsetcharexpan ((Gfloat)*chxp);
@@ -311,7 +311,7 @@ gschsp_ (chsp)
 float *chsp;
 {
 
-debug ( ("Set Character Spacing %7.2f \n", *chsp) ); 
+debug ( ("Set Character Spacing %7.2f \n", *chsp) );
 
 gsetcharspace ((Gfloat)*chsp);
 
@@ -330,7 +330,7 @@ gstxci_ (coli)
 int *coli;
 {
 
-debug ( ("Set Text Color Index %d \n", *coli) ); 
+debug ( ("Set Text Color Index %d \n", *coli) );
 
 gsettextcolorind ((Gint)*coli);
 
@@ -392,7 +392,7 @@ gstxp_ (txp)
 int *txp;
 {
 
-debug ( ("Set Text Path  %d \n", *txp) ); 
+debug ( ("Set Text Path  %d \n", *txp) );
 
 TEXTPATH (*txp, errgsettextpath)
 gsettextpath ((Gtxpath)*txp);
@@ -415,7 +415,7 @@ int *txalv;
 {
 Gtxalign txalign;
 
-debug ( ("Set Text Alignment %d %d \n", *txalh, *txalv) ); 
+debug ( ("Set Text Alignment %d %d \n", *txalh, *txalv) );
 
 TEXTALIGNMENTHORIZONTAL (*txalh, errgsettextalign)
 txalign.hor = (Gtxhor)*txalh;
@@ -439,7 +439,7 @@ gsfai_ (fai)
 int *fai;
 {
 
-debug ( ("Set Fill Area Index %d \n", *fai) ); 
+debug ( ("Set Fill Area Index %d \n", *fai) );
 
 gsetfillind ((Gint)*fai);
 
@@ -458,7 +458,7 @@ gsfais_ (ints)
 int *ints;
 {
 
-debug ( ("Set Fill Area Interior Style %d \n", *ints) ); 
+debug ( ("Set Fill Area Interior Style %d \n", *ints) );
 
 FILLAREAINTERIORSTYLE (*ints, errgsetfillintstyle)
 gsetfillintstyle ((Gflinter)(*ints));
@@ -478,7 +478,7 @@ gsfasi_ (styli)
 int *styli;
 {
 
-debug ( ("Set Fill Area Style Index %d \n", *styli) ); 
+debug ( ("Set Fill Area Style Index %d \n", *styli) );
 
 gsetfillstyleind ((Gint)*styli);
 
@@ -497,7 +497,7 @@ gsfaci_ (coli)
 int *coli;
 {
 
-debug ( ("Set Fill Area Color Index %d \n", *coli) ); 
+debug ( ("Set Fill Area Color Index %d \n", *coli) );
 
 gsetfillcolorind ((Gint)*coli);
 
@@ -518,31 +518,31 @@ int  lasf[13];
 Gasfs asfs;
 debug ( ("Set Aspect Source Flags \n") );
 ASPECTSOURCE(lasf[0], errgsetasf)
-asfs.ln_type     = lasf[0]; 
+asfs.ln_type     = lasf[0];
 ASPECTSOURCE(lasf[1], errgsetasf)
-asfs.ln_width    = lasf[1]; 
+asfs.ln_width    = lasf[1];
 ASPECTSOURCE(lasf[2], errgsetasf)
-asfs.ln_colour   = lasf[2]; 
+asfs.ln_colour   = lasf[2];
 ASPECTSOURCE(lasf[3], errgsetasf)
-asfs.mk_type     = lasf[3]; 
+asfs.mk_type     = lasf[3];
 ASPECTSOURCE(lasf[4], errgsetasf)
-asfs.mk_size     = lasf[4]; 
+asfs.mk_size     = lasf[4];
 ASPECTSOURCE(lasf[5], errgsetasf)
-asfs.mk_colour   = lasf[5]; 
+asfs.mk_colour   = lasf[5];
 ASPECTSOURCE(lasf[6], errgsetasf)
-asfs.tx_fp       = lasf[6]; 
+asfs.tx_fp       = lasf[6];
 ASPECTSOURCE(lasf[7], errgsetasf)
-asfs.tx_exp      = lasf[7]; 
+asfs.tx_exp      = lasf[7];
 ASPECTSOURCE(lasf[8], errgsetasf)
-asfs.tx_space    = lasf[8]; 
+asfs.tx_space    = lasf[8];
 ASPECTSOURCE(lasf[9], errgsetasf)
-asfs.tx_colour   = lasf[9]; 
+asfs.tx_colour   = lasf[9];
 ASPECTSOURCE(lasf[10], errgsetasf)
-asfs.fl_inter    = lasf[10]; 
+asfs.fl_inter    = lasf[10];
 ASPECTSOURCE(lasf[11], errgsetasf)
-asfs.fl_style    = lasf[11]; 
+asfs.fl_style    = lasf[11];
 ASPECTSOURCE(lasf[12], errgsetasf)
-asfs.fl_colour   = lasf[12]; 
+asfs.fl_colour   = lasf[12];
 
 gsetasf (&asfs);
 

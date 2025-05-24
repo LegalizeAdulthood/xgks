@@ -29,7 +29,7 @@
  *	gschm_
  *	gspkm_
  *	gsstm_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -37,33 +37,33 @@
  *
  * August 31 1988
  *
- * $Header: inputmode.c,v 4.0 89/08/31 18:31:06 amy Exp $ 
+ * $Header: inputmode.c,v 4.0 89/08/31 18:31:06 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inputmode.c,v $
- * 
+ *
  * $Log:	inputmode.c,v $
  * Revision 4.0  89/08/31  18:31:06  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.7  89/06/26  15:22:12  amy
  * DCR d1	Declare errfp external so that
  * 		error macros may reference it.
- * 
+ *
  * Revision 1.6  88/12/05  15:19:03  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.4  88/12/05  14:25:27  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.3  88/10/11  17:00:50  todd
  * Added Global_errnum initialization.
- * 
+ *
  * Revision 1.2  88/09/27  16:22:13  mike
  * Fixed Code Review problems: prologues, casts, variable names, and range checks
- * 
+ *
  * Revision 1.1  88/09/27  08:17:02  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inputmode.c,v 4.0 89/08/31 18:31:06 amy Exp $";
@@ -100,10 +100,10 @@ debug ( ("Set Locator Mode %d  %d %d %d \n", *wkid, *lcdnr, *mode, *esw) );
 OPERATINGMODE (*mode, errgsetlocmode);
 ECHOSWITCH (*esw, errgsetlocmode);
 
-gsetlocmode ((Gint)*wkid, 
-             (Gint)*lcdnr, 
-             (Gimode)*mode, 
-             (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO)); 
+gsetlocmode ((Gint)*wkid,
+             (Gint)*lcdnr,
+             (Gimode)*mode,
+             (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO));
 
 
 }
@@ -134,8 +134,8 @@ OPERATINGMODE (*mode, errgsetstrokemode);
 ECHOSWITCH (*esw, errgsetstrokemode);
 
 gsetstrokemode ((Gint)*wkid,
-                (Gint)*skdnr, 
-                (Gimode)*mode, 
+                (Gint)*skdnr,
+                (Gimode)*mode,
                 (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO));
 
 
@@ -167,8 +167,8 @@ debug ( ("Set Valuator Mode %d %d %d %d \n", *wkid, *vldnr, *mode, *esw) );
 OPERATINGMODE (*mode, errgsetvalmode);
 ECHOSWITCH (*esw, errgsetvalmode);
 
-gsetvalmode ((Gint)*wkid, 
-             (Gint)*vldnr, 
+gsetvalmode ((Gint)*wkid,
+             (Gint)*vldnr,
              (Gimode)*mode,
              (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO));
 
@@ -201,9 +201,9 @@ debug ( ("Set Choice Mode %d %d %d %d \n", *wkid, *chdnr, *mode, *esw) );
 OPERATINGMODE (*mode, errgsetchoicemode);
 ECHOSWITCH (*esw, errgsetchoicemode);
 
-gsetchoicemode ((Gint)*wkid, 
-                (Gint)*chdnr, 
-                (Gimode)*mode, 
+gsetchoicemode ((Gint)*wkid,
+                (Gint)*chdnr,
+                (Gimode)*mode,
                 (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO));
 
 
@@ -235,8 +235,8 @@ debug ( ("Set Pick Mode %d %d %d %d \n", *wkid, *pkdnr, *mode, *esw ));
 OPERATINGMODE (*mode, errgsetpickmode);
 ECHOSWITCH (*esw, errgsetpickmode);
 
-gsetpickmode ((Gint)*wkid, 
-              (Gint)*pkdnr, 
+gsetpickmode ((Gint)*wkid,
+              (Gint)*pkdnr,
               (Gimode)*mode,
               (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO));
 
@@ -269,9 +269,9 @@ debug ( ("Set String Mode %d %d %d %d \n", *wkid, *stdnr, *mode, *esw) );
 OPERATINGMODE (*mode, errgsetstringmode);
 ECHOSWITCH (*esw, errgsetstringmode);
 
-gsetstringmode ((Gint)*wkid, 
-                (Gint)*stdnr, 
-                (Gimode)*mode, 
+gsetstringmode ((Gint)*wkid,
+                (Gint)*stdnr,
+                (Gimode)*mode,
                 (Gesw)((*esw) ? FORT_GNECHO : FORT_GECHO));
 
 

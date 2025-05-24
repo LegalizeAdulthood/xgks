@@ -7,7 +7,7 @@
 #
 # $Header: Makefile,v 1.9 89/05/02 12:47:19 bruce Exp $
 
-# The following line added for AIX PORT 
+# The following line added for AIX PORT
 SHELL=/bin/sh
 
 ILIBDIR = $(INSTALLHOME)/lib

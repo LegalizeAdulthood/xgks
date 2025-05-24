@@ -144,7 +144,7 @@ void hsv_to_rgb(HSV *hsv_clr, Gcobundl *rgb_clr)
     t3 = hsv_clr->val * (1 - (hsv_clr->sat * (1 - fractional_part)));
 
     /* integer part = sextent
-                   and assignment of t1,t2,t3 is based on 
+                   and assignment of t1,t2,t3 is based on
                    which sextent the color is in */
 
     switch (integer_part)

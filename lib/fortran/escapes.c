@@ -24,8 +24,8 @@
  * GKS Escape functions :
  *	gesscm_ ()
  *	gessdc_ ()
- *	gessrp_ () 
- * 	gessrn_ () 
+ *	gessrp_ ()
+ * 	gessrn_ ()
  *	gescid_ ()
  *
  * David Berkowitz
@@ -35,45 +35,45 @@
  *
  * August 31 1988
  *
- * $Header: escapes.c,v 4.0 89/08/31 18:13:21 amy Exp $ 
+ * $Header: escapes.c,v 4.0 89/08/31 18:13:21 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/escapes.c,v $
- * 
+ *
  * $Log:	escapes.c,v $
  * Revision 4.0  89/08/31  18:13:21  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 4.0  89/08/31  18:05:22  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.9  89/06/23  17:17:43  amy
  * DCR d1	Declare errfp external for use in error-handling macros
  * 		expansion.
- * 
+ *
  * Revision 1.8  89/06/16  14:14:30  bruce
  * PTR# c2069:	Added GESCID function.
- * 
+ *
  * Revision 1.7  88/12/27  14:24:52  todd
  * Corrected spelling mistake.
- * 
+ *
  * Revision 1.6  88/12/05  15:18:35  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.4  88/12/05  14:31:57  todd
  * Changes for code review II.
- * 
+ *
  * Revision 1.3  88/11/16  10:16:25  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.2  88/10/11  17:00:41  todd
  * Added Global_errnum initialization.
- * 
+ *
  * Revision 1.1  88/09/27  08:16:51  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: escapes.c,v 4.0 89/08/31 18:13:21 amy Exp $";
@@ -133,7 +133,7 @@ gescsetdcsize (*wsid, dcsize);
  *
  * See also: ANSI standard p.80
  */
-gessrp_ (wsid, store) 
+gessrp_ (wsid, store)
 int   *wsid;
 int   *store;
 {
@@ -151,7 +151,7 @@ gescstoreprimi (*wsid, *store);
  * See also: ANSI standard p.80
  *
  */
-gessrn_ (wsid, func) 
+gessrn_ (wsid, func)
 int   *wsid;
 int   (*func)();
 {
@@ -159,13 +159,13 @@ gescredrawnotify (*wsid, *func);
 
 }  /* end gessrn_  */
 
-/*$F								   c2069   
- * gescid_ - Escape Set Connection Identifier  			   c2069   
- * 								   c2069   
- * char *conid		- server connection identifier		   c2069   
- * long *length		- string length passed by FORTRAN	   c2069   
- *								   c2069   
- */								/* c2069 */  
+/*$F								   c2069
+ * gescid_ - Escape Set Connection Identifier  			   c2069
+ * 								   c2069
+ * char *conid		- server connection identifier		   c2069
+ * long *length		- string length passed by FORTRAN	   c2069
+ *								   c2069
+ */								/* c2069 */
 								/* c2069 */
 gescid_ (conid,length) 						/* c2069 */
 char *conid;							/* c2069 */

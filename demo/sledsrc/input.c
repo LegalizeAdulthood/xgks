@@ -1,4 +1,4 @@
-/*  
+/*
  *              Copyright IBM Corporation 1989
  *
  *                      All Rights Reserved
@@ -81,7 +81,7 @@ void initialize_locator(void)
 /*
  *  select_pt
  *
- *  description:        returns next Gpoint selected by user as well as 
+ *  description:        returns next Gpoint selected by user as well as
  *                      transformation no used to convert to WC
  *
  *  parameters:         transno (IDX *) - trans used to convert pt to WC

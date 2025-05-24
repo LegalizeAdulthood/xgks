@@ -125,7 +125,7 @@ void init_colors_menu(AREA area, MENU *menu)
 /*
  *  cleanup_colors_menu
  *
- *  description:        restores PICT_AREA and switches 
+ *  description:        restores PICT_AREA and switches
  *                      CLR_SELECTOR_PAL_AREA to PAL_AREA,
  *                      and removes CLR_WHEEL_AREA, CLR_PICKED_AREA,
  *                      MIXER_AREA and TUNER_AREA.
@@ -250,7 +250,7 @@ void clr_wheel_area_exec(AREA area, IDX transno, Gpoint pt)
  *
  *  parameters:         pt (Gpoint) - pt picked by user
  *
- *  returns:            (BOOLEAN) - true if pt on clr wheel, 
+ *  returns:            (BOOLEAN) - true if pt on clr wheel,
  *                              false otherwise
  */
 

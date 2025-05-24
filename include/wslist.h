@@ -32,7 +32,7 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  */
 
 #ifndef  WSLIST_H
@@ -84,13 +84,13 @@ typedef struct ws_struct {
         /* UNIX - implementation of MI/MO needs the a file pointer */
         Gfile           *mfp;                   /* Need this for MI/MO */
         Gint            filestat;               /* File status for MI/MO */
-        
+
         /* Entries in this group do not exist for workstation of categories INPUT and MI */
-        
+
         Gwsstate        wsstate;                /* Workstation state [ACTIVE/INACTIVE] */
-        
+
         /* Entries in this group do not exist for workstation of categoeies INPUT, WISS, MI */
-        
+
         Gstore          primi_store;            /* state of storage of non-segment primitives */
         Gpoint          size;                   /* Workstation DC space size */
         Gwsti           wsti;                   /* Workstation transformation information */
@@ -100,7 +100,7 @@ typedef struct ws_struct {
                                                 /* after workstation redraw */
 
         /* Entries in this group do not exist for workstation of categoeies INPUT, WISS, MI, MO */
-        
+
         Glnbundl        lnbundl_table[MAX_BUNDL_TBL];   /* Polyline bundle table */
         Gmkbundl        mkbundl_table[MAX_BUNDL_TBL];   /* Polymarker bundle table */
         Gtxbundl        txbundl_table[MAX_BUNDL_TBL];   /* Text bundle table */
@@ -113,16 +113,16 @@ typedef struct ws_struct {
         WS_SEG_LIST  *seg_insertpt;
         Gint          seg_list_dirty;   /* Flag indicatinf that ws->seglist
                                            needs to be re-arrange before next gks-redraw */
-        /* A note on implementation, this list will be mantain by routines in 
+        /* A note on implementation, this list will be mantain by routines in
            segment.c and should only be change by routines in it ! */
 
-        /* logical input devices are implemented as a linked list of 
+        /* logical input devices are implemented as a linked list of
            all the devices that have been used */
         INPUT_DEV       *in_dev_list;
 
         Glimit          clip;                   /* Intersection between NDC-viewport and WS_window */
 
-        /* Following output primitive list are for non-segment primitives associated 
+        /* Following output primitive list are for non-segment primitives associated
            with this workstation */
         OUT_PRIMI       primi_list;             /* First primitve is always a CLIP_REC */
         OUT_PRIMI       *primi_insert_pt;       /* Primitive manager needs this for efficient insertion */
@@ -156,7 +156,7 @@ typedef struct ws_struct {
         XRectangle      last_farea_rectangle;
         XRectangle      last_text_rectangle;
         Gint            last_dash_index;
-        Gint            last_message_width;   
+        Gint            last_message_width;
 } *WS_STATE_PTR, WS_STATE_ENTRY ;
 
 #define NOT_SET (-9.99)
@@ -173,7 +173,7 @@ WS_STATE_PTR XgksValidWsId();
         /* WS_STATE_ENTRY *ws; Gpoint *ndc, *dc; */  \
         (dc)->x = (ndc)->x * (ws)->ndctodctrans.xScale + (ws)->ndctodctrans.xTrans; \
         (dc)->y = (ndc)->y * (ws)->ndctodctrans.yScale + (ws)->ndctodctrans.yTrans; \
-        } 
+        }
 
 #define DcToNdc(ws, dc, ndc) { \
         /* WS_STATE_ENTRY *ws; Gpoint *dc, *ndc; */  \

@@ -32,9 +32,9 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  * GKS Input processing structures
- * 
+ *
  */
 
 #ifndef INPUT_H
@@ -102,10 +102,10 @@ typedef struct {
                                val == (DC*convert[0] - convert[1]) */
         Gfloat BarWidth;    /* Width of the sliding bar */
         Gfloat BarHeight;   /* Height of Sliding Bar */
-                            /* Note the sliding bar is always constructed with 
+                            /* Note the sliding bar is always constructed with
                                input DC at center, so what is being saved here are
-                               actually OFFSETS FROM CENTER to construct the sliging bar */ 
-        Gfloat CurPos;      /* Current position (in DC) w.r.t. the echo min 
+                               actually OFFSETS FROM CENTER to construct the sliging bar */
+        Gfloat CurPos;      /* Current position (in DC) w.r.t. the echo min
                                This is either X or Y value */
         Gpoint SlidRule[2]; /* Location of the Slide Ruler in DC */
         Gqval  val;         /* Response record in valuator-ratio  */

@@ -7,10 +7,10 @@
 #
 # $Header: Makefile,v 3.12 89/03/10 10:37:10 amy Exp $
 
-H = /usr/include 
+H = /usr/include
 LIBS = ../lib/libxgks.a -lX11 -lm
 
-CFLAGS = -I$(H) -I/andrew/Xgks/source/xgks/include 
+CFLAGS = -I$(H) -I/andrew/Xgks/source/xgks/include
 
 SRCS = bsort.c clock.c defcolors.c font.c hanoi.c mi.c pline.c pmark.c usa.c wong.c
 BINS = bsort clock defcolors font hanoi mi pline pmark usa wong
@@ -29,7 +29,7 @@ cleanbins:	clean
 	-rm -f $(BINS)
 
 clean:
-	-rm *.o core 
+	-rm *.o core
 	@for i in $(SUBDIRS); do \
 		(echo '*** making: '`pwd`'/'$$i; \
 		cd $$i; make $(MFLAGS) clean; \
@@ -53,7 +53,7 @@ depend:
 	echo 'w' >>eddep
 	cp Makefile Makefile.bak
 	ed - Makefile < eddep
-	rm eddep makedep 
+	rm eddep makedep
 	echo '# DEPENDENCIES MUST END AT END OF FILE' >> Makefile
 	echo '# IF YOU PUT STUFF HERE IT WILL GO AWAY' >> Makefile
 	echo '# see make depend above' >> Makefile

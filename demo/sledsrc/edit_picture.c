@@ -673,8 +673,8 @@ void combine_exec(Gpoint pt)
             enq_comb_ob_list(new_comb_ob, &new_list);
         }
 
-        /*  make copy of each comb_ob in list 
-                    (i.e. dup_comb_ob).  Put all obejcts except 
+        /*  make copy of each comb_ob in list
+                    (i.e. dup_comb_ob).  Put all obejcts except
                     those picked in dup_comb_ob.
                     Put picked objects in new_comb_ob */
 

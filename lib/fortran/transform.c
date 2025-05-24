@@ -30,7 +30,7 @@
  *	gsclip_
  *	gswkwn_
  *	gswkvp_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -38,56 +38,56 @@
  *
  * August 31 1988
  *
- * $Header: transform.c,v 4.0 89/08/31 18:37:29 amy Exp $ 
+ * $Header: transform.c,v 4.0 89/08/31 18:37:29 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/transform.c,v $
- * 
+ *
  * $Log:	transform.c,v $
  * Revision 4.0  89/08/31  18:37:29  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.15  89/06/26  16:09:45  amy
  * DCR d1	Declare errfp external for use in error macros.
- * 
+ *
  * Revision 1.14  89/02/13  15:37:48  amy
- *  
- * 
+ *
+ *
  * Revision 1.13  89/01/06  09:38:18  todd
  * Added switch for clipswitch.
- * 
+ *
  * Revision 1.12  88/12/27  14:35:43  todd
  * Correct enumerated type in set clip.
- * 
+ *
  * Revision 1.11  88/12/05  15:20:44  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.9  88/12/05  14:27:19  bhaim
- * 
- * 
+ *
+ *
  * Revision 1.8  88/11/10  10:23:40  bhaim
  * Error handling
- * 
+ *
  * Revision 1.7  88/10/11  17:04:25  todd
  * No changes.
- * 
+ *
  * Revision 1.6  88/10/11  14:31:40  todd
  * Added line to initialize global_errnum.
- * 
+ *
  * Revision 1.5  88/10/03  15:31:24  mike
  * Minor corrections made after Amy\'s review
- * 
+ *
  * Revision 1.4  88/09/27  16:22:07  mike
  * Fixed Code Review problems: prologues, casts, variable names, and range checks
- * 
+ *
  * Revision 1.3  88/09/27  11:20:28  todd
  * Added includes.
- * 
+ *
  * Revision 1.2  88/09/27  10:03:55  todd
  * Added missing functions.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:34  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: transform.c,v 4.0 89/08/31 18:37:29 amy Exp $";
@@ -202,7 +202,7 @@ gselnt_ (tnr)
 int *tnr;
 {
 
-debug ( ("Select Normalization Transformation %d \n", *tnr) ); 
+debug ( ("Select Normalization Transformation %d \n", *tnr) );
 
 gselntran ((Gint)*tnr);
 

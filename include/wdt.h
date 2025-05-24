@@ -32,9 +32,9 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  * wdt.h - GKS workstation description table structure
- * 
+ *
  */
 
 #ifndef WDT_H

@@ -41,7 +41,7 @@ C
        PARAMETER ( ERROUT = 1, TTOUT = 5, WSTYPE = 0, NBYTES = -1 )
 C
 C      Define coordinates for drawing the star.
-C   
+C
        REAL STARX( 5 ),STARY( 5 )
        DATA STARX / 0.951057, -0.951057, 0.587785, 0.0, -0.587785 /
        DATA STARY / 0.309017, 0.309017, -0.951057, 1.0, -0.951057 /
@@ -89,7 +89,7 @@ C      FORTRAN 77 subset version.
 C      CALL GTXS ( 0.0,-1.1,4,'Star' )
 C
 C      Close the workstation and shutdown GKS.
-C 
+C
        CALL GDAWK ( 1 )
        CALL GCLWK ( 1 )
        CALL GCLKS

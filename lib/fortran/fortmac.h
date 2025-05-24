@@ -33,28 +33,28 @@
  * $Log:	fortmac.h,v $
  * Revision 4.0  89/09/01  09:55:11  amy
  * Fixed copyright.
- * 
+ *
  * Revision 4.0  89/09/01  09:52:02  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.5  89/06/26  16:39:49  amy
  * DCR d1	Change references to errfpp to errfp.
- * 
+ *
  * Revision 1.4  89/04/06  16:27:40  bruce
  * PTR# c2043:	corrected TYPEOFRETURNEDVALUES macro to set errind.
- * 
+ *
  * Revision 1.3  89/03/14  20:31:37  amy
  * PTR c2043	Changed VALIDTYPE and VALIDMEMBER macros to
  * 		take errind parameter.
- * 
+ *
  * PTR c2061	Fixed the MIN macro.
- * 
+ *
  * Revision 1.2  89/03/07  16:37:38  amy
  * No change.
- * 
+ *
  * Revision 1.1  89/02/03  16:32:42  amy
  * Initial revision
- * 
+ *
  */
 
 #define ASPECTSOURCE(x,y) \

@@ -27,7 +27,7 @@
  *	gqewk_
  *	gqwkm_
  *	gqmntn_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -35,65 +35,65 @@
  *
  * August 31 1988
  *
- * $Header: inqgksdesc.c,v 4.0 89/08/31 18:32:35 amy Exp $ 
+ * $Header: inqgksdesc.c,v 4.0 89/08/31 18:32:35 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inqgksdesc.c,v $
- * 
+ *
  * $Log:	inqgksdesc.c,v $
  * Revision 4.0  89/08/31  18:32:35  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.15  89/06/26  15:33:39  amy
  * DCR d1	Declare errfp external for use in error macros.
- * 
+ *
  * Revision 1.14  89/03/15  15:01:11  amy
- * PTR c2043	All calls to VALIDMEMBER:  added value for errind 
+ * PTR c2043	All calls to VALIDMEMBER:  added value for errind
  * 		parameter.
- *  
+ *
  * PTR c2020	Inq. List Element and Inq. Set Member functions:
  * 		return values of output parameters regardless
  * 		of validity of the n parameter, and accept 0 as valid value
  * 		for n.
- * 
+ *
  * Revision 1.13  89/01/06  09:39:09  todd
  * Fixed VALIDMEMBER call inq inqavailwstypes.
- * 
+ *
  * Revision 1.12  88/12/05  15:19:19  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.10  88/12/05  14:30:46  todd
  * Changes for Code review II.
- * 
+ *
  * Revision 1.9  88/11/16  10:17:09  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.8  88/11/09  07:03:11  bhaim
  * Added GQWKM and GQMNTN
- * 
+ *
  * Revision 1.7  88/11/08  13:47:22  bhaim
  * Added code for gqewk
- * 
+ *
  * Revision 1.6  88/10/11  17:02:38  todd
  * Added global_errnum initialization.
- * 
+ *
  * Revision 1.5  88/10/05  07:08:12  amy
  * Removed gqopwk from this file-- it belongs in inqgkslist.c.
- * 
+ *
  * Revision 1.4  88/10/04  14:23:04  amy
  * Added stub for gqmntn.
- * 
+ *
  * Revision 1.3  88/10/03  15:31:21  mike
  * Minor corrections made after Amy\'s review
- * 
+ *
  * Revision 1.2  88/09/27  16:22:19  mike
  * Fixed Code Review problems: prologues, casts, variable names, and range checks
- * 
+ *
  * Revision 1.1  88/09/27  08:17:08  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inqgksdesc.c,v 4.0 89/08/31 18:32:35 amy Exp $";
@@ -128,10 +128,10 @@ debug ( ("Inquire Level of Kernel System  \n") );
 /*$F
  * gqewk - Inquire List  of Available Workstation Types
  *
- * int *n              list element requested 
- * int *errind         error indicator           
+ * int *n              list element requested
+ * int *errind         error indicator
  * int *number         number of workstation types
- * int *wktyp          Nth element of list       
+ * int *wktyp          Nth element of list
 
  *
  * Returns: 2002 in addition to ANSI standard errors for this function.
@@ -139,11 +139,11 @@ debug ( ("Inquire Level of Kernel System  \n") );
  * See also: ANSI standard p.146
  */
 gqewk_ (n,errind,number,wktyp)
-int *n;      
+int *n;
 int *errind;
 int *number;
 int *wktyp;
- { 
+ {
 Gstrlist wstypes;
 if (*errind = ginqavailwstypes (&wstypes)) return;
 free(*(wstypes.strings));
@@ -154,7 +154,7 @@ free(*(wstypes.strings));
 VALIDMEMBER(errind,*n,0,wstypes.number,errginqavailwstypes); /* c2043 */
 
 /* Since the workstation type in fortran is an
-   integer, simply return the integer type requested */ 
+   integer, simply return the integer type requested */
 if (*n)			/* c2020 */
    *wktyp   = (int)  *n;
 }
@@ -171,7 +171,7 @@ if (*n)			/* c2020 */
  *
  * See also: ANSI standard p.146
  */
-gqwkm_ (errind,mxopwk,mxacwk,mxwkas)   
+gqwkm_ (errind,mxopwk,mxacwk,mxwkas)
 int  *errind;
 int  *mxopwk;
 int  *mxacwk;

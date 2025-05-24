@@ -1020,7 +1020,7 @@ void init_bundle_tbls(void)
  *  init_text_bundle_tbl
  *
  *  description:        sets up text bndle table so that a key
- *                      will correspond to a particular text font, 
+ *                      will correspond to a particular text font,
  *                      precision, expansion, spacing and height
  *
  *  parameters:         filename (char *) - file containing text info
@@ -1029,7 +1029,7 @@ void init_bundle_tbls(void)
 
 void init_text_bundle_tbl(char *filename)
 {
-    FILE *fd;             /* fd for file containing text 
+    FILE *fd;             /* fd for file containing text
                                            info */
     Gtxbundl text_bundle; /* text bundle tbl entry info */
     char *precision;      /* text precision in chr form */

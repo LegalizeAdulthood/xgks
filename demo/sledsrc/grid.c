@@ -345,7 +345,7 @@ void erase_grid(void)
                 pts[j].y = pts[0].y;
 
             /* points must be drawn in small
-                        groups due to limits on the 
+                        groups due to limits on the
                         size of data packets */
 
             gpolymarker(no_x_pts, pts);

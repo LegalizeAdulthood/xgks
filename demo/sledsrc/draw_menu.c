@@ -159,7 +159,7 @@ void cleanup_menu_n_popups(AREA area, MENU *menu)
  *
  *  description:        displays a menu
  *
- *  parameters:         area (AREA) - menu area (PRI_MENU_AREA or 
+ *  parameters:         area (AREA) - menu area (PRI_MENU_AREA or
  *                              SEC_MENU_AREA)
  *                      menu_ptr (MENU) - menu to display
  */

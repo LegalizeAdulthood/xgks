@@ -128,7 +128,7 @@ int get_text_bndl_tbl_idx(KEY key)
  *  parameters: setting (Gasf) - GINDIVIDUAL | GBUNDLED
  */
 
-/* set_aspect_flags(setting)    Old GKS version 
+/* set_aspect_flags(setting)    Old GKS version
 ENUM setting;
 {
         ENUM flags[13];

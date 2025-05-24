@@ -115,7 +115,7 @@ void display_palette(void)
 /*
  *  display_fgdclr_area
  *
- *  description:        displays fgdclr 
+ *  description:        displays fgdclr
  *
  *  parameters:         none
  */
@@ -132,7 +132,7 @@ void display_fgdclr_area(void)
 /*
  *  display_bgdclr_area
  *
- *  description:        displays bgdclr 
+ *  description:        displays bgdclr
  *
  *  parameters:         none
  */
@@ -149,7 +149,7 @@ void display_bgdclr_area(void)
 /*
  *  display_fillclr_area
  *
- *  description:        displays fillclr 
+ *  description:        displays fillclr
  *
  *  parameters:         none
  */
@@ -166,7 +166,7 @@ void display_fillclr_area(void)
 /*
  *  draw_clr_area
  *
- *  description:        draws clr area with clr splotch 
+ *  description:        draws clr area with clr splotch
  *                      of specified color and with
  *                      specified heading
  *
@@ -223,7 +223,7 @@ void draw_clr_area(AREA clr_area, BOOLEAN hi_lite)
 
     set_aspect_flags(GBUNDLED);
 
-    /* fill in window in bgd_area_clr and outline in 
+    /* fill in window in bgd_area_clr and outline in
            fgd_area_clr */
 
     get_window(clr_area, window);

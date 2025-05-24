@@ -113,7 +113,7 @@ one_to_one(menu_item)
 }; /* one_to_one */
 
 /*
- *  photograph 
+ *  photograph
  *
  *  description:        photographs screen
  *

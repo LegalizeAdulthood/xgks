@@ -32,8 +32,8 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
- *  Define file for : Xevent 
+ *
+ *  Define file for : Xevent
  *
  */
 

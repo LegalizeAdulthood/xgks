@@ -63,7 +63,7 @@ void draw_printer(Gint wsid)
 void do_printer(void)
 {
         Gpoint pts[20];
-        
+
         gsetfillintstyle(GSOLID);
         gsetfillcolorind(BEIGE);
 
@@ -87,9 +87,9 @@ void do_printer(void)
         pts[3].x=54.0; pts[3].y=14.0;
         pts[4].x=54.0; pts[4].y=18.0;
         pts[5].x=55.0;  pts[5].y=18.0;
-        gpolyline(6, pts); 
+        gpolyline(6, pts);
 
-        
+
 /* paper ins an outs */
         gsetfillcolorind(BLACK);
 
@@ -98,14 +98,14 @@ void do_printer(void)
         pts[2].x=52.5; pts[2].y=4.0;
         pts[3].x=5.5; pts[3].y=4.0;
         pts[4].x=5.5; pts[4].y=0.0;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         pts[0].x=5.0;  pts[0].y=16.0;
         pts[1].x=53.0; pts[1].y=16.0;
         pts[2].x=53.0; pts[2].y=25.0;
         pts[3].x=5.0; pts[3].y=25.0;
         pts[4].x=5.0; pts[4].y=16.0;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
 /* control panel */
         gsetfillcolorind(DARKGRAY);
@@ -115,7 +115,7 @@ void do_printer(void)
         pts[2].x=52.5; pts[2].y=11.5;
         pts[3].x=37.0; pts[3].y=11.5;
         pts[4].x=37.0; pts[4].y=4.0;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         gsetfillcolorind(BLACK);
 
@@ -124,14 +124,14 @@ void do_printer(void)
         pts[2].x=47.5; pts[2].y=10.5;
         pts[3].x=38.0; pts[3].y=10.5;
         pts[4].x=38.0; pts[4].y=6.0;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         pts[0].x=48.5; pts[0].y=6.0;    /* on off switch */
         pts[1].x=51.0; pts[1].y=6.0;
         pts[2].x=51.0; pts[2].y=10.5;
         pts[3].x=48.5; pts[3].y=10.5;
         pts[4].x=48.5; pts[4].y=6.0;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         gsetfillcolorind(DARKGRAY);
 
@@ -140,21 +140,21 @@ void do_printer(void)
         pts[2].x=41.0; pts[2].y=10.0;
         pts[3].x=39.0; pts[3].y=10.0;
         pts[4].x=39.0; pts[4].y=8.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         pts[0].x=45.0; pts[0].y=8.5;    /* power */
         pts[1].x=46.5; pts[1].y=8.5;
         pts[2].x=46.5; pts[2].y=10.0;
         pts[3].x=45.0; pts[3].y=10.0;
         pts[4].x=45.0; pts[4].y=8.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         pts[0].x=43.0; pts[0].y=6.5;    /* forms mode */
         pts[1].x=44.5; pts[1].y=6.5;
         pts[2].x=44.5; pts[2].y=8.0;
         pts[3].x=43.0; pts[3].y=8.0;
         pts[4].x=43.0; pts[4].y=6.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         gsetfillcolorind(BLUE);
 
@@ -163,14 +163,14 @@ void do_printer(void)
         pts[2].x=42.5; pts[2].y=10.0;
         pts[3].x=41.0; pts[3].y=10.0;
         pts[4].x=41.0; pts[4].y=8.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         pts[0].x=41.0; pts[0].y=6.5;    /* form feed */
         pts[1].x=42.5; pts[1].y=6.5;
         pts[2].x=42.5; pts[2].y=8.0;
         pts[3].x=41.0; pts[3].y=8.0;
         pts[4].x=41.0; pts[4].y=6.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         gsetfillcolorind(YELLOW);
 
@@ -179,14 +179,14 @@ void do_printer(void)
         pts[2].x=40.5; pts[2].y=8.0;
         pts[3].x=39.0; pts[3].y=8.0;
         pts[4].x=39.0; pts[4].y=6.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         pts[0].x=45.0; pts[0].y=6.5;    /* fault */
         pts[1].x=46.5; pts[1].y=6.5;
         pts[2].x=46.5; pts[2].y=8.0;
         pts[3].x=45.0; pts[3].y=8.0;
         pts[4].x=45.0; pts[4].y=6.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         gsetfillcolorind(GREEN);
 
@@ -195,7 +195,7 @@ void do_printer(void)
         pts[2].x=44.5; pts[2].y=10.0;
         pts[3].x=43.0; pts[3].y=10.0;
         pts[4].x=43.0; pts[4].y=8.5;
-        gfillarea(5, pts); 
+        gfillarea(5, pts);
 
         gsetfillcolorind(RED);
 

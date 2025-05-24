@@ -59,8 +59,8 @@
  *	gqopsg_
  *	gqsgus_
  *	gqsim_
- *  
- *        
+ *
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -68,69 +68,69 @@
  *
  * September 29, 2988
  *
- * $Header: inqgkslist.c,v 4.0 89/08/31 18:32:42 amy Exp $ 
+ * $Header: inqgkslist.c,v 4.0 89/08/31 18:32:42 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inqgkslist.c,v $
- * 
+ *
  * $Log:	inqgkslist.c,v $
  * Revision 4.0  89/08/31  18:32:42  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.16  89/06/26  15:35:16  amy
  *  DCR d1	Declare errfp external for use in error macros.
- * 
+ *
  * Revision 1.15  89/03/15  16:13:01  bruce
  * PTR c2020	More stuff for 2020.
- * 
+ *
  * Revision 1.14  89/03/15  15:02:35  amy
- * PTR c2043	All calls to VALIDMEMBER:  added value for errind 
+ * PTR c2043	All calls to VALIDMEMBER:  added value for errind
  * 		parameter.
  * PTR c2020	Inq. List Element and Inq. Set Member functions:
  * 		return values of output parameters regardless
  * 		of validity of the n parameter, and accept 0 as valid value
  * 		for n.
- * 
+ *
  * Revision 1.13  89/01/06  08:22:10  bruce
  * Changed some of the InquireSetMember functions so they will accept a request for
  * member number 0 but in such a case will only return the number of members in the
  * set.  PTR# c2020.
- * 
+ *
  * Revision 1.12  88/12/29  17:08:42  todd
  * fixed ptr# c2015
  * Inquire Ws Connection and type need to check if the
- * wtype was equal to the conid. If so then return the 
+ * wtype was equal to the conid. If so then return the
  * NULL index.
- * 
+ *
  * Revision 1.11  88/12/05  15:19:26  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.9  88/12/05  14:25:49  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.8  88/11/16  10:18:46  todd
  * Removed extra call to gerrorhand.
- * 
+ *
  * Revision 1.7  88/11/14  07:50:49  bhaim
  * Error handling
- * 
+ *
  * Revision 1.6  88/10/11  17:03:00  todd
  * No changes.
- * 
+ *
  * Revision 1.5  88/10/11  14:33:49  owens
  * more changes from code review
- * 
+ *
  * Revision 1.4  88/09/30  11:28:28  owens
  * more code review changes
- * 
+ *
  * Revision 1.3  88/09/29  16:51:37  owens
  * more code review changes
- * 
+ *
  * Revision 1.2  88/09/29  16:27:30  owens
  * code review changes
- * 
+ *
  * Revision 1.1  88/09/27  08:17:10  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inqgkslist.c,v 4.0 89/08/31 18:32:42 amy Exp $";
@@ -144,20 +144,20 @@ extern FILE *errfp;              /* d1 */
 /*$F
  * gqopwk - inquire set member of open workstations
  *
- * int *n            set member requested   
- * int *errind       error indicator       
- * int *ol           number of open workstations 
- * int *wkid         Nth member of set of open workstations 
+ * int *n            set member requested
+ * int *errind       error indicator
+ * int *ol           number of open workstations
+ * int *wkid         Nth member of set of open workstations
  *
  * Returns: 2002 in addition to ANSI standard errors for this function
  *
  * See also: ANSI standard p. 147
  */
-gqopwk_ (n,errind,ol,wkid)   
-int *n;        
-int *errind;  
-int *ol;     
-int *wkid;  
+gqopwk_ (n,errind,ol,wkid)
+int *n;
+int *errind;
+int *ol;
+int *wkid;
 {
 Gintlist wsids;
 debug(("inquire set member of open workstations \n"));
@@ -174,20 +174,20 @@ free(wsids.integers);
 /*$F
  * gqacwk - inquire set member of active workstations
  *
- * int *n            set member requested   
- * int *errind       error indicator        
- * int *ol           number of open workstations 
- * int *wkid         Nth member of set of open workstations 
+ * int *n            set member requested
+ * int *errind       error indicator
+ * int *ol           number of open workstations
+ * int *wkid         Nth member of set of open workstations
  *
  * Returns: 2002 in addition to ANSI standard errors for this function
  *
  * See also: ANSI standard p. 147
  */
-gqacwk_ (n,errind,ol,wkid)   
-int *n;         
-int *errind;   
-int *ol;      
-int *wkid;   
+gqacwk_ (n,errind,ol,wkid)
+int *n;
+int *errind;
+int *ol;
+int *wkid;
 {
 Gintlist wsids;
 debug(("Inquire Set Member of Active Workstations %n \n",*n));
@@ -206,16 +206,16 @@ free(wsids.integers);
 /*$F
  * gqpli - inquire list member of polyline indices
  *
- * int *errind;      error indicator   
- * int *pli;         polyline index    
+ * int *errind;      error indicator
+ * int *pli;         polyline index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqpli_ (errind,pli)   
-int *errind;     
-int *pli;       
+gqpli_ (errind,pli)
+int *errind;
+int *pli;
 {
 Gpriattr primattr;
 debug(("inquire list member of polyline indices \n"));
@@ -227,16 +227,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqpmi - inquire list member of polymarker indices
  *
- * int *errind;      error indicator   
- * int *pmi;         polymarker index    
+ * int *errind;      error indicator
+ * int *pmi;         polymarker index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqpmi_ (errind,pmi)   
-int *errind;     
-int *pmi;       
+gqpmi_ (errind,pmi)
+int *errind;
+int *pmi;
 {
 Gpriattr primattr;
 debug(("inquire list member of polymarker indices \n"));
@@ -248,16 +248,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqtxi - inquire list member of text indices
  *
- * int *errind;      error indicator   
- * int *txi;         text     index    
+ * int *errind;      error indicator
+ * int *txi;         text     index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqtxi_ (errind,txi)   
-int *errind;   
-int *txi;     
+gqtxi_ (errind,txi)
+int *errind;
+int *txi;
 {
 Gpriattr primattr;
 debug(("inquire list member of text indices \n"));
@@ -267,18 +267,18 @@ if (*errind = ginqprimattr(&primattr)) return;
 }
 
 /*$F
- * gqchh - inquire character height 
+ * gqchh - inquire character height
  *
- * int *errind;      error indicator   
- * float *chh;       character height    
+ * int *errind;      error indicator
+ * float *chh;       character height
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqchh_ (errind,chh)   
-int *errind;   
-float *chh;   
+gqchh_ (errind,chh)
+int *errind;
+float *chh;
 {
 Gpriattr primattr;
 debug(("inquire character height \n"));
@@ -290,16 +290,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqchup - inquire character up vector
  *
- * int *errind;      error indicator   
- * float  *chux;     character up X    
- * float  *chuy;     character up Y    
+ * int *errind;      error indicator
+ * float  *chux;     character up X
+ * float  *chuy;     character up Y
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqchup_ (errind,chux,chuy)   
-int *errind;  
+gqchup_ (errind,chux,chuy)
+int *errind;
 float  *chux;
 float  *chuy;
 {
@@ -314,16 +314,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqchw - inquire character width
  *
- * int   *errind;      error indicator   
- * float *chw;         character width   
+ * int   *errind;      error indicator
+ * float *chw;         character width
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqchw_ (errind,chw)   
-int   *errind;     
-float *chw;       
+gqchw_ (errind,chw)
+int   *errind;
+float *chw;
 {
 Gpriattr primattr;
 debug(("inquire character width \n"));
@@ -333,18 +333,18 @@ if (*errind = ginqprimattr(&primattr)) return;
 }
 
 /*$F
- * gqchb - 
+ * gqchb -
  *
- * int *errind;      error indicator   
- * float *chbx;      character base X  
- * float *chby;      character base Y  
+ * int *errind;      error indicator
+ * float *chbx;      character base X
+ * float *chby;      character base Y
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqchb_ (errind,chbx,chby)   
-int *errind; 
+gqchb_ (errind,chbx,chby)
+int *errind;
 float *chbx;
 float *chby;
 {
@@ -359,16 +359,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqtxp - inquire text path
  *
- * int *errind;      error indicator   
- * int *txp;         text path         
+ * int *errind;      error indicator
+ * int *txp;         text path
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqtxp_ (errind,txp)   
-int *errind;    
-int *txp;      
+gqtxp_ (errind,txp)
+int *errind;
+int *txp;
 {
 Gpriattr primattr;
 debug(("inquire text path \n"));
@@ -380,18 +380,18 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqtxal - inquire text alignment
  *
- * int *errind;      error indicator   
+ * int *errind;      error indicator
  * int *txalh;       text alignment horizontal
- * int *txalv;       text alignment vertical  
+ * int *txalv;       text alignment vertical
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqtxal_ (errind,txalh,txalv)   
-int *errind;    
-int *txalh;    
-int *txalv;   
+gqtxal_ (errind,txalh,txalv)
+int *errind;
+int *txalh;
+int *txalv;
 {
 Gpriattr primattr;
 debug(("inquire text alignment \n"));
@@ -404,16 +404,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqfai - inquire fill area index
  *
- * int *errind;      error indicator   
- * int *fai;         fill area index    
+ * int *errind;      error indicator
+ * int *fai;         fill area index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqfai_ (errind,fai)   
-int *errind;   
-int *fai;     
+gqfai_ (errind,fai)
+int *errind;
+int *fai;
 {
 Gpriattr primattr;
 debug(("inquire fill area index \n"));
@@ -425,16 +425,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqpa - inquire pattern size
  *
- * int *errind;      error indicator   
- * float *pwx,*pwy;  pattern width vector 
- * float *phx,*phy;  pattern width vector 
+ * int *errind;      error indicator
+ * float *pwx,*pwy;  pattern width vector
+ * float *phx,*phy;  pattern width vector
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqpa_ (errind,pwx,pwy,phx,phy)   
-int *errind;     
+gqpa_ (errind,pwx,pwy,phx,phy)
+int *errind;
 float *pwx,*pwy;
 float *phx,*phy;
 {
@@ -451,18 +451,18 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqparf - inquire pattern reference point
  *
- * int *errind;      error indicator   
- * float *rfx;       pattern reference point 
- * float *rfy;       pattern reference point 
+ * int *errind;      error indicator
+ * float *rfx;       pattern reference point
+ * float *rfy;       pattern reference point
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  *
  */
-gqparf_ (errind,rfx,rfy)   
-int *errind;    
-float *rfx;    
-float *rfy;   
+gqparf_ (errind,rfx,rfy)
+int *errind;
+float *rfx;
+float *rfy;
 {
 Gpriattr primattr;
 debug(("inquire pattern reference point \n"));
@@ -475,16 +475,16 @@ if (*errind = ginqprimattr(&primattr)) return;
 /*$F
  * gqpkid - inquire pick identifier
  *
- * int *errind;      error indicator   
- * int *pkid;        pick identifier   
+ * int *errind;      error indicator
+ * int *pkid;        pick identifier
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 148
  */
-gqpkid_ (errind,pkid)   
-int *errind;    
-int *pkid;       
+gqpkid_ (errind,pkid)
+int *errind;
+int *pkid;
 {
 debug(("inquire pick identifier \n"));
 *errind = ginqcurpickid((Gint *)pkid);
@@ -494,16 +494,16 @@ debug(("inquire pick identifier \n"));
 /*$F
  * gqln - inquire linetype
  *
- * int *errind;      error indicator   
- * int *ltype;       linetype          
+ * int *errind;      error indicator
+ * int *ltype;       linetype
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqln_ (errind,ltype)   
-int *errind;   
-int *ltype;   
+gqln_ (errind,ltype)
+int *errind;
+int *ltype;
 {
 Gindattr indivattr;
 debug(("inquire linetype \n"));
@@ -515,16 +515,16 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqlwsc - inquire linewidth scale factor
  *
- * int *errind;      error indicator   
- * float *lwidth;    linewidth         
+ * int *errind;      error indicator
+ * float *lwidth;    linewidth
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqlwsc_ (errind,lwidth)   
-int *errind;     
-float *lwidth;  
+gqlwsc_ (errind,lwidth)
+int *errind;
+float *lwidth;
 {
 Gindattr indivattr;
 debug(("inquire linewidth scale factor \n"));
@@ -536,14 +536,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqplci - inquire polyline color index
  *
- * int *errind;      error indicator   
- * int *coli;        polyline colour index 
+ * int *errind;      error indicator
+ * int *coli;        polyline colour index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqplci_ (errind,coli)   
+gqplci_ (errind,coli)
 int *errind;      /* error indicator   */
 int *coli;        /* polyline colour index */
 {
@@ -557,14 +557,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqmk - inquire markertype
  *
- * int *errind;      error indicator   
- * int *mtype;       marker type       
+ * int *errind;      error indicator
+ * int *mtype;       marker type
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqmk_ (errind,mtype)   
+gqmk_ (errind,mtype)
 int *errind;      /* error indicator   */
 int *mtype;       /* marker type       */
 {
@@ -578,14 +578,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqmksc - inquire marker size scale factor
  *
- * int   *errind;    error indicator   
- * float *mszsf;     marker size scale factor 
+ * int   *errind;    error indicator
+ * float *mszsf;     marker size scale factor
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqmksc_ (errind,mszsf)   
+gqmksc_ (errind,mszsf)
 int   *errind;
 float *mszsf;
 {
@@ -599,14 +599,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqpmci - inquire polymarker color index
  *
- * int *errind;      error indicator   
- * int *coli;        polymarker colour index 
+ * int *errind;      error indicator
+ * int *coli;        polymarker colour index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqpmci_ (errind,coli)   
+gqpmci_ (errind,coli)
 int *errind;      /* error indicator   */
 int *coli;        /* polymarker colour index */
 {
@@ -620,18 +620,18 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqtxfp - inquire text font and precision
  *
- * int *errind;      error indicator   
- * int *font;        text font         
- * int *prec;        text precision    
+ * int *errind;      error indicator
+ * int *font;        text font
+ * int *prec;        text precision
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqtxfp_ (errind,font,prec)   
-int *errind;   
-int *font;      
-int *prec;       
+gqtxfp_ (errind,font,prec)
+int *errind;
+int *font;
+int *prec;
 {
 Gindattr indivattr;
 debug(("inquire text font and precision \n"));
@@ -644,14 +644,14 @@ if (*errind =  ginqindivattr(&indivattr)) return;
 /*$F
  * gqchxp - inquire character expansion factor
  *
- * int   *errind;      error indicator   
- * float *chxp;        character expansion factor 
+ * int   *errind;      error indicator
+ * float *chxp;        character expansion factor
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqchxp_ (errind,chxp)   
+gqchxp_ (errind,chxp)
 int   *errind;      /* error indicator   */
 float *chxp;        /* character expansion factor */
 {
@@ -665,14 +665,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqchsp - inquire character spacing
  *
- * int *errind;      error indicator   
- * float *chsp;      character spacing 
+ * int *errind;      error indicator
+ * float *chsp;      character spacing
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqchsp_ (errind,chsp)   
+gqchsp_ (errind,chsp)
 int *errind;      /* error indicator   */
 float *chsp;      /* character spacing */
 {
@@ -685,14 +685,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqtxci - inquire text color index
  *
- * int *errind;      error indicator   
- * int *coli;        text colour index 
+ * int *errind;      error indicator
+ * int *coli;        text colour index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqtxci_ (errind,coli)   
+gqtxci_ (errind,coli)
 int *errind;      /* error indicator   */
 int *coli;        /* text colour index */
 {
@@ -706,14 +706,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqfais - inquire fill area interior style
  *
- * int *errind;      error indicator          
- * int *ints;        fill area interior style 
+ * int *errind;      error indicator
+ * int *ints;        fill area interior style
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqfais_ (errind,ints)   
+gqfais_ (errind,ints)
 int *errind;      /* error indicator          */
 int *ints;        /* fill area interior style */
 {
@@ -726,14 +726,14 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqfasi - inquire fill area style index
  *
- * int *errind;      error indicator  
- * int *styli;       fill area style index 
+ * int *errind;      error indicator
+ * int *styli;       fill area style index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqfasi_ (errind,styli)   
+gqfasi_ (errind,styli)
 int *errind;      /* error indicator   */
 int *styli;       /* fill area style index */
 {
@@ -746,15 +746,15 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqfaci - inquire fill area color index
  *
- * int *errind;      error indicator   
- * int *coli;        fill area colour index 
+ * int *errind;      error indicator
+ * int *coli;        fill area colour index
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
 
-gqfaci_ (errind,coli)   
+gqfaci_ (errind,coli)
 int *errind;      /* error indicator   */
 int *coli;        /* fill area colour index */
 {
@@ -767,16 +767,16 @@ if (*errind = ginqindivattr(&indivattr)) return;
 /*$F
  * gqasf - inquire aspect source flags
  *
- * int *errind;      error indicator   
- * int *lasf;        list of aspect source flags 
+ * int *errind;      error indicator
+ * int *lasf;        list of aspect source flags
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqasf_ (errind,lasf)   
-int *errind;    
-int *lasf;       
+gqasf_ (errind,lasf)
+int *errind;
+int *lasf;
 {
 Gindattr indivattr;
 debug(("inquire aspect source flags \n"));
@@ -800,41 +800,41 @@ lasf[12] = (int)indivattr.asflist.fl_colour;
 /*$F
  * gqcntn - inquire current normalization transformation number
  *
- * int *errind;      error indicator   
- * int *ctnr;        current transformation number 
+ * int *errind;      error indicator
+ * int *ctnr;        current transformation number
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 149
  */
-gqcntn_ (errind,ctnr)   
-int *errind;     
-int *ctnr; 
+gqcntn_ (errind,ctnr)
+int *errind;
+int *ctnr;
 {
 debug(("inquire current normalization transformation number \n"));
 *errind = ginqcurntrannum((Gint *)ctnr);
 }
 
 /*$F
- * gqentn - inquire list element of normalization transformation 
+ * gqentn - inquire list element of normalization transformation
  *
- * int *n;           set member requested   
- * int *errind;      error indicator        
- * int *ol;          number of open workstations 
+ * int *n;           set member requested
+ * int *errind;      error indicator
+ * int *ol;          number of open workstations
  * int *tnr;         Nth member of transformation list
  *
  * Returns: 2002 in addition to ANSI standard errors for this function
  *
  * See also: ANSI standard p. 150
  */
-gqentn_ (n,errind,ol,tnr)   
-int *n;        
-int *errind;  
-int *ol;     
-int *tnr;   
+gqentn_ (n,errind,ol,tnr)
+int *n;
+int *errind;
+int *ol;
+int *tnr;
 {
 Gintlist tranlist;
-debug(("inquire list element of normalization transformation %d \n",*n)); 
+debug(("inquire list element of normalization transformation %d \n",*n));
 if (*errind = ginqntrannum(&tranlist)) return;
 
 /* set return values not dependent on range check  c2020 */
@@ -849,18 +849,18 @@ free(tranlist.integers);
 /*$F
  * gqnt - inquire normalization transformation
  *
- * int  *ntnr;       normalization transformation number 
- * int  *errind;     error indicator                     
- * float window[4];  window limits                       
- * float viewpt[4];  viewport limits                     
+ * int  *ntnr;       normalization transformation number
+ * int  *errind;     error indicator
+ * float window[4];  window limits
+ * float viewpt[4];  viewport limits
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 150
  */
-gqnt_ (ntnr,errind,window,viewpt)   
-int  *ntnr;       
-int  *errind;    
+gqnt_ (ntnr,errind,window,viewpt)
+int  *ntnr;
+int  *errind;
 float window[4];
 float viewpt[4];
 {
@@ -882,19 +882,19 @@ viewpt[3] = (float)trans.v.ymax;
 /*$F
  * gqclip - inquire clipping indicator
  *
- * int *errind;      error indicator 
- * int *clsw;        clipping indicator 
- * float clrect[4];  clipping rectangle 
+ * int *errind;      error indicator
+ * int *clsw;        clipping indicator
+ * float clrect[4];  clipping rectangle
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 151
  */
-gqclip_ (errind,clsw,clrect)   
-int *errind;   
-int *clsw;      
-float clrect[4]; 
-{ 
+gqclip_ (errind,clsw,clrect)
+int *errind;
+int *clsw;
+float clrect[4];
+{
 Gcliprec clip;
 debug(("Inquire Clipping indicator \n"));
 if (*errind = ginqclip(&clip)) return;
@@ -912,22 +912,22 @@ switch (clip.ind)
 clrect[0] = (float)clip.rec.xmin;
 clrect[1] = (float)clip.rec.xmax;
 clrect[2] = (float)clip.rec.ymin;
-clrect[3] = (float)clip.rec.ymax; 
+clrect[3] = (float)clip.rec.ymax;
 }
 
 /*$F
  * gqopsg - inquire name of open segment
  *
- * int *errind;      error indicator   
- * int *sgna;        name of open segment 
+ * int *errind;      error indicator
+ * int *sgna;        name of open segment
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 151
  */
-gqopsg_ (errind,sgna)   
-int *errind;   
-int *sgna;    
+gqopsg_ (errind,sgna)
+int *errind;
+int *sgna;
 {
 debug(("Inquire Name of Open Segment \n"));
 *errind = ginqnameopenseg((Gint *)sgna);
@@ -936,20 +936,20 @@ debug(("Inquire Name of Open Segment \n"));
 /*$F
  * gqsgus - inquire set member of segment names in use
  *
- * int *n;           set member requested   
- * int *errind;      error indicator        
- * int *ol;          number of open workstations 
- * int *sgna;        Nth member of set of segment names in use 
+ * int *n;           set member requested
+ * int *errind;      error indicator
+ * int *ol;          number of open workstations
+ * int *sgna;        Nth member of set of segment names in use
  *
  * Returns: 2002 in addition to ANSI standard errors for this function
  *
  * See also: ANSI standard p. 152
  */
-gqsgus_ (n,errind,ol,sgna)   
-int *n;         
-int *errind;   
-int *ol;      
-int *sgna;   
+gqsgus_ (n,errind,ol,sgna)
+int *n;
+int *errind;
+int *ol;
+int *sgna;
 {
 Gintlist segs;
 debug(("Inquire Set Member %d of Segment Names in Use \n",*n));
@@ -967,16 +967,16 @@ free(segs.integers);
 /*$F
  * gqsim - inquire more simulataneous events
  *
- * int *errind;      error indicator   
- * int *flag;        name of open segment 
+ * int *errind;      error indicator
+ * int *flag;        name of open segment
  *
  * Returns: ANSI standard errors for this function
  *
  * See also: ANSI standard p. 152
  */
-gqsim_ (errind,flag)   
-int *errind;   
-int *flag;    
+gqsim_ (errind,flag)
+int *errind;
+int *flag;
 {
 debug(("Inquire More Simulataneous Events \n"));
 *errind = ginqmoreevents((Gsimultev *)flag);

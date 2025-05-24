@@ -8,8 +8,8 @@ XGKS_TOP = ../..
 LOCAL_LIBRARIES = $(XGKSLIB) $(XLIB)
 LOCAL_XGKSINCLUDES = -I..
 
-SRCS = hello.c 
-OBJS = hello.o 
+SRCS = hello.c
+OBJS = hello.o
 
 SingleProgramTarget(hello,$(OBJS),$(LOCAL_LIBRARIES),-lm)
 

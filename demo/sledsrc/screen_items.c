@@ -70,7 +70,7 @@ POPUP *currpoptbl;
 MENU_ITEM *currmitem = (MENU_ITEM *) NULL; /* currently active
                                                    menu item */
 
-BOOLEAN done = FALSE; /* activated by menu item 
+BOOLEAN done = FALSE; /* activated by menu item
                                            QUIT */
 
 AREA active_clr_area = FGDCLR_AREA;
@@ -87,7 +87,7 @@ AREA active_clr_area = FGDCLR_AREA;
 void manage_input(void)
 {
     AREA area;      /* identifies window */
-    int transno;    /* trans no of window 
+    int transno;    /* trans no of window
                                            selected */
     Gpoint pt;      /* point selected */
     IDX idx;        /* screen_tbl index */
@@ -118,8 +118,8 @@ void manage_input(void)
 
             snap_to_grid(&pt);
 
-        /* if screen area exists and is active 
-                   execute associated function 
+        /* if screen area exists and is active
+                   execute associated function
                    else, reprompt */
 
         if (area != (AREA) NULL)
@@ -168,7 +168,7 @@ void signal_done(void)
 
 void picture_area_exec(AREA area, IDX transno, Gpoint pt)
 {
-    IDX idx; /* index of currmitem in 
+    IDX idx; /* index of currmitem in
                                            menu_item_func_tbl */
 
     if (currmitem != (MENU_ITEM *) NULL)
@@ -257,7 +257,7 @@ void fillclr_area_exec(AREA area, IDX transno, Gpoint pt)
 /*
  *  popup_area_exec
  *
- *  description:        calls appropriate popup exec routine 
+ *  description:        calls appropriate popup exec routine
  *
  *  parameters:         area (AREA) - area selected by user
  *                      transno (IDX) - trans no picked
@@ -454,7 +454,7 @@ MENU_ITEM *get_menu_item_from_pt(AREA area, Gpoint pt)
 void erase_area(AREA area)
 {
     Gpoint window[2]; /* area world window */
-    Gpoint box[4];    /* pts of rectangle 
+    Gpoint box[4];    /* pts of rectangle
                                                    bounding window */
 
     push_curr_trans();

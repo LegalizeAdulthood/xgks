@@ -22,7 +22,7 @@
  *
  * Tool: X 11 Graphical Kernel System
  * Author:  Michael Wojcik
- * 
+ *
  * Define file for :  polyline predefined bundles
  *
  */

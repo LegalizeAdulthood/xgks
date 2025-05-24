@@ -30,7 +30,7 @@
  *	ggtch_
  *	ggtpk_
  *	ggtst_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -38,66 +38,66 @@
  *
  * August 31 1988
  *
- * $Header: inputevent.c,v 4.0 89/08/31 18:29:01 amy Exp $ 
+ * $Header: inputevent.c,v 4.0 89/08/31 18:29:01 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inputevent.c,v $
- * 
+ *
  * $Log:	inputevent.c,v $
  * Revision 4.0  89/08/31  18:29:01  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 4.0  89/08/31  18:18:57  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.16  89/06/23  17:24:23  amy
  * DCR d1	Changed references to errfpp to errfp.
- * 
+ *
  * Revision 1.15  89/06/16  08:09:54  bruce
  * PTR# c1175:	Corrected calls to realloc that were not storing the
  * 		pointer to the new memory.
- * 
+ *
  * Revision 1.14  89/05/04  17:50:02  bruce
  * PTR# c2065:	Changes were made to handle cases where more points
  * 		are given to device than alloted space allows.
- * 
+ *
  * Revision 1.13  89/04/03  09:57:00  bruce
  * PTR# c2063:	Corrected variable used for getstroke.
- * 
+ *
  * Revision 1.12  89/03/07  17:03:55  amy
  * PTR c2040	ggtch:  added switch statement on status returned that uses
  * 		correct enumerated type values.
  * 		ggtpk:  same as for ggtch.
- * 
+ *
  * Revision 1.11  88/12/27  14:34:05  todd
  * Added extern's for global var's.
- * 
+ *
  * Revision 1.10  88/12/05  15:18:44  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.8  88/12/05  14:33:03  todd
  * Changes for code review II.
- * 
+ *
  * Revision 1.7  88/11/16  10:21:14  todd
  * Removed extra call to gerrorhand.
- * 
+ *
  * Revision 1.6  88/10/13  12:30:39  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.5  88/10/11  17:00:45  todd
  * Added Global_errnum initialization.
- * 
+ *
  * Revision 1.4  88/10/03  15:31:11  mike
  * Minor corrections made after Amy\'s review
- * 
+ *
  * Revision 1.3  88/09/27  17:00:38  mike
  * Fixed Code Review problems: prologues, casts, variable names, and range checks
- * 
+ *
  * Revision 1.2  88/09/27  12:59:43  todd
- * Added includes 
- * 
+ * Added includes
+ *
  * Revision 1.1  88/09/27  08:16:57  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inputevent.c,v 4.0 89/08/31 18:29:01 amy Exp $";
@@ -137,10 +137,10 @@ Gevent event;
 
 debug ( ("Await Event %d %d %d %f \n", *wkid, *icl, *idnr, *tout) );
 
-if (gawaitevent ((Gfloat)*tout, &event)) return; 
+if (gawaitevent ((Gfloat)*tout, &event)) return;
 
 *wkid = (int)event.ws;
-*icl  = (int)event.class; 
+*icl  = (int)event.class;
 *idnr = (int)event.dev;
 
 debug ( ("Await Event input class = %d  \n",*icl) );
@@ -169,12 +169,12 @@ debug ( ("Flush Device Input class = %d device = %d \n",*icl,*idnr) );
 
 INPUTCLASS (*icl, errgflushevents);
 
-gflushevents ((Gint)*wkid, (Giclass)*icl, (Gint)*idnr); 
+gflushevents ((Gint)*wkid, (Giclass)*icl, (Gint)*idnr);
 
 }
 
 /*$F
- * ggtlc - Get Locator 
+ * ggtlc - Get Locator
  *
  * Parameters :
 
@@ -183,17 +183,17 @@ gflushevents ((Gint)*wkid, (Giclass)*icl, (Gint)*idnr);
  * float *lpy;		locator y position
 
  *
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
-ggtlc_ (tnr,lpx,lpy) 
+ggtlc_ (tnr,lpx,lpy)
 int *tnr;
 float *lpx;
-float *lpy; 
-{ 
+float *lpy;
+{
 Gloc response;
 
 
-if (ggetloc (&response)) return; 
+if (ggetloc (&response)) return;
 
 *tnr  = (int) response.transform;
 *lpx   = (float) response.position.x;
@@ -201,7 +201,7 @@ if (ggetloc (&response)) return;
 }
 
 /*$F
- * ggtsk -  Get Stroke 
+ * ggtsk -  Get Stroke
  *
  * Parameters :
 
@@ -211,15 +211,15 @@ if (ggetloc (&response)) return;
  * float *pxa;          x points in stroke
  * float *pya;          y points in stroke
 
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
 ggtsk_ (n,tnr,np,pxa,pya)
 int *n;
 int *tnr;
 int *np;
 float *pxa;
-float *pya;  
-{ 
+float *pya;
+{
 Gstroke response;
 int i,temp;	/* c2065 */
 
@@ -240,7 +240,7 @@ if (*n > currfortpoints)  /* c2063 */     /* Check amount of memory needed */
   }
 
 response.points = (Gpoint *) fortpoints;
-if (ggetstroke (&response)) return; 
+if (ggetstroke (&response)) return;
 
 *tnr  = (int) response.transform;
 *np   = (int) response.n_points;
@@ -259,23 +259,23 @@ debug ( ("Get Stroke Completed") );
 }
 
 /*$F
- * grqvl - Request Valuator 
+ * grqvl - Request Valuator
  *
  * Parameters :
  * float *val; 		value
 
  *
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
-ggtvl_ (val)  
+ggtvl_ (val)
 float *val;
 {
 Gfloat response;
 
 debug ( ("Request Valuator \n") );
 
-if (ggetval ((Gfloat *)&response)) return; 
-  
+if (ggetval ((Gfloat *)&response)) return;
+
 *val  = (float) response;
 }
 
@@ -287,7 +287,7 @@ if (ggetval ((Gfloat *)&response)) return;
  *
  * Returns: ANSI standard errors for this function.
  *
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
 ggtch_ (stat, chnr)
 int *stat;
@@ -297,7 +297,7 @@ Gchoice response;
 
 debug ( ("Get Choice \n") );
 
-if (ggetchoice (&response)) return; 
+if (ggetchoice (&response)) return;
 
 switch (response.status)       /* C2040 added switch */
 {
@@ -333,7 +333,7 @@ Gpick response;
 
 debug ( ("Get Pick \n") );
 
-if (ggetpick (&response)) return; 
+if (ggetpick (&response)) return;
 
 switch (response.status)       /* C2040 added switch */
 {
@@ -343,7 +343,7 @@ switch (response.status)       /* C2040 added switch */
             break;
     case GP_NONE : *stat = (int) FORT_GNONE;
             break;
-} 
+}
 *sgna  = (int)response.seg;
 *pkid  = (int)response.pickid;
 
@@ -358,13 +358,13 @@ debug ( ("    returning status %d seg %d pickid %d \n", *stat, *sgna, *pkid) );
  * char *str;		character string
 
  *
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
-ggtst_ (lostr,str,length) 
+ggtst_ (lostr,str,length)
 int *lostr;
-char *str; 
+char *str;
 long length;
-{ 
+{
 Gchar *response;
 
 debug ( ("Get String \n") );
@@ -374,7 +374,7 @@ if (length > currforttext)   /* Check amount of memory needed */
   {
    forttext = (Gchar *)realloc(forttext,                /* c1175 */
                         length * sizeof(char));         /* realloc more memory */
-   if (forttext == NULL)     /* If memory allocation unsuccessful call error routine */ 
+   if (forttext == NULL)     /* If memory allocation unsuccessful call error routine */
      {
       gerrorhand(300,errggetstring,(errfp));		/* d1 */
       return;
@@ -384,13 +384,13 @@ if (length > currforttext)   /* Check amount of memory needed */
   }
 response = (Gchar *) forttext;
 
-if (ggetstring (response)) return; 
-  
+if (ggetstring (response)) return;
+
 debug(("response string = %s ",response));
 
 *lostr = MIN(80,strlen(response));
 strncpy (str,(char *) response,*lostr);
-  
+
 }
 /*$F
  * ggtsts - Get String (Subset Version)
@@ -400,23 +400,23 @@ strncpy (str,(char *) response,*lostr);
  * char *str;		character string
 
  *
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
-ggtsts_ (lostr,str,length) 
+ggtsts_ (lostr,str,length)
 int *lostr;
-char *str; 
+char *str;
 long length;
-{ 
+{
 Gchar *response;
 
-debug ( ("Get String (Subset Version) \n") ); 
+debug ( ("Get String (Subset Version) \n") );
 
 
 if (length > currforttext)   /* Check amount of memory needed */
   {
    forttext = (Gchar *)realloc(forttext,                /* c1175 */
                         (*lostr) * sizeof(char));       /* realloc more memory */
-   if (forttext == NULL)     /* If memory allocation unsuccessful call error routine */ 
+   if (forttext == NULL)     /* If memory allocation unsuccessful call error routine */
      {
       gerrorhand(300,errggetstring,(errfp));		/* d1 */
       return;
@@ -426,11 +426,11 @@ if (length > currforttext)   /* Check amount of memory needed */
   }
 response = (Gchar *) forttext;
 
-if (ggetstring (response)) return; 
-  
+if (ggetstring (response)) return;
+
 debug(("response string = %s ",response));
 
 *lostr = MIN(strlen(response),80);
 strncpy (str,(char *) response,*lostr);
-  
+
 }

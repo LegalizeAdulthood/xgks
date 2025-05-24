@@ -8,7 +8,7 @@ C IBM CONFIDENTIAL
 C
 C FORTRAN to C binding for XGKS
 C
-C    inqlun 
+C    inqlun
 C
 C Todd Gill
 C TCS Development

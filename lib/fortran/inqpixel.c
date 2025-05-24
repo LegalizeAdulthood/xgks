@@ -26,7 +26,7 @@
  *	gqpxad_
  *	gqpxa_
  *	gqpx_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * Todd Gill
@@ -35,74 +35,74 @@
  *
  * August 31 1988
  *
- * $Header: inqpixel.c,v 4.0 89/08/31 18:32:52 amy Exp $ 
+ * $Header: inqpixel.c,v 4.0 89/08/31 18:32:52 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inqpixel.c,v $
- * 
+ *
  * $Log:	inqpixel.c,v $
  * Revision 4.0  89/08/31  18:32:52  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.18  89/06/26  15:38:08  amy
  * DCR d1	Declare errfp external for use in error macros.
  * 		Change reference to errfpp to errfp.
- * 
+ *
  * Revision 1.17  89/03/27  08:52:39  bruce
  * PTR# c2050:	More changes for 2050.  Input parameters have to be copied
  * 		into the input structure.
- * 
+ *
  * Revision 1.16  89/03/15  14:42:16  bruce
  * PTR c2050:  Fixed numerous problems in inq pixel array (GQPXA):
  *    - check for error 2001 was returning 2002
  *     - input param (dimen) being used as output param
  *    - C call was missing param
  *    - return matrix unnecessarily transposed
- * 
+ *
  * Revision 1.15  89/03/15  14:19:44  bruce
  * PTR c2056   Removed formal parameter from gqpx_.
- * 
+ *
  * Revision 1.14  88/12/05  15:19:36  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.12  88/12/05  14:29:20  todd
  * Changes for Code review II.
- * 
+ *
  * Revision 1.11  88/11/16  10:18:08  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.10  88/11/07  11:38:03  todd
  * Finished functions and comments.
- * 
+ *
  * Revision 1.9  88/10/11  17:03:14  todd
  * No changes.
- * 
+ *
  * Revision 1.8  88/10/11  14:34:25  owens
  * more changes from code review
- * 
+ *
  * Revision 1.7  88/10/11  13:21:09  todd
  * More code review changes.
- * 
+ *
  * Revision 1.6  88/09/30  11:28:48  owens
  * more code review changes
- * 
+ *
  * Revision 1.5  88/09/29  16:52:04  owens
  * more code review changes
- * 
+ *
  * Revision 1.4  88/09/29  16:28:01  owens
  * code review changes
- * 
+ *
  * Revision 1.3  88/09/29  10:14:20  todd
  * No changes.
- * 
+ *
  * Revision 1.2  88/09/27  12:44:48  todd
  * Added missing function.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:13  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inqpixel.c,v 4.0 89/08/31 18:32:52 amy Exp $";
@@ -214,7 +214,7 @@ if (*errind = ginqpixelarray((Gint) *wkid, &point, &dimen, &pxarr)) return;
    for (row=0; row < *dy; row++)                        /* c2050 */
       for (col=0; col < *dx; col++)                     /* c2050 */
          *(colia + (row * *dimx + col)) = *(pxarr.array + (row * *dx + col));
-                        /* c2050 */      
+                        /* c2050 */
    }                                                    /* c2050 */
 
 free( pxarr.array );                                    /* c2050 */

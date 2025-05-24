@@ -1,4 +1,4 @@
-/* 
+/*
  *              Copyright IBM Corporation 1989
  *
  *                      All Rights Reserved
@@ -55,7 +55,7 @@ struct popup
 };
 
 extern POPUP *currpoptbl; /* list of popups associated
-                                           with current menus and 
+                                           with current menus and
                                            menu items */
 
 /*

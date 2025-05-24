@@ -42,7 +42,7 @@
  *	gqptxr_
  *	gqdlc_
  *	gqdds_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * Todd Gill
@@ -51,115 +51,115 @@
  *
  * September 29, 2988
  *
- * $Header: inqwsdesc.c,v 4.0 89/08/31 18:33:12 amy Exp $ 
+ * $Header: inqwsdesc.c,v 4.0 89/08/31 18:33:12 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inqwsdesc.c,v $
- * 
+ *
  * $Log:	inqwsdesc.c,v $
  * Revision 4.0  89/08/31  18:33:12  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.27  89/06/26  15:44:12  amy
  * DCR d1	Declare errfp external for use in error macros.
  * 		Change reference to errfpp to errfp.
- * 
+ *
  * Revision 1.26  89/06/06  09:56:31  bruce
  * PTR# c1179:	Made changes to character expansion field names for
  * 		AIX compiler.
- * PTR# c2073:	gqplf, gqpmf and gqfaf were freeing non pointers. 
+ * PTR# c2073:	gqplf, gqpmf and gqfaf were freeing non pointers.
  * 		free(fac.hatches) should be free(fac.hatches.integers)
- * 
+ *
  * Revision 1.25  89/03/31  11:11:14  bruce
  * PTR# c2051:	Moved VALIDMEMBER code back to before switch
  * 		statement so *ptr is set for switch.
  * 		Also corrected structure ref in switch.
- * 
+ *
  * Revision 1.24  89/03/15  20:14:02  bruce
  * PTR# c2020:	Functions now return values not dependant on member range
  * 		always.  Request member 0 is OK.
- * 
+ *
  * Revision 1.23  89/03/15  15:52:34  bruce
  * PTR# c2051:	Added code to pack datarecord for each pet.
- * 
+ *
  * Revision 1.22  89/03/15  15:20:38  bruce
  * PTR c2042:  functions now set errind before calling gerrorhand
  * 	       also includes changes for PTR c2044 that fixed pattern
  * 	       array problems.
- * 
+ *
  * Revision 1.21  89/03/15  14:53:23  amy
- * PTR c2043	All calls to VALIDMEMBER:  added value for errind 
+ * PTR c2043	All calls to VALIDMEMBER:  added value for errind
  * 		parameter.
- * 
- * PTR c2020	Inq. List Element and Inq. Set Member functions:  
+ *
+ * PTR c2020	Inq. List Element and Inq. Set Member functions:
  * 		return values of output parameters regardless
  * 		of validity of the n parameter, and accept 0 as valid value
  * 		for n.
- * 
+ *
  * PTR c2051	Pack a data record for every pet of a given input device.
- * 
+ *
  * Revision 1.20  89/03/14  18:36:08  amy
  * PTR c2047	gqdst:  fix dereferencing of parameters to call to
  * 		ginqdefstring.
  * 		Correct typo: set il = 2, not rl.
- * 
+ *
  * Revision 1.19  89/03/14  17:35:17  amy
  * PTR c2049	Fixed calls to ginqdefloc, gprec and ginqdefpick.
- * 
+ *
  * Revision 1.18  89/01/20  13:27:41  todd
  * Corrected calls to gprec.
- * 
+ *
  * Revision 1.17  88/12/30  11:17:24  bruce
  * checked out for debugging - no changes.
- * 
+ *
  * Revision 1.16  88/12/28  14:27:00  todd
  * Added check for valid wtype.
- * 
+ *
  * Revision 1.15  88/12/05  15:19:46  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.13  88/12/05  13:35:54  owens
  * code review changes
- * 
+ *
  * Revision 1.12  88/11/16  10:19:25  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.11  88/11/07  13:17:07  amy
  * Added stubs for gqegdp and gqgdp.
- * 
+ *
  * Revision 1.10  88/11/07  11:34:47  todd
  * Finished functions and comments
- * 
+ *
  * Revision 1.9  88/10/11  17:03:27  todd
  * No changes.
- * 
+ *
  * Revision 1.8  88/10/11  14:34:03  owens
  * more changes from code review
- * 
+ *
  * Revision 1.7  88/10/05  06:58:17  amy
  * Fixed compile errors.
- * 
+ *
  * Revision 1.6  88/10/04  15:17:31  amy
  * Added stubs for gqdlc, gqdds, gqppmr, and gqtxf.
- * 
+ *
  * Revision 1.5  88/10/04  13:17:18  amy
  * Added stubs for functions gqtxr, gqpfar, gqppar, gqdsk, gqdvl, gqdch, gqdpk, and
  * gqdst.
- * 
+ *
  * Revision 1.4  88/09/30  11:28:40  owens
  * more code review changes
- * 
+ *
  * Revision 1.3  88/09/29  16:51:56  owens
  * more code review changes
- * 
+ *
  * Revision 1.2  88/09/29  16:27:49  owens
  * code review changes
- * 
+ *
  * Revision 1.1  88/09/27  08:17:18  todd
  * Initial revision
- * 
+ *
  */
 
 static char *rcsid = "$Header: inqwsdesc.c,v 4.0 89/08/31 18:33:12 amy Exp $";
@@ -176,7 +176,7 @@ extern FILE *errfp;             /* d1 */
  * gqwkca - inquire workstation category
  *
  * int *wktype - pointer to workstation type
- * int *errind - pointer to error indicator         
+ * int *errind - pointer to error indicator
  * int *wkcat - pointer to workstation category
  *
  * Returns: Error 2000 in addition to ANSI standard errors for this function.
@@ -246,10 +246,10 @@ debug ( ("        Workstation Class is %d  \n", class) );
 /*$F
  * gqdsp - inquire display space size
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
  * int *dcunit - display space units
- * float *rx   - raster x 
+ * float *rx   - raster x
  * float *ry   - raster y
  * int *lx     - device x
  * int *ly     - device y
@@ -289,16 +289,16 @@ if (*errind = ginqdisplayspacesize ( (Gchar *) wtypes[*wtype-1], &dspsz)) return
 
 
 /*$F
- * gqdwka - inquire dynamic modification of workstation attributes  
+ * gqdwka - inquire dynamic modification of workstation attributes
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
  * int *plbun  - polyline bundle
  * int *pmbun  - polymarker bundle
  * int *txbun  - text bundle
  * int *fabun  - fill area bundle
  * int *parep  - pattern rep.
- * int *colrep - color 
+ * int *colrep - color
  * int *wktr   - workstation transformation
 
  * Returns: ANSI standard errors for this function.
@@ -341,10 +341,10 @@ if (*errind = ginqmodwsattr ( (Gchar *) wtypes[*wtype-1], &dyn)) return;
 /*$F
  * gqplf - inquire polyline facilities
  *
- * int *wtype    - workstation type 
+ * int *wtype    - workstation type
  * int *n        - member to return from nlt
  * int *errind   - error indicator
- * int *nlt      - list of return info 
+ * int *nlt      - list of return info
  * int *lt       - *nlt[*n] (nth item in nlt)
  * int *nlw      - number of line widths
  * float *nomlw  - nominal width
@@ -462,7 +462,7 @@ free (fac.types.integers);		/* c2073 */
  * int *nh     - number of the hatch style requested
  * int *errind - error indicator
  * int *nis    - number of available interior styles
- * int *is     - interiors[ni] 
+ * int *is     - interiors[ni]
  * int *nhs    - number of available hatch styles
  * int *hs     - hatches[nh]
  * int *npfai  - number of predefined bundles
@@ -538,9 +538,9 @@ VALIDTYPE(errind,*wtype,1,NUMWTYPES,errginqpatfacil); /* c2043 */
 /*$F
  * gqcf - inquire color facilities
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
- * int *ncoli  - number of colors 
+ * int *ncoli  - number of colors
  * int *cola   - color availability
  * int *npci   - number of predefined bundles
 
@@ -576,7 +576,7 @@ if (*errind = ginqcolourfacil ( (Gchar *) wtypes[*wtype-1], &fac)) return;
 
 switch (fac.coavail)
   {
-  case GCOLOR : 
+  case GCOLOR :
     *cola = FORT_GCOLOR;
     break;
   case GMONOCHROME :
@@ -594,7 +594,7 @@ debug ( ("        Number of Predefined Bundles is %d  \n", *npci) );
 /*$F
  * gqppmr - Inquire Predefined Polymarker Representation
  *
- * int	*wtype		- pointer to workstation type 
+ * int	*wtype		- pointer to workstation type
  * int	*pmi		- pointer to predefined polymarker index
  * int	*errind		- pointer to error indicator
  * int	*mtype		- pointer to marker type
@@ -603,7 +603,7 @@ debug ( ("        Number of Predefined Bundles is %d  \n", *npci) );
 
  * Returns: ANSI standard errors for this function.
  *
- * See also: ANSI standard p.175 
+ * See also: ANSI standard p.175
  */
 gqppmr_ (wtype, pmi, errind, mtype, mszsf, coli)
 int *wtype;
@@ -628,7 +628,7 @@ if (*errind = ginqpredmarkerrep ((Gchar *) wtypes[*wtype-1], (Gint) *pmi,&rep)) 
 /*$F
  * gqpplr - Inquire Predefined Polyline Representation
  *
- * int	*wtype		- pointer to workstation type 
+ * int	*wtype		- pointer to workstation type
  * int	*pli		- pointer to predefined polline index
  * int	*errind		- pointer to error indicator
  * int	*ltype		- pointer to line type
@@ -638,7 +638,7 @@ if (*errind = ginqpredmarkerrep ((Gchar *) wtypes[*wtype-1], (Gint) *pmi,&rep)) 
  *
  * Returns: ANSI standard errors for this function.
  *
- * See also: ANSI standard p.175 
+ * See also: ANSI standard p.175
  */
 gqpplr_ (wtype, pli, errind, ltype, lwidth, coli)
 int *wtype;
@@ -663,12 +663,12 @@ if ( *errind = ginqpredlinerep ((Gchar *) wtypes[*wtype-1], (Gint) *pli, &rep)) 
 /*$F
  * gqtxf - Inquire Text Facilities
  *
- * int	*wtype		- pointer to workstation type 
+ * int	*wtype		- pointer to workstation type
  * int	*n		- pointer to list element requested
  * int	*errind		- pointer to error indicator
- * int	*nfpp		- pointer to number of text font and precision pairs 
+ * int	*nfpp		- pointer to number of text font and precision pairs
  * int	*font		- pointer to nth element of list of text fonts
- * int	*prec		- pointer to nth element of list of text precisions 
+ * int	*prec		- pointer to nth element of list of text precisions
  *			  (GSTRP, GCHARP, GSTRKP)
  * int	*nchh		- pointer to number of available character heights
  * float *minchh	- pointer to minimum character height (DC)
@@ -681,7 +681,7 @@ if ( *errind = ginqpredlinerep ((Gchar *) wtypes[*wtype-1], (Gint) *pli, &rep)) 
  *
  * Returns: ANSI standard errors for this function.
  *
- * See also: ANSI standard p.176 
+ * See also: ANSI standard p.176
  */
 gqtxf_ (wtype, n, errind, nfpp, font, prec, nchh, minchh, maxchh, nchx, minchx, maxchx, nptxi)
 int *wtype;
@@ -726,7 +726,7 @@ free(fac.fp_list);
 /*$F
  * gqpcr - inquire predefined color representation
  *
- * int *wtype   - workstation type 
+ * int *wtype   - workstation type
  * int *pci     - predefined color index
  * int *errind  - error indicator
  * float *red   - % of red
@@ -735,7 +735,7 @@ free(fac.fp_list);
 
  * Returns: ANSI standard errors for this function.
  *
- * See also: ANSI standard p.180 
+ * See also: ANSI standard p.180
  */
 gqpcr_ (wtype, pci, errind, red, green, blue)
 int *wtype;
@@ -765,7 +765,7 @@ if (*errind = ginqpredcolourrep ( (Gchar *) wtypes[*wtype-1], (Gint) *pci, &rep)
 /*$F
  * gqlwk - inquire maximum length of workstation state table
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
  * int *mplbte - polyline
  * int *mpmbte - polymarker
@@ -811,7 +811,7 @@ if (*errind = ginqmaxwssttables ( (Gchar *) wtypes[*wtype-1], &tables)) return;
 /*$F
  * gqsgp - inquire number of segment priorities supported
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
  * int *nsg    - number of segment priorities supported (returned)
 
@@ -837,7 +837,7 @@ debug ( ("        Number of Segment Priorities Supported %d \n", *nsg) );
 /*$F
  * gqdsga - inquire dynamic modification of segment attributes
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
  * int *sgtr   - segment transformation
  * int *vonoff - appearing (turning visible)
@@ -886,7 +886,7 @@ if (*errind = ginqmodsegattr ( (Gchar *) wtypes[*wtype-1], &dyn)) return;
 /*$F
  * gqli - inquire number of available logical input devices
  *
- * int *wtype  - workstation type 
+ * int *wtype  - workstation type
  * int *errind - error indicator
  * int *nlcd   - number of locator devices
  * int *nskd   - number of stroke devices
@@ -934,7 +934,7 @@ if (*errind = ginqnumavailinput ( (Gchar *) wtypes[*wtype-1], &num)) return;
  *
  * int	*wtype		- pointer to workstation type
  * int	*ptxi		- pointer to predefined text index
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * int	*font		- pointer to text font
  * int	*prec		- pointer to text precision (GSTRP, GCHARP, GSTRKP)
  * float *chxp		- character expansion factor
@@ -984,8 +984,8 @@ switch (rep.fp.prec)
  *
  * int	*wtype		- pointer to workstation type
  * int	*pfai		- pointer to predefined fill area index
- * int	*errind		- pointer to error indicator         
- * int 	*ints		- pointer to fill area interior style (GHOLLO, GSOLID, 
+ * int	*errind		- pointer to error indicator
+ * int 	*ints		- pointer to fill area interior style (GHOLLO, GSOLID,
  *			  GPATTR, GHATCH)
  * int 	*styli		- pointer to fill area style index
  * int 	*coli		- pointer to fill area colour index
@@ -1008,7 +1008,7 @@ VALIDTYPE(errind,*wtype,1,NUMWTYPES,errginqpredfillrep); /* c2043 */
 
 if (*errind = ginqpredfillrep (wtypes[*wtype-1],*pfai,&rep)) return;
 
-*ints = (int) rep.inter; 
+*ints = (int) rep.inter;
 *styli = (int) rep.style;
 *coli = (int) rep.color;
 }
@@ -1019,7 +1019,7 @@ if (*errind = ginqpredfillrep (wtypes[*wtype-1],*pfai,&rep)) return;
  * int	*wtype		- pointer to workstation type
  * int	*ppai		- pointer to predefined pattern index
  * int	*dimx, *dimy	- pointers to maximum pattern array dimensions
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * int	*dx, *dy 	- pointer to pattern array dimensions
  * int	*colia[dimx,dimy] - pointer to pattern array
  *
@@ -1041,8 +1041,8 @@ Gptbundl rep;
 debug ( ("Inquire Predefined Pattern Representation \n") );
 VALIDTYPE(errind,*wtype,1,NUMWTYPES,errginqpredpatrep); /* c2043 */
 
-if (*errind = ginqpredpatrep ((Gchar *) wtypes[*wtype-1], (Gint) *ppai, &rep)) 
-  return; 
+if (*errind = ginqpredpatrep ((Gchar *) wtypes[*wtype-1], (Gint) *ppai, &rep))
+  return;
 
 *dx = (int) rep.size.x;
 *dy = (int) rep.size.y;
@@ -1078,10 +1078,10 @@ free (rep.array);
  * int	*devno		- pointer to logical input device number
  * int	*n		- pointer to list element requested
  * int	*mldr		- pointer to dimension of data record array
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * float *dpx,*dpy	- pointers to default initial locator position
  * int	*ol		- pointer to number of available prompt/echo types
- * int	*pet		- pointer to nth element of list of available prompt/echo 
+ * int	*pet		- pointer to nth element of list of available prompt/echo
  *			  types
  * float *earea[4]	- pointer to default echo area in device coordinates
  *			  XMIN, XMAX, YMIN, YMAX
@@ -1130,7 +1130,7 @@ VALIDMEMBER(errind,*n,0,data.pets.number,errginqdefloc); /* c2043 */
 if (*n)                                 /* c2020 */
    *pet = (int) data.pets.integers[*n-1];
 switch(*pet)
- { 
+ {
   case 1: /* default */
           il = 0;                                                    /*c2051*/
           rl = 0;                                                    /*c2051*/
@@ -1200,10 +1200,10 @@ switch(*pet)
  * int	*devno		- pointer to logical input device number
  * int	*n		- pointer to list element requested
  * int	*mldr		- pointer to dimension of data record array
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * int	*dbufsk		- pointer to maximum input buffer size
  * int	*ol		- pointer to number of available prompt/echo types
- * int	*pet		- pointer to nth element of list of available prompt/echo 
+ * int	*pet		- pointer to nth element of list of available prompt/echo
  *			  types
  * float *earea[4]	- pointer to default echo area in device coordinates
  *			  XMIN, XMAX, YMIN, YMAX
@@ -1253,7 +1253,7 @@ VALIDMEMBER (errind,*n,0,data.pets.number,errginqdefstroke); /* c2043 c2051*/
 if (*n)                                                      /* c2020 c2051*/
    *pet = (int) data.pets.integers[*n-1];                    /* c2051 */
 switch(*pet)
- { 
+ {
   case 1:  /* default pet */
           il = 2;
           rl = 3;
@@ -1275,7 +1275,7 @@ switch(*pet)
           *buflen = (int) data.record.pet1.bufsiz;                  /*c2051*/
           break;
 
-  case 2: 
+  case 2:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1297,7 +1297,7 @@ switch(*pet)
           gprec_(&il,ia,&rl,ra,&sl,lstr,str,mldr,errind,ldr,datrec); /*c2051*/
           *buflen = (int) data.record.pet3.bufsiz;
           break;
-  case 4: 
+  case 4:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1317,10 +1317,10 @@ switch(*pet)
  * int	*devno		- pointer to logical input device number
  * int	*n		- pointer to list element requested
  * int	*mldr		- pointer to dimension of data record array
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * float *dval		- pointer to default initial value
  * int	*ol		- pointer to number of available prompt/echo types
- * int	*pet		- pointer to nth element of list of available prompt/echo 
+ * int	*pet		- pointer to nth element of list of available prompt/echo
  *			  types
  * float *earea[4]	- pointer to default echo area in device coordinates
  *			  XMIN, XMAX, YMIN, YMAX
@@ -1370,7 +1370,7 @@ VALIDMEMBER (errind,*n,0,data.pets.number,errginqdefval); /* c2043 */
 if (*n)					/* c2020 */
    *pet = (int) data.pets.integers[*n-1];
 switch (*pet)
- { 
+ {
   case 1: /* default device */
           il = 0;
           rl = 2;
@@ -1388,7 +1388,7 @@ switch (*pet)
           *loval = (float) data.record.pet1.low;
           *hival = (float) data.record.pet1.high;
           break;
-  case 2: 
+  case 2:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1423,10 +1423,10 @@ switch (*pet)
  * int	*devno		- pointer to logical input device number
  * int	*n		- pointer to list element requested
  * int	*mldr		- pointer to dimension of data record array
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * int	*malt		- pointer to maximum number of alternatives
  * int	*ol		- pointer to number of available prompt/echo types
- * int	*pet		- pointer to nth element of list of available prompt/echo 
+ * int	*pet		- pointer to nth element of list of available prompt/echo
  *			  types
  * float *earea[4]	- pointer to default echo area in device coordinates
  *			  XMIN, XMAX, YMIN, YMAX
@@ -1474,8 +1474,8 @@ VALIDMEMBER (errind,*n,0,data.pets.number,errginqdefchoice); /* c2043 */
 if (*n)					/* c2020 */
    *pet = (int) data.pets.integers[*n-1];
 switch (*pet)
- { 
-  case 1: 
+ {
+  case 1:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1485,7 +1485,7 @@ switch (*pet)
 	  lstr = NULL;					             /*c2051*/
           gprec_(&il,ia,&rl,ra,&sl,lstr,str,mldr,errind,ldr,datrec); /*c2051*/
           break;
-  case 2: 
+  case 2:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1515,7 +1515,7 @@ switch (*pet)
           free(str);
           free(lstr);
           break;
-  case 4: 
+  case 4:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1525,7 +1525,7 @@ switch (*pet)
 	  lstr = NULL;					             /*c2051*/
           gprec_(&il,ia,&rl,ra,&sl,lstr,str,mldr,errind,ldr,datrec); /*c2051*/
           break;
-  case 5: 
+  case 5:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1545,9 +1545,9 @@ switch (*pet)
  * int	*devno		- pointer to logical input device number
  * int	*n		- pointer to list element requested
  * int	*mldr		- pointer to dimension of data record array
- * int	*errind		- pointer to error indicator         
+ * int	*errind		- pointer to error indicator
  * int	*ol		- pointer to number of available prompt/echo types
- * int	*pet		- pointer to nth element of list of available prompt/echo 
+ * int	*pet		- pointer to nth element of list of available prompt/echo
  *			  types
  * float *earea[4]	- pointer to default echo area in device coordinates
  *			  XMIN, XMAX, YMIN, YMAX
@@ -1592,8 +1592,8 @@ VALIDMEMBER (errind,*n,0,data.pets.number,errginqdefpick); /* c2043 */
 if (*n)					/* c2020 */
    *pet = (int) data.pets.integers[*n-1];
 switch (*pet)
- { 
-  case 1: 
+ {
+  case 1:
           il = 0;                                                    /*c2051*/
           rl = 0;						     /*c2051*/
           sl = 0;					 	     /*c2051*/
@@ -1635,9 +1635,9 @@ switch (*pet)
  * int	*n 		- pointer to list element requested
  * int	*mldr		- pointer to dimension of data record array
  * int	*errind		- pointer to error indicator
- * int	*mbuff		- pointer to maximum string buffer size         
+ * int	*mbuff		- pointer to maximum string buffer size
  * int	*ol		- pointer to number of available prompt/echo types
- * int	*pet		- pointer to nth element of list of available prompt/echo 
+ * int	*pet		- pointer to nth element of list of available prompt/echo
  *			  types
  * float *earea[4]	- pointer to default echo area in device coordinates
  *			  XMIN, XMAX, YMIN, YMAX
@@ -1686,8 +1686,8 @@ VALIDMEMBER (errind,*n,0,data.pets.number,errginqdefstring); /* c2043 */
 if (*n)					/* c2020 */
    *pet = (int) data.pets.integers[*n-1];
 switch (*pet)
- { 
-  case 1: 
+ {
+  case 1:
           il = 2;		/* c2047 */
           rl = 0;
           sl = 0;
@@ -1712,7 +1712,7 @@ switch (*pet)
  * int	*wtype		- pointer to workstation type
  * int	*errind		- pointer to error indicator
  * int	*defmod		- pointer to default deferral mode (GASAP, GBNIG, GBNIL
- *			  GASTI)         
+ *			  GASTI)
  * int	*regmod		- pointer to default implicit regeneration mode (GSUPPD,
  *			  GALLOW)
  *
@@ -1750,7 +1750,7 @@ switch (def.irgmode)
  * int	*wtype		- pointer to workstation type
  * int  *n		- list element requested
  * int	*errind		- pointer to error indicator
- * int	*ngdp		- number of available GDPs         
+ * int	*ngdp		- number of available GDPs
  * int	*gdpl		- nth element of list of GDP identifiers
  *
  * Returns: error 2002 as well as ANSI standard errors for this function.
@@ -1791,8 +1791,8 @@ free (gdps.indices);
  * int	*wtype		- pointer to workstation type
  * int  *gdp		- GDP identifier
  * int	*errind		- pointer to error indicator
- * int	*nbnd		- number of sets of attributes used         
- * int	*bndl		- list of sets of attributes used (GPLBND, GPMBND, 
+ * int	*nbnd		- number of sets of attributes used
+ * int	*bndl		- list of sets of attributes used (GPLBND, GPMBND,
  *			  GTXBND, GFABND)
  *
  * Returns: ANSI standard errors for this function.

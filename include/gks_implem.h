@@ -32,9 +32,9 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
- * Define file for : XGKS implementation 
- *                   all implementation files have to include this and only this 
+ *
+ * Define file for : XGKS implementation
+ *                   all implementation files have to include this and only this
  *                   define file
  */
 

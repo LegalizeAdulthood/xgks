@@ -157,7 +157,7 @@ void init_trans_tbls(void)
 void alloc_trans(AREA area)
 {
     IDX transno;        /* trans no to be allocated */
-    int maximum;        /* highest numbered trans 
+    int maximum;        /* highest numbered trans
                                            available */
     Gpoint viewport[2]; /* viewport for area */
     Gpoint window[2];   /* window for area */
@@ -325,7 +325,7 @@ int find_trans(AREA area)
 {
     int transno; /* trans no corresponding
                                            to area */
-    int maximum; /* highest numbered trans 
+    int maximum; /* highest numbered trans
                                            available */
 
     /* inquire how many transformations are available
@@ -353,7 +353,7 @@ int find_trans(AREA area)
  *                      is currently mapped to actual trans
  *                      gks viewport is reset
  *
- *  parameters:         area (AREA) - associated area 
+ *  parameters:         area (AREA) - associated area
  *                      viewport (Gpoint *) - new viewport
  */
 
@@ -396,7 +396,7 @@ void set_viewport(AREA area, Gpoint *viewport)
  *                      is currently mapped to actual trans
  *                      gks window is reset
  *
- *  parameters:         area (AREA) - associated area 
+ *  parameters:         area (AREA) - associated area
  *                      window (Gpoint *) - new window
  */
 

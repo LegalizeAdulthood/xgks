@@ -23,7 +23,7 @@
  * FORTRAN to C binding for XGKS
  *
  * GKS Segment Manipulation Functions:
- *        
+ *
  *	gcrsg_ (sgna)
  *	gclsg_ ()
  *	grensg_ (old,new)
@@ -40,35 +40,35 @@
  *
  * August 31 1988
  *
- * $Header: segment.c,v 4.0 89/08/31 18:37:23 amy Exp $ 
+ * $Header: segment.c,v 4.0 89/08/31 18:37:23 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/segment.c,v $
- * 
+ *
  * $Log:	segment.c,v $
  * Revision 4.0  89/08/31  18:37:23  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.8  88/12/05  15:20:39  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.6  88/12/05  14:27:14  bhaim
- * 
- * 
+ *
+ *
  * Revision 1.5  88/11/10  10:24:58  bhaim
  * Error handling
- * 
+ *
  * Revision 1.4  88/10/11  17:04:18  todd
  * Added global_errnum initialization.
- * 
+ *
  * Revision 1.3  88/10/11  06:12:07  bhaim
  * No changes
- * 
+ *
  * Revision 1.2  88/10/06  09:49:34  todd
  * Code review changes.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:32  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: segment.c,v 4.0 89/08/31 18:37:23 amy Exp $";
@@ -93,7 +93,7 @@ gcrsg_ (sgna)
 int *sgna;
 {
 
-debug ( ("Create Segment %d \n", *sgna) ); 
+debug ( ("Create Segment %d \n", *sgna) );
 
 gcreateseg ((Gint) *sgna);
 
@@ -114,7 +114,7 @@ gcreateseg ((Gint) *sgna);
 gclsg_ ()
 {
 
-debug ( ("Close Segment \n") ); 
+debug ( ("Close Segment \n") );
 
 gcloseseg ();
 
@@ -138,7 +138,7 @@ int *old;
 int *new;
 {
 
-debug ( ("Rename Segment %d %d \n",*old,*new) ); 
+debug ( ("Rename Segment %d %d \n",*old,*new) );
 
 grenameseg ((Gint) *old,(Gint) *new);
 
@@ -160,7 +160,7 @@ gdsg_ (sgna)
 int *sgna;
 {
 
-debug ( ("Delete Segment %d \n", *sgna) ); 
+debug ( ("Delete Segment %d \n", *sgna) );
 
 gdelseg ((Gint) *sgna);
 
@@ -185,7 +185,7 @@ int *wkid;
 int *sgna;
 {
 
-debug ( ("Delete Segment from Workstation %d %d \n", *wkid, *sgna) ); 
+debug ( ("Delete Segment from Workstation %d %d \n", *wkid, *sgna) );
 
 gdelsegws ((Gint) *wkid,(Gint) *sgna);
 
@@ -210,7 +210,7 @@ int *wkid;
 int *sgna;
 {
 
-debug ( ("Associate Segment with Workstation %d %d \n", *wkid, *sgna) ); 
+debug ( ("Associate Segment with Workstation %d %d \n", *wkid, *sgna) );
 
 gassocsegws ((Gint) *wkid,(Gint) *sgna);
 
@@ -235,7 +235,7 @@ int *wkid;
 int *sgna;
 {
 
-debug ( ("Copy Segment to Workstation %d %d \n", *wkid, *sgna) ); 
+debug ( ("Copy Segment to Workstation %d %d \n", *wkid, *sgna) );
 
 gcopysegws ((Gint)  *wkid,(Gint) *sgna);
 
@@ -265,6 +265,6 @@ debug ( ("Insert Segment %d  \n", *sgna) );
 
 MOVE_ARRAY_1X6_TO_2X3(m,input_segtran)
 
-ginsertseg ((Gint) *sgna,input_segtran); 
+ginsertseg ((Gint) *sgna,input_segtran);
 
 }

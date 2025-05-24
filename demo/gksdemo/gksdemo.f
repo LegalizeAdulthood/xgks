@@ -1137,7 +1137,7 @@ C***********************************************************************GKS10870
       LOGICAL      SGNAME(50)                                           GKS11040
                                                                         GKS11050
       COMMON      /WINF/   WKID,WTYPE                                   GKS11060
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS11070
       COMMON      /LIMITS/ XMIN,XMAX,YMIN,YMAX                          GKS11080
@@ -1311,7 +1311,7 @@ C***********************************************************************GKS12500
       LOGICAL      SGNAME(50)                                           GKS12700
                                                                         GKS12710
       COMMON      /WINF/   WKID,WTYPE                                   GKS12720
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS12730
       COMMON      /LIMITS/ XMIN,XMAX,YMIN,YMAX                          GKS12740
@@ -1502,7 +1502,7 @@ C***********************************************************************GKS14360
       LOGICAL      SGNAME(50)                                           GKS14560
                                                                         GKS14570
       COMMON      /WINF/   WKID,WTYPE                                   GKS14580
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS14590
       COMMON      /LIMITS/ XMIN,XMAX,YMIN,YMAX                          GKS14600
@@ -1661,7 +1661,7 @@ C***********************************************************************GKS15920
       LOGICAL      SGNAME(50)                                           GKS16130
                                                                         GKS16140
       COMMON      /WINF/   WKID,WTYPE                                   GKS16150
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS16160
       COMMON      /LIMITS/ XMIN,XMAX,YMIN,YMAX                          GKS16170
@@ -3560,7 +3560,7 @@ C***********************************************************************GKS34970
       LOGICAL      SGNAME(50)                                           GKS35040
                                                                         GKS35050
       COMMON      /WINF/   WKID,WTYPE                                   GKS35060
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS35070
                                                                         GKS35080
@@ -3624,7 +3624,7 @@ C***********************************************************************GKS35540
       LOGICAL      SGNAME(50)                                           GKS35660
                                                                         GKS35670
       COMMON      /WINF/   WKID,WTYPE                                   GKS35680
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS35690
       COMMON      /LIMITS/ XMIN,XMAX,YMIN,YMAX                          GKS35700
@@ -3761,7 +3761,7 @@ C***********************************************************************GKS36920
       LOGICAL      SGNAME(50)                                           GKS37010
                                                                         GKS37020
       COMMON      /WINF/   WKID,WTYPE                                   GKS37030
-C The AIX fortran compiler only allows common blocks to be 
+C The AIX fortran compiler only allows common blocks to be
 C dimensioned once. The following line was modifed for AIX port. c2071
       COMMON      /SEGM/   SGNAME                                       GKS37040
                                                                         GKS37050

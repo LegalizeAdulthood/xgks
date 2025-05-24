@@ -152,7 +152,7 @@ void lstartup(void)
 }
 
 /****   startup  ****/
-/* startup performs the function of starting the blue program and creating a 
+/* startup performs the function of starting the blue program and creating a
    pipe between the two programs.  Red creates a pipe, forks, and then does
    an execve which replaces the child with the blue program.
 */
@@ -194,7 +194,7 @@ void startup(char *envp[])
 #endif
 
 /****  initialize  ****/
-/* initialize does the initialization for gks,windows,color table, board, 
+/* initialize does the initialization for gks,windows,color table, board,
    fill style, and line type.
 */
 
@@ -701,9 +701,9 @@ void drawboard(int option)
 /* makemove allows the player to choose the move he wishes to make.  both
    his first pick (origination square) and his second pick (destination square)
    are checked for validity.  if they are valid then the value of orig and dest
-   are set to the corresponding squares.  if they are not valid the user is 
-   reprompted.  the user may quit the game by hitting break instead of his 
-   first pick.  if on the second pick he picks another square which contains 
+   are set to the corresponding squares.  if they are not valid the user is
+   reprompted.  the user may quit the game by hitting break instead of his
+   first pick.  if on the second pick he picks another square which contains
    his piece then this becomes his first pick and he is reprompted for a second
    pick.
 */
@@ -711,8 +711,8 @@ void drawboard(int option)
 int makemove(void)
 {
     int valid = 0;       /* flag to check if the move is valid */
-    int i, j, k, l;      /* values to hold square position. i and j are for the         
-                    origination square. k and l are for the destination square  
+    int i, j, k, l;      /* values to hold square position. i and j are for the
+                    origination square. k and l are for the destination square
                  */
     int status;          /* pick status */
     int stop, firstpick; /* flags */
@@ -780,7 +780,7 @@ int makemove(void)
 }
 
 /****  checkmove   ****/
-/* checkmove takes a source square and a destination square and determines if 
+/* checkmove takes a source square and a destination square and determines if
    this consitutes a legal move. if it does it returns a 1 , if not it returns
    a 0.  there are 4 parametres: sx and sy are the position of the origination
    square and dx,dy is the position of the destination square.
@@ -872,7 +872,7 @@ int checkmove(int sx, int sy, int dx, int dy)
 }
 
 /****  quitgame  ****/
-/* quitgame prompts the user with the option to quit, skip turn, or return 
+/* quitgame prompts the user with the option to quit, skip turn, or return
    without skipping turn.
 */
 
@@ -895,10 +895,10 @@ int quitgame(void)
 
 /****  drawmove  ****/
 /* drawmove takes the origination square and destination square and make the
-   move both pictorally and internally.  there are two cases.     
+   move both pictorally and internally.  there are two cases.
       1) no fight
       2) fight
-   the first case is rather simple. however in the second case it must be     
+   the first case is rather simple. however in the second case it must be
    determined who is the winner and who is attacking. each possability is
    addressed.
 */
@@ -1013,7 +1013,7 @@ void drawmove(void)
 }
 
 /****  addpow  ****/
-/* addpow admits an opponent's piece to the P.O.W. camp and prints what pieces 
+/* addpow admits an opponent's piece to the P.O.W. camp and prints what pieces
    are in the camp.
 */
 static int pow[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -1077,9 +1077,9 @@ void drawpow()
 
 /**** findwinner ****/
 /* findwinner finds the winner of a single fight. the parameters are a and b.
-   a is the rank of the attacker. b is the rank of the defender. if the a wins 
+   a is the rank of the attacker. b is the rank of the defender. if the a wins
    a 0 is returned. if b wins a 1 is returned. the method is to make a general
-   statement that a higher piece wins and then check if a special case took 
+   statement that a higher piece wins and then check if a special case took
    place and change the result of the fight accordingly.
 */
 

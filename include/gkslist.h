@@ -32,7 +32,7 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  */
 
 #ifndef  GKSLIST_H
@@ -54,7 +54,7 @@ typedef struct {
 } WS_ENTRY;                             /* Each entry of a ws state list */
 
 typedef struct {
-        Gwstran         ntrans; 
+        Gwstran         ntrans;
         Glimit          wc_to_ndc;      /* Transformation maxtrix for wc to ndc mapping */
 } NORM_TRANS;
 
@@ -92,7 +92,7 @@ typedef struct {
         Gint            open_mo;        /* Number of opened meta output files */
 
 /* Normalization number is array index */
-        NORM_TRANS   ntrans_list[MAX_TRANS+1];  
+        NORM_TRANS   ntrans_list[MAX_TRANS+1];
 
 /*
  * ntrans_list[ ntrans_priority[0] ] has the highest priority

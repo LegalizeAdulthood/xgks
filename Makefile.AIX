@@ -6,7 +6,7 @@
 #
 # Make XGKS
 #
-# The following line added for the AIX PORT 
+# The following line added for the AIX PORT
 SHELL=/bin/sh
 SUBDIRS = src fortran
 
@@ -42,7 +42,7 @@ clean :
 	@for i in $(SUBDIRS); do \
 		(echo '** cleaning : '`pwd`'/'$$i; \
 		cd $$i; make $(MFLAGS) $(ALLIVARS) clean; \
-		echo '** done cleaning : '`pwd`/); done 
+		echo '** done cleaning : '`pwd`/); done
 
 depend:
 	cd utils/makedepend;make;cd ../..;

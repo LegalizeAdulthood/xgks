@@ -32,7 +32,7 @@
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
  *
- * logo.c - GKS program to draw the various parts of our (old) hardware 
+ * logo.c - GKS program to draw the various parts of our (old) hardware
  *
  * usage:logo  [hostname:display]
  *
@@ -152,7 +152,7 @@ void do_connections(void)
 {
         Gpoint pts[22];
         Glimit Window;
-        
+
         Window.xmin = 0.0;
         Window.xmax = 1.0;
         Window.ymin = 0.0;

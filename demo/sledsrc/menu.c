@@ -111,7 +111,7 @@ AREA get_area_from_menu(MENU *menu)
 /*
  *  find_menu_item_idx
  *
- *  description:        finds menu containing item and idx 
+ *  description:        finds menu containing item and idx
  *                      of item in menu
  *
  *  parameters:         key (KEY) - menu item key

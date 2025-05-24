@@ -28,7 +28,7 @@
  *       gopwk()
  *	 gclwk()
  *       gacwk()
- *	 gdawk() 
+ *	 gdawk()
  * 	 gclrwk()
  *	 grsgwk()
  * 	 guwk()
@@ -43,110 +43,110 @@
  *
  * August 31 1988
  *
- * $Header: control.c,v 1.1 89/09/19 13:25:37 jim Exp $ 
+ * $Header: control.c,v 1.1 89/09/19 13:25:37 jim Exp $
  *
  * $Source: /xsrc/contrib/toolkits/xgks/lib/fortran/RCS/control.c,v $
- * 
+ *
  * $Log:	control.c,v $
  * Revision 1.1  89/09/19  13:25:37  jim
  * Initial revision
- * 
+ *
  * Revision 4.0  89/08/31  18:09:59  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.29  89/07/11  18:05:28  todd
  * corrected global_errfil initialization
- * 
+ *
  * Revision 1.28  89/06/26  17:48:57  amy
  * Put back include of fiodefs.h for STDERR definition.
- * 
+ *
  * Revision 1.27  89/06/26  17:33:53  amy
  * DCR d1	Delete inclusion of fio.h.
- * 
+ *
  * Revision 1.26  89/06/23  17:03:51  amy
  * DCR 1	Discontinue use of units table lookup for error file
- * 		name.  Use Fortran Inquire Logical Unit Number function 
+ * 		name.  Use Fortran Inquire Logical Unit Number function
  * 		instead.  Change global variable errfpp to errfp, pointer to error FILE.
- * 
+ *
  * Revision 1.25  89/06/16  14:15:21  bruce
  * PTR# c2069:	Changed opws() so it will used global conid if int conid != 0
- * 
+ *
  * Revision 1.24  89/06/16  08:09:07  bruce
  * PTR# c1175:	Corrected calls to realloc that were not storing the
  * 		pointer to the new memory.
- * 
+ *
  * Revision 1.23  89/04/20  16:39:14  bruce
  * removed unused variable to eliminate warning.
- * 
+ *
  * Revision 1.22  89/04/20  14:59:03  bruce
  * Removed code using xgks_connection,
- * 
+ *
  * Revision 1.21  89/03/15  20:35:21  amy
  * Message subset version:  added debug  statements.
- * 
+ *
  * Revision 1.20  89/03/15  18:57:03  amy
  * PTR c1130	Added global definition for error file logical unit number
  * 		 and set it in the call to open GKS.
- * 
+ *
  * Revision 1.19  89/03/14  20:55:49  amy
  * PTR c1130	Added definition and initialization of global_errfil.
- * 
+ *
  * Revision 1.18  89/03/14  20:39:58  amy
  * PTR c2043	Changed calls to VALIDTYPE macro to include value for errind parameter.
- * 
+ *
  * Revision 1.17  89/03/07  17:09:49  amy
  * PTR c2008	gopwk:  in checking for workstation type, use double
  * 		quotes around strings, instead of single quotes.
- * 
+ *
  * Revision 1.16  89/02/13  15:37:10  amy
- *  
- * 
+ *
+ *
  * Revision 1.15  89/01/17  11:44:28  todd
  * Corrected comment.
- * 
+ *
  * Revision 1.14  89/01/17  11:21:44  todd
  * Added code to use the units file descriptor for MI and MO.
  * Also the connection id can now be passed in the array
  * xgks_connection if this is blank NULL is passed to the
  * "C" binding. PTR c2008
- * 
+ *
  * Revision 1.13  89/01/14  14:52:15  todd
  * Answered ptr 2023
- * 
+ *
  * Revision 1.11  88/12/05  17:34:55  owens
  * code review changes
- * 
+ *
  * Revision 1.10  88/12/05  14:34:08  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.9  88/11/14  06:30:46  todd
  * Added ginqavailwstypes function.
- * 
+ *
  * Revision 1.8  88/11/07  10:17:33  bhaim
  * Changed error file handling
- * 
+ *
  * Revision 1.7  88/10/11  17:00:13  todd
  * Added Global_errnum initialization.
- * 
+ *
  * Revision 1.6  88/10/11  06:02:50  bhaim
  * No revision
- * 
+ *
  * Revision 1.5  88/10/04  11:44:50  bhaim
  * Added type casting
- * 
+ *
  * Revision 1.4  88/09/29  10:24:16  todd
- * Added code to allocate space for the 
+ * Added code to allocate space for the
  * integer area.
- * 
+ *
  * Revision 1.3  88/09/28  08:10:08  bhaim
  * Change prolouges
- * 
+ *
  * Revision 1.2  88/09/27  11:19:13  bhaim
  * Added comments to parameters
- * 
+ *
  * Revision 1.1  88/09/27  08:16:46  todd
  * Initial revision
- * 
+ *
  */
 
 static char *rcsid = "$Header: control.c,v 1.1 89/09/19 13:25:37 jim Exp $";
@@ -191,7 +191,7 @@ int global_errfil;		/* logical unit no. of error file *//* c1130 */
 
 /*$F
  * gopks - Open  GKS
- *   initialize the static points array (used throughout fortran binding) 
+ *   initialize the static points array (used throughout fortran binding)
  *   initialize the static text area    (ditto)
  *   initialize the static integer area (ditto ditto)
  *   set up file pointer (see below for description of tricky stuff)
@@ -204,8 +204,8 @@ int global_errfil;		/* logical unit no. of error file *//* c1130 */
  * See also: ANSI standard p.74
  */
 gopks_ (errfile, memory)
-int *errfile;    
-int *memory;    
+int *errfile;
+int *memory;
 {
 Gstrlist wstype;
 Gint i;
@@ -260,7 +260,7 @@ NUMWTYPES = wstype.number;
 wtypes = (char **) malloc(NUMWTYPES * sizeof(char *));
 
 for (i = 0 ; i < wstype.number ; i++ )
- { 
+ {
   wtypes[i] = wstype.strings[i];
   debug(("wstype %d = %s \n",i,wtypes[i]));
  }
@@ -273,7 +273,7 @@ free (wstype.strings);
 
 /*$F
  * gclks - CLOSE GKS
- *   free memory malloc'ed for use while GKS was open 
+ *   free memory malloc'ed for use while GKS was open
  *
  * Returns: ANSI standard errors for this function.
  *
@@ -298,24 +298,24 @@ if (xgks_connection != NULL)            /* c2069 */
 
 
 /*$F
- * gopwk - Open Workstation 
- * int *wkid                             workstation identifier  
- * int *conid                            connection identifier  
- * int *wtype                            workstation type      
+ * gopwk - Open Workstation
+ * int *wkid                             workstation identifier
+ * int *conid                            connection identifier
+ * int *wtype                            workstation type
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.74
  */
 gopwk_ (wkid, conid, wtype)
-int *wkid;                            
-int *conid;                          
-int *wtype;                         
+int *wkid;
+int *conid;
+int *wtype;
 {
 Gchar *connection;
 char *getenv();
 
-debug ( ("Open Workstation %d conid %d type %d \n",*wkid, *conid, *wtype-1) ); 
+debug ( ("Open Workstation %d conid %d type %d \n",*wkid, *conid, *wtype-1) );
 
 debug(("wstype = <%s>\n",wtypes[*wtype-1]));
 
@@ -341,14 +341,14 @@ gopenws ((Gint)*wkid, connection, wtypes[*wtype -1]);
 
 /*$F
  * gclwk -  Close Workstation
- * int *wkid;                              workstation identifier   
+ * int *wkid;                              workstation identifier
  *
  * Returns: 2000, in addition to ANSI standard errors for this function.
  *
  * See also: ANSI standard p.74
  */
 gclwk_ (wkid)
-int *wkid;  
+int *wkid;
 {
 
 debug ( ("Close Workstation %d \n", *wkid) );
@@ -359,14 +359,14 @@ gclosews ((Gint)*wkid);
 
 /*$F
  * gacwk -  Activate Workstation
- * int *wkid                            workstation identifier      
+ * int *wkid                            workstation identifier
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.75
  */
 gacwk_ (wkid)
-int *wkid;  
+int *wkid;
 {
 
 debug ( ("Activate Workstation %d \n", *wkid) );
@@ -377,14 +377,14 @@ gactivatews ((Gint)*wkid);
 
 /*$F
  * gdawk -  Deactivate Workstation
- * int *wkid                              workstation identifier     
+ * int *wkid                              workstation identifier
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.76
  */
 gdawk_ (wkid)
-int *wkid;  
+int *wkid;
 {
 
 debug ( ("Deactivate Workstation %d \n", *wkid) );
@@ -395,18 +395,18 @@ gdeactivatews ((Gint)*wkid);
 
 /*$F
  * gclrwk -  Clear Workstation
- * int *wkid;                              workstation identifier     
- * int *cofl;                              control flag              
+ * int *wkid;                              workstation identifier
+ * int *cofl;                              control flag
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.76
  */
 gclrwk_ (wkid, cofl)
-int *wkid;                            
-int *cofl;                           
+int *wkid;
+int *cofl;
 {
-debug ( ("Clear Workstation %d (%d) \n",*wkid, *cofl) ); 
+debug ( ("Clear Workstation %d (%d) \n",*wkid, *cofl) );
 CLEARCONTROLFLAG(*cofl,errgclearws);
 
 gclearws ((Gint)*wkid, (Gclrflag)*cofl );
@@ -415,14 +415,14 @@ gclearws ((Gint)*wkid, (Gclrflag)*cofl );
 
 /*$F
  * grsgwk - Redraw all segments on workstation
- * int *wkid;                               workstation identifier    
+ * int *wkid;                               workstation identifier
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.77
  */
 grsgwk_ (wkid)
-int *wkid;            
+int *wkid;
 {
 
 debug ( ("Redraw Workstation %d \n", *wkid) );
@@ -432,8 +432,8 @@ gredrawsegws ((Gint)*wkid);
 
 
 /*$F
- * guwk  -  Update Workstation 
- * int *wkid;                            workstation identifier   
+ * guwk  -  Update Workstation
+ * int *wkid;                            workstation identifier
  * int *regfl;                           update regeneration flag
  *
  * Returns: 2000, in addition to ANSI standard errors for this function.
@@ -441,7 +441,7 @@ gredrawsegws ((Gint)*wkid);
  * See also: ANSI standard p.78
  */
 guwk_ (wkid, regfl)
-int *wkid;   
+int *wkid;
 int *regfl;
 {
 debug ( ("Update Workstation %d %d \n", *wkid, *regfl) );
@@ -455,8 +455,8 @@ gupdatews ((Gint)*wkid, ((Gregen)(*regfl)?GPERFORM:GPOSTPONE));
 
 /*$F
  * gsds - Set Deferral State
- * int *wkid;                                workstation identifier    
- * int *defmod;                              deferral mode             
+ * int *wkid;                                workstation identifier
+ * int *defmod;                              deferral mode
  * int *regmod;                              implicit regeneration mode
  *
  * Returns: 2000, in addition to ANSI standard errors for this function.
@@ -464,39 +464,39 @@ gupdatews ((Gint)*wkid, ((Gregen)(*regfl)?GPERFORM:GPOSTPONE));
  * See also: ANSI standard p.79
  */
 gsds_ (wkid, defmod, regmod)
-int *wkid;                               
-int *defmod;                            
-int *regmod;                           
+int *wkid;
+int *defmod;
+int *regmod;
 {
 Girgmode C_regmod;
 Gdefmode C_defmod;
 
-debug ( ("Set Deferal State %d (%d) (%d) \n",*wkid, *defmod, *regmod) ); 
+debug ( ("Set Deferal State %d (%d) (%d) \n",*wkid, *defmod, *regmod) );
 DEFERRALMODE(*defmod,errgsetdeferst);
 IMPLICITREGENERATIONMODE(*regmod,errgsetdeferst);
 switch (*defmod)
  {
-  case FORT_GASAP : C_defmod = GASAP; 
+  case FORT_GASAP : C_defmod = GASAP;
        break;
-  case FORT_GBNIG : C_defmod = GBNIG; 
+  case FORT_GBNIG : C_defmod = GBNIG;
        break;
-  case FORT_GBNIL : C_defmod = GBNIL; 
+  case FORT_GBNIL : C_defmod = GBNIL;
        break;
-  case FORT_GASTI : C_defmod = GASTI; 
+  case FORT_GASTI : C_defmod = GASTI;
        break;
   default:
     C_defmod = NULL;              /* suppress compiler warning */
     fprintf(stderr,"error unknown defmod\n");
  }
 
-switch (*regmod) 
+switch (*regmod)
   {
-  case FORT_GSUPPD: 
-    C_regmod = GSUPPRESSED; 
+  case FORT_GSUPPD:
+    C_regmod = GSUPPRESSED;
     break;
-  case FORT_GALLOW: 
-    C_regmod = GALLOWED; 
-    break; 
+  case FORT_GALLOW:
+    C_regmod = GALLOWED;
+    break;
   default:
     C_regmod = NULL;              /* suppress compiler warning */
     fprintf(stderr,"error unknown regmod\n");
@@ -507,24 +507,24 @@ gsetdeferst ((Gint)*wkid,C_defmod,C_regmod);
 
 /*$F
  * gmsg - Message
- * int *wkid;                                workstation identifier    
- * char *mess;                               message                   
- * long length;                              length of message         
+ * int *wkid;                                workstation identifier
+ * char *mess;                               message
+ * long length;                              length of message
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.80
  */
 gmsg_(wkid, mess, length)
-int *wkid;                               
-char *mess;                             
-long length;                           
+int *wkid;
+char *mess;
+long length;
 {
 
 debug ( ("Message ") );
 
 /* make sure we have enought temp. storage to hold the string */
-if (length > currforttext) 
+if (length > currforttext)
   {
   forttext = (Gchar *)realloc (forttext,length*sizeof(Gchar)); /* c1175 */
   if (forttext == NULL)
@@ -536,7 +536,7 @@ if (length > currforttext)
   else
     currforttext = length;
   }
-  
+
 strncpy (forttext, mess, length);
 forttext[length] = '\0';
 
@@ -549,24 +549,24 @@ gmessage ((Gint)*wkid,(Gchar *)forttext );
 
 /*$F
  * gmsgs - Message FORTRAN 77 Subset Version
- * int *wkid;                                workstation identifier  
- * int *lstr;                                length of string       
- * char *mess;                               message               
+ * int *wkid;                                workstation identifier
+ * int *lstr;                                length of string
+ * char *mess;                               message
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.74
  */
 gmsgs_(wkid, lstr, mess)
-int *wkid;                               
-int *lstr;                              
-char *mess;                            
+int *wkid;
+int *lstr;
+char *mess;
 {
 
 debug ( ("Message (Subset Version) length = %d \n",*lstr) );
 
 /* make sure we have enought temp. storage to hold the string */
-if (*lstr > currforttext) 
+if (*lstr > currforttext)
   {
   forttext = (Gchar *)realloc (forttext,(*lstr)*sizeof(Gchar)); /* c1175 */
   if (forttext == NULL)

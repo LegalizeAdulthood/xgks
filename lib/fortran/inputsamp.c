@@ -29,7 +29,7 @@
  *	gsmch_
  *	gsmpk_
  *	gsmst_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -37,65 +37,65 @@
  *
  * August 31 1988
  *
- * $Header: inputsamp.c,v 4.0 89/08/31 18:31:12 amy Exp $ 
+ * $Header: inputsamp.c,v 4.0 89/08/31 18:31:12 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inputsamp.c,v $
- * 
+ *
  * $Log:	inputsamp.c,v $
  * Revision 4.0  89/08/31  18:31:12  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.14  89/06/26  15:31:37  amy
  * DCR d1	Declare errfp external for use in error macros.
  * 		Change reference to errfpp to errfp.
- * 
+ *
  * Revision 1.13  89/06/16  08:10:09  bruce
  * PTR# c1175:	Corrected calls to realloc that were not storing the
  * 		pointer to the new memory.
- * 
+ *
  * Revision 1.12  89/05/04  17:48:49  bruce
  * PTR# c2065:	Changes were made to handle cases where more points
  * 		are given to device than alloted space allows.
- * 
+ *
  * Revision 1.11  88/12/30  09:52:12  todd
  * Added externs
- * 
+ *
  * Revision 1.10  88/12/05  15:19:11  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.8  88/12/05  14:32:36  todd
  * Changes for code review II.
- * 
+ *
  * Revision 1.7  88/11/21  09:28:45  todd
  * Removed extra includes.
- * 
+ *
  * Revision 1.6  88/11/16  10:16:52  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.5  88/11/14  07:21:59  todd
  * No changes
- * 
+ *
  * Revision 1.4  88/11/14  07:15:47  bhaim
  * Error handling
- * 
+ *
  * Revision 1.3  88/10/13  12:29:21  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.2  88/09/27  17:10:24  mike
  * Fixed module prologue
- * 
+ *
  * Revision 1.1  88/09/27  08:17:05  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inputsamp.c,v 4.0 89/08/31 18:31:12 amy Exp $";
 
 #include <xgks.h>
-#include "fortxgks.h" 
+#include "fortxgks.h"
 
 extern FILE *errfp;             /* d1 */
 extern char *forttext;
@@ -107,7 +107,7 @@ extern int currfortpoints;
 
 
 /*$F
- * gsmlc - Sample Locator 
+ * gsmlc - Sample Locator
  *
  * Parameters :
  * int *wkid;		workstation identifier
@@ -119,7 +119,7 @@ extern int currfortpoints;
  *
  * See also: ANSI standard p.135
  */
-gsmlc_ (wkid,lcdnr,tnr,lpx,lpy)   
+gsmlc_ (wkid,lcdnr,tnr,lpx,lpy)
 int *wkid;
 int *lcdnr;
 int *tnr;
@@ -130,8 +130,8 @@ Gloc response;
 
 debug ( ("Sample Locator %d %d \n", *wkid, *lcdnr) );
 
-if (gsampleloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return; 
-  
+if (gsampleloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return;
+
 
 *tnr  = (int) response.transform;
 *lpx   = (float) response.position.x;
@@ -139,7 +139,7 @@ if (gsampleloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return;
 }
 
 /*$F
- * gsmsk - Sample Stroke 
+ * gsmsk - Sample Stroke
  *
  * Parameters :
  * int *wkid; 		workstation identifier
@@ -150,10 +150,10 @@ if (gsampleloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return;
  * float *pxa;          x points in stroke
  * float *pya;          y points in stroke
 
- * See also: ANSI standard p.137 
+ * See also: ANSI standard p.137
  */
 
-gsmsk_ (wkid,skdnr,n,tnr,np,pxa,pya)   
+gsmsk_ (wkid,skdnr,n,tnr,np,pxa,pya)
 int *wkid;
 int *skdnr;
 int *n;
@@ -172,7 +172,7 @@ if (*n > currfortpoints)     /*c2065*/  /* Check amount of memory needed */
   {
    fortpoints = (Gpoint *)realloc(fortpoints,           /* c1175 */
 				(*n) * sizeof(Gpoint)); /* c2065 */ /* realloc more memory */
-   if (fortpoints == NULL) /* If memory allocation unsuccessful, error  c2065 */ 
+   if (fortpoints == NULL) /* If memory allocation unsuccessful, error  c2065 */
      {
       gerrorhand(300,errgsamplestroke,(errfp)); 	/* d1 */
       return;
@@ -183,7 +183,7 @@ if (*n > currfortpoints)     /*c2065*/  /* Check amount of memory needed */
 
 response.points = (Gpoint *) fortpoints;
 
-if (gsamplestroke ((Gint) *wkid,(Gint) *skdnr, &response)) return; 
+if (gsamplestroke ((Gint) *wkid,(Gint) *skdnr, &response)) return;
 
 *tnr  = (int) response.transform;
 *np   = (int) response.n_points;
@@ -202,7 +202,7 @@ debug ( ("Sample Stroke Completed") );
 }
 
 /*$F
- * grqvl - Request Valuator 
+ * grqvl - Request Valuator
  *
  * Parameters :
  * int *wkid;		workstation identifier
@@ -213,7 +213,7 @@ debug ( ("Sample Stroke Completed") );
  * See also: ANSI standard  p.133
  */
 
-gsmvl_ (wkid,vldnr,val)   
+gsmvl_ (wkid,vldnr,val)
 int *wkid;
 int *vldnr;
 float *val;
@@ -222,13 +222,13 @@ Gfloat response;
 
 debug ( ("Request Valuator %d %d \n", *wkid, *vldnr) );
 
-if (gsampleval ((Gint) *wkid,(Gint) *vldnr, (Gfloat *)&response)) return; 
-  
+if (gsampleval ((Gint) *wkid,(Gint) *vldnr, (Gfloat *)&response)) return;
+
 *val  = (float) response;
 }
 
 /*$F
- * gsmch - Sample Choice 
+ * gsmch - Sample Choice
  *
  * Parameters :
  * int *wkid; 		workstation identifier
@@ -240,7 +240,7 @@ if (gsampleval ((Gint) *wkid,(Gint) *vldnr, (Gfloat *)&response)) return;
  * See also: ANSI standard  p.136
  */
 
-gsmch_ (wkid,chdnr,stat,chnr)   
+gsmch_ (wkid,chdnr,stat,chnr)
 int *wkid;
 int *chdnr;
 int *stat;
@@ -255,7 +255,7 @@ switch(response.status)
     case GC_OK : *stat = (int) FORT_GOK;
 	    break;
     case GC_NOCHOICE : *stat = (int) FORT_GNCHOI;
-	    break; 
+	    break;
     case GC_NONE : *stat = (int) FORT_GNONE;
 	    break;
     }
@@ -263,12 +263,12 @@ switch(response.status)
 *chnr  = (int) response.choice;
 }
 /*$F
- * gsmpk - Sample Pick 
+ * gsmpk - Sample Pick
  *
  * Parameters :
  * int *wkid; 		workstation identifier
  * int *pkdnr; 		pick device number
- * int *stat;		status 
+ * int *stat;		status
  * int *sgna;		segment name
  * int *pkid; 		pick identifier
 
@@ -276,7 +276,7 @@ switch(response.status)
  * See also: ANSI standard  p.137
  */
 
-gsmpk_ (wkid,pkdnr,stat,sgna,pkid)   
+gsmpk_ (wkid,pkdnr,stat,sgna,pkid)
 int *wkid;
 int *pkdnr;
 int *stat;
@@ -288,7 +288,7 @@ Gpick response;
 debug ( ("Sample Pick %d %d \n", *wkid, *pkdnr) );
 
 if (gsamplepick ((Gint) *wkid,(Gint) *pkdnr, &response)) return;
-  
+
 switch (response.status)
     {
     case GP_OK: *stat = (int) FORT_GOK;
@@ -315,7 +315,7 @@ switch (response.status)
  *
  * See also: ANSI standard p.134
  */
-gsmst_ (wkid,stdnr,lostr,str)   
+gsmst_ (wkid,stdnr,lostr,str)
 int *wkid;
 int *stdnr;
 int *lostr;
@@ -327,12 +327,12 @@ debug ( ("Sample String  %d %d \n", *wkid, *stdnr) );
 
 
 response = (Gchar *) str;
-if (gsamplestring ((Gint) *wkid,(Gint) *stdnr, response)) return; 
-  
+if (gsamplestring ((Gint) *wkid,(Gint) *stdnr, response)) return;
+
 debug(("response string = %s ",str));
 
 *lostr = strlen(response);
-  
+
 }
 
 
@@ -348,7 +348,7 @@ debug(("response string = %s ",str));
  *
  * See also: ANSI standard p.134
  */
-gsmsts_ (wkid,stdnr,lostr,str)   
+gsmsts_ (wkid,stdnr,lostr,str)
 int *wkid;
 int *stdnr;
 int *lostr;
@@ -360,10 +360,10 @@ debug ( ("Sample String (Subset Version)  %d %d \n", *wkid, *stdnr) );
 
 
 response = (Gchar *) str;
-if (gsamplestring ((Gint) *wkid,(Gint) *stdnr, response)) return; 
-  
+if (gsamplestring ((Gint) *wkid,(Gint) *stdnr, response)) return;
+
 debug(("response string = %s ",str));
 
 *lostr = MIN(80,strlen(response));
-  
+
 }

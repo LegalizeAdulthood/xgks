@@ -34,19 +34,19 @@
  * $Log:	ps2aixdefs.h,v $
  * Revision 4.0  89/09/01  09:55:21  amy
  * Fixed copyright.
- * 
+ *
  * Revision 4.0  89/09/01  09:52:20  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.1  89/07/11  18:03:28  todd
  * Initial revision
- * 
+ *
  * Revision 1.1  89/06/26  17:34:46  amy
  * Initial revision
- * 
+ *
  */
 
-#ifdef i386 
+#ifdef i386
 
 #define gopks_		gopks
 #define gclks_		gclks

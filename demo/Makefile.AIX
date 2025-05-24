@@ -23,7 +23,7 @@ BINS =  bsort clock defcolors font hanoi mi pline pmark usa wong
 
 SUBDIRS = Logo example stratego
 
-all: $(BINS) 
+all: $(BINS)
 	@for i in $(SUBDIRS); do \
 		(echo '*** making: '`pwd`'/'$$i; \
 		cd $$i; make $(MFLAGS) all; \
@@ -60,7 +60,7 @@ wong : wong.o
 	$(CC) $(CFLAGS) -o $@ $@.o $(LIBS)
 
 clean:
-	-rm *.o core 
+	-rm *.o core
 	@for i in $(SUBDIRS); do \
 		(echo '*** making: '`pwd`'/'$$i; \
 		cd $$i; make $(MFLAGS) clean; \

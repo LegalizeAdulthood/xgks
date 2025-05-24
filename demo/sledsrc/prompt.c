@@ -110,7 +110,7 @@ IDX msgno2 = NO_PROMPT; /* is "prompt_message[msgno1]:
 /*
  *  prompt
  *
- *  description:        if in verbose mode, display 
+ *  description:        if in verbose mode, display
  *                      prompt_messages[msgno]
  *
  *  parameters:         msgno (IDX) - msgno2
@@ -291,7 +291,7 @@ void erase_msg(void)
 
 void display_msg_area(void)
 {
-    Gpoint window[2]; /* boundary of prompt area 
+    Gpoint window[2]; /* boundary of prompt area
                                            window */
     Gpoint box[4];    /* pts of boundary */
 

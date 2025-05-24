@@ -1,4 +1,4 @@
-/* 
+/*
  *              Copyright IBM Corporation 1989
  *
  *                      All Rights Reserved
@@ -134,7 +134,7 @@ BOOLEAN write_picture(char *filename)
  *  description:        allocates color table space for palette
  *                      colors in color table and initializes colors
  *                      in color table as well as initializing fgdclr
- *                      to first entry in color table (top row, 
+ *                      to first entry in color table (top row,
  *                      leftmost column)
  *
  *  parameters:         fd (FILE *) - file descriptor

@@ -26,8 +26,8 @@
  *	
  *	gssgt_ (sgna, m)
  *	gsvis_ (sgna, vis)
- *	gshlit_ (sgna,hil)   
- *	gssgp_ (sgna,prior)   
+ *	gshlit_ (sgna,hil)
+ *	gssgp_ (sgna,prior)
  *	gsdtec_ (sgna, det)
  *
  * David Berkowitz
@@ -37,41 +37,41 @@
  *
  * August 31 1988
  *
- * $Header: segattr.c,v 4.0 89/08/31 18:37:19 amy Exp $ 
+ * $Header: segattr.c,v 4.0 89/08/31 18:37:19 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/segattr.c,v $
  *
  * $Log:	segattr.c,v $
  * Revision 4.0  89/08/31  18:37:19  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.10  89/06/26  16:07:22  amy
  * DCR d1	Declare errfp external for use in error macros.
- * 
+ *
  * Revision 1.9  89/06/19  11:05:46  amy
  * PTR c2074	gsdtec:  corrected type casting.
- * 
+ *
  * Revision 1.8  89/01/06  08:28:48  bruce
  * Fixed some of the type casting.  PTR# c2019.
- * 
+ *
  * Revision 1.7  88/12/30  09:44:34  todd
  * Fixed debug in gssgp.
- * 
+ *
  * Revision 1.6  88/12/05  15:20:36  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.4  88/12/05  14:27:03  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.3  88/11/15  16:29:24  bhaim
  * Error handling
- * 
+ *
  * Revision 1.2  88/10/06  09:48:57  todd
  * Code review changes.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:30  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: segattr.c,v 4.0 89/08/31 18:37:19 amy Exp $";
@@ -104,12 +104,12 @@ debug ( ("Set Segment Transformation %d  \n", *sgna) );
 
 /* Need all this segment's attributes for gsetsegattr */
 segattr.seg = (Gint) *sgna;
-ginqsegattr (&segattr); 
+ginqsegattr (&segattr);
 
 
 MOVE_ARRAY_1X6_TO_2X3(m,segattr.segtran)
 
-gsetsegattr ((Gint) *sgna, &segattr); 
+gsetsegattr ((Gint) *sgna, &segattr);
 
 }
 
@@ -140,12 +140,12 @@ VISIBILITY(*vis,errginqsegattr);
 
 /* Need all this segment's attributes for gsetsegattr */
 segattr.seg = (Gint) *sgna;
-ginqsegattr (&segattr); 
-  
-/* Reverse the sense of *vis */
-segattr.vis = (Gsegvis) (*vis) ? FORT_GINVIS : FORT_GVISI;  
+ginqsegattr (&segattr);
 
-gsetsegattr ((Gint) *sgna, &segattr); 
+/* Reverse the sense of *vis */
+segattr.vis = (Gsegvis) (*vis) ? FORT_GINVIS : FORT_GVISI;
+
+gsetsegattr ((Gint) *sgna, &segattr);
 
 }
 
@@ -155,11 +155,11 @@ gsetsegattr ((Gint) *sgna, &segattr);
  *
  *
  * Returns: 2000, in addition to ANSI standard errors for this function.
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
 
 
-gshlit_ (sgna,hil)   
+gshlit_ (sgna,hil)
 int  *sgna;                       /* segment name   */
 int  *hil;                        /* highlighting      */
 {
@@ -172,10 +172,10 @@ HIGHLIGHTING(*hil,errgsethighlight);
 
 /* Need all this segment's attributes for gsetsegattr */
 segattr.seg = (Gint) *sgna;		/* c2019 */
-ginqsegattr (&segattr); 
-  
+ginqsegattr (&segattr);
+
 segattr.hilight = (Gseghi)*hil;		/* c2019 */
-gsetsegattr ((Gint) *sgna, &segattr); 
+gsetsegattr ((Gint) *sgna, &segattr);
 }
 
 
@@ -184,11 +184,11 @@ gsetsegattr ((Gint) *sgna, &segattr);
  *
  * Parameters :
 
- * See also: ANSI standard 
+ * See also: ANSI standard
  */
 
 
-gssgp_ (sgna,prior)   
+gssgp_ (sgna,prior)
 int  *sgna;                       /* segment name   */
 float  *prior;                      /* priority       */
 {
@@ -199,15 +199,15 @@ debug ( ("Set priority %d %f \n", *sgna, *prior) );
 
 /* Need all this segment's attributes for gsetsegattr */
 segattr.seg = (Gint) *sgna;		/* c2019 */
-ginqsegattr (&segattr); 
-  
+ginqsegattr (&segattr);
+
 segattr.pri = (Gfloat) *prior;
-gsetsegattr ((Gint) *sgna, &segattr); 
+gsetsegattr ((Gint) *sgna, &segattr);
 }
 
 
 /*$F
- * gsdtec - Set Dectability    
+ * gsdtec - Set Dectability
  *
  * Parameters :
  * int *sgna; 		segment name
@@ -233,9 +233,9 @@ DETECTABILITY(*det,errginqsegattr);
 
 /* Need all this segment's attributes for gsetsegattr */
 segattr.seg = (Gint) *sgna;	/* c2074 */
-ginqsegattr (&segattr); 
-  
+ginqsegattr (&segattr);
+
 segattr.det = (Gsegdet) *det;
-gsetsegattr ((Gint) *sgna, &segattr); 
+gsetsegattr ((Gint) *sgna, &segattr);
 
 }

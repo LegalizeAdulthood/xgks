@@ -23,7 +23,7 @@
  * FORTRAN to C binding for XGKS
  *
  * GKS Output functions :
- *        
+ *
  *	gpl_ (n, px, py)
  *	gpm_ (n, px, py)
  *	gtx_ (px, py, chars, length)
@@ -38,72 +38,72 @@
  *
  * August 31 1988
  *
- * $Header: output.c,v 4.0 89/08/31 18:37:06 amy Exp $ 
+ * $Header: output.c,v 4.0 89/08/31 18:37:06 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/output.c,v $
- * 
+ *
  * $Log:	output.c,v $
  * Revision 4.0  89/08/31  18:37:06  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.17  89/06/26  15:55:02  amy
  * DCR d1	Declare errfp external for use in error macros.
  * 		Change references to errfpp to errfp.
- * 
+ *
  * Revision 1.16  89/06/16  08:10:37  bruce
  * PTR# c1175:	Corrected calls to realloc that were not storing the
  * 		pointer to the new memory.
- * 
+ *
  * Revision 1.15  89/02/04  15:08:30  amy
  * Cosmetic changes to log.
- * 
+ *
  * Revision 1.14  89/01/30  09:26:53  mike
  * PTR c2018	The colour index array used by GCA (cellarray) does not need to
- * 		be transposed, so the transposal code was removed.  Since the array      *		can now be passed directly into the C binding, the array no longer 
+ * 		be transposed, so the transposal code was removed.  Since the array      *		can now be passed directly into the C binding, the array no longer
  * 		needs to be duplicated, so the duplication code was also removed.
- * 
+ *
  * Revision 1.13  89/01/14  14:11:53  bruce
- * PTRs c2021 & c2022 Made changes to Polymarker - it wasn't copying points from  
- * 		FORTRAN to C binding correctly.  Also fixed translation of 
- * 		Cellarray colour array from FORTRAN to C. 
- * 
- * 
+ * PTRs c2021 & c2022 Made changes to Polymarker - it wasn't copying points from
+ * 		FORTRAN to C binding correctly.  Also fixed translation of
+ * 		Cellarray colour array from FORTRAN to C.
+ *
+ *
  * Revision 1.12  88/12/27  14:34:53  todd
  * Added extern's for global vars
- * 
+ *
  * Revision 1.11  88/12/05  15:20:22  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.9  88/12/05  14:30:19  todd
  * Changes for Code review II.
- * 
+ *
  * Revision 1.8  88/11/18  13:58:49  owens
  * code review changes
- * 
+ *
  * Revision 1.7  88/11/16  10:20:13  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.6  88/11/10  10:22:29  bhaim
  * Error handling
- * 
+ *
  * Revision 1.5  88/11/07  13:16:45  amy
  * Repaired compile bug.
- * 
+ *
  * Revision 1.4  88/11/07  12:58:01  amy
  * Added stub for ggdp.
- * 
+ *
  * Revision 1.3  88/10/11  17:04:09  todd
  * Added global_errnum initialization.
- * 
+ *
  * Revision 1.2  88/10/03  15:31:02  todd
  * *** empty log message ***
- * 
+ *
  * Revision 1.1  88/09/27  08:17:25  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: output.c,v 4.0 89/08/31 18:37:06 amy Exp $";
@@ -126,7 +126,7 @@ extern int currfortpoints;
  * int *n;            	Number of points
  * float *px, *py;	Coordinates of points WC
  *
- * Returns error 300 in addition to ANSI standard errors 
+ * Returns error 300 in addition to ANSI standard errors
  *
  * See also: ANSI standard p.82
  */
@@ -166,13 +166,13 @@ gpolyline ((Gint) *n,(Gpoint *) fortpoints);
 
 
 /*$F
- * gpm - Polymarker 
+ * gpm - Polymarker
  *
  * Parameters :
  * int *n;		Number of points
  * float *px, *py;	Coordinates of points WC
  *
- * Returns error 300 in addition to ANSI standard errors 
+ * Returns error 300 in addition to ANSI standard errors
  *
  * See also: ANSI standard p.82
  */
@@ -190,7 +190,7 @@ if (*n > currfortpoints) /* Check amount of memory needed */
   {
    fortpoints = (Gpoint *)realloc(fortpoints,           /* c1175 */
                                 *n * sizeof(Gpoint));   /* realloc more memory */
-   if (!fortpoints)/* If memory allocation unsuccessful call error routine */ 
+   if (!fortpoints)/* If memory allocation unsuccessful call error routine */
      {
       gerrorhand(300,errgpolymarker,(errfp)); 	/* d1 */
       currfortpoints = 0;
@@ -217,8 +217,8 @@ gpolymarker ((Gint) *n, (Gpoint *) fortpoints);
  *
  * Parameters :
  * float *px, *py;      Text position WC
- * char *chars;         String of characters 
- * long length;         this parameter is passed by FORTRAN/C conventions 
+ * char *chars;         String of characters
+ * long length;         this parameter is passed by FORTRAN/C conventions
  *
  * Returns error 300 in addition to ANSI standard errors
  *
@@ -243,7 +243,7 @@ if (length+1 > currforttext) /* Check amount of memory needed */
    if (!forttext) /* If memory allocation unsuccessful call error routine */
      {
       gerrorhand(300,errgtext,(errfp)); 	/* d1 */
-      currforttext = 0; 
+      currforttext = 0;
       return;
      }
    else
@@ -279,7 +279,7 @@ gtext (&position,(Gchar *) forttext );
 
 gtxs_ (px, py, lstr, chars)
 float *px, *py;
-int  *lstr; 
+int  *lstr;
 char *chars;
 {
 Gpoint position;
@@ -318,7 +318,7 @@ gtext (&position,(Gchar *) forttext );
  *
  * Parameters :
  * int *n;		Number of points
- * float *px, *py;      Coordinates of points WC 
+ * float *px, *py;      Coordinates of points WC
  *
  * Returns error 300 in addition to ANSI standard errors
  *
@@ -364,17 +364,17 @@ gfillarea ((Gint) *n,(Gpoint *) fortpoints);
  *
  * Parameters :
  * float *px;                        +---------0 <--(*qx,*qy)
- * float *py;                        |         | 
- * float *qx;                        |         | 
- * float *qy;           (*px,*py)--> 0---------+          
- * int   *dimx; 	columns of entire colour index array 
- * int   *dimy;		rows of entire colour index array 
+ * float *py;                        |         |
+ * float *qx;                        |         |
+ * float *qy;           (*px,*py)--> 0---------+
+ * int   *dimx; 	columns of entire colour index array
+ * int   *dimy;		rows of entire colour index array
  * int   *isc; 		index of start column
  * int   *isr; 		index of start row
  * int   *dx;      	number of columns in array subset
  * int   *dy;		number of rows in array subset
- * int   *colia;  	colour index array 
- * 
+ * int   *colia;  	colour index array
+ *
  *
  * Returns error 300 in addition to ANSI standard errors
  *
@@ -404,7 +404,7 @@ Gipoint    dimensions;
 debug ( ("Cell Array \n") );
 
 /* c2018:  No longer need our own copy of array, so don't need to allocate. */
- 
+
 rectangle.ll.x = (Gfloat) *px;
 rectangle.ll.y = (Gfloat) *py;
 rectangle.ur.x = (Gfloat) *qx;
@@ -418,7 +418,7 @@ dimensions.y  = (Gint) *dy;
 /* We can more or less pass the parameters in verbatim from here.   ** c2018 */
 
 gcellarray (&rectangle, &dimensions,(Gint) *dimx, (colia));  /* c2018 */
- 
+
 
 }
 
@@ -450,13 +450,13 @@ int     i;
 
 /* allocate memory for C Gpoint array */
 points = (Gpoint *) malloc ((*n) * sizeof(Gpoint));
-if (points = NULL) 
+if (points = NULL)
   {
   gerrorhand(300,errggdp,(errfp)); 	/* d1 */
   return;
   }
 
-/* convert from two arrays of floats to an array of points */  
+/* convert from two arrays of floats to an array of points */
 for (i=0; i<*n; i++)
   {
   points[i].x = (Gfloat) pxa[i];

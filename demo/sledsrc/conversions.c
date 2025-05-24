@@ -1,4 +1,4 @@
-/* 
+/*
  *              Copyright IBM Corporation 1989
  *
  *                      All Rights Reserved
@@ -20,7 +20,7 @@
  * SOFTWARE.
  *
  * These procedures are used to convert the enumerated data types of xGKS into integers
- * and back; the integer codes of the "fake" ENUMS of the old version are used, but 
+ * and back; the integer codes of the "fake" ENUMS of the old version are used, but
  * basically any kind of coding could be used (though picture files coded one way would
  * not make sense to a sled program compiled using a different code).
  * The idea is to make the code independent of the way these types are defined

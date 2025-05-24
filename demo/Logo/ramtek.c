@@ -65,9 +65,9 @@ void draw_ramtek(Gint wsid)
 void do_ram_monitor(void)
 {
         Gpoint pts[20];
-        
+
         gsetfillcolorind(DARKGRAY);
-        
+
         gsetfillintstyle( GSOLID );
 
         gsetlinecolorind(BLACK);
@@ -82,7 +82,7 @@ void do_ram_monitor(void)
 
 /* bezel */
         gsetfillcolorind(BLACK);
-        
+
         pts[0].x=1.5;   pts[0].y= 8.0;
         pts[1].x=47.5;  pts[1].y= 8.0;
         pts[2].x=47.5;  pts[2].y=44.0;

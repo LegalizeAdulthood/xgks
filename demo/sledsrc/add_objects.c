@@ -1054,7 +1054,7 @@ void add_text_exec(Gpoint pt)
         prompt(12);
     else if (ch == END_OF_STR)
     {
-        /* if first text string is being drawn, 
+        /* if first text string is being drawn,
                    note that there is now something to undo */
 
         if (object == (OBJECT *) NULL)

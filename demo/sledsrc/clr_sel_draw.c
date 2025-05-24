@@ -51,7 +51,7 @@
 
 BOOLEAN clr_picked;     /* index of color picked */
 IDX display_clr_picked; /* color picked up by user */
-IDX mixer_clr;          /* first color in mixer from 
+IDX mixer_clr;          /* first color in mixer from
                                            left to right */
 IDX tuner_clr;          /* fine tuner color */
 IDX wheel_start_clr;    /* first color in color wheel */

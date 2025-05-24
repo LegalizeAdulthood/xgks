@@ -27,7 +27,7 @@
  *	ggtitm_
  *	grditm_
  *	giitm_
- *      
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -35,47 +35,47 @@
  *
  * August 31 1988
  *
- * $Header: meta.c,v 4.0 89/08/31 18:37:00 amy Exp $ 
+ * $Header: meta.c,v 4.0 89/08/31 18:37:00 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/meta.c,v $
- * 
+ *
  * $Log:	meta.c,v $
  * Revision 4.0  89/08/31  18:37:00  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.11  88/12/05  15:20:17  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.9  88/12/05  14:35:21  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.8  88/11/16  10:19:47  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.7  88/10/13  12:29:51  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.6  88/10/11  17:03:44  todd
  * Added global_errnum initialization.
- * 
+ *
  * Revision 1.5  88/10/04  13:53:33  amy
  * Added stub for giitm.
- * 
+ *
  * Revision 1.4  88/10/03  15:31:18  mike
  * Minor corrections made after Amy\'s review
- * 
+ *
  * Revision 1.3  88/09/27  17:10:28  mike
  * Fixed module prologue
- * 
+ *
  * Revision 1.2  88/09/27  15:36:21  mike
  * checked out by mistake
- * 
+ *
  * Revision 1.1  88/09/27  08:17:23  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: meta.c,v 4.0 89/08/31 18:37:00 amy Exp $";
@@ -86,17 +86,17 @@
 /*$F
  * gwitm - Write Item
  *
-int *wkid;                         workstation identifier  
-int *type;                         item type               
-int *idrl;                         item data record length 
+int *wkid;                         workstation identifier
+int *type;                         item type
+int *idrl;                         item data record length
 int *ldr;                          dimension of data record
-char *datarec;                     data record             
+char *datarec;                     data record
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.142
  */
-gwitm_ (wkid,type,idrl,ldr,datarec)   
+gwitm_ (wkid,type,idrl,ldr,datarec)
 int *wkid;                         /* workstation identifier  */
 int *type;                         /* item type               */
 int *idrl;                         /* item data record length */
@@ -109,15 +109,15 @@ gwritegksm((Gint)*wkid,(Gint)*type,(Gint)*idrl,(Gchar *)datarec);
 /*$F
  * ggtitm - Get Item
  *
-int *wkid;                          workstation identifier 
-int *type;                          item type              
-int *idrl;                          item data rec length   
+int *wkid;                          workstation identifier
+int *type;                          item type
+int *idrl;                          item data rec length
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.142
  */
-ggtitm_ (wkid,type,idrl)   
+ggtitm_ (wkid,type,idrl)
 int *wkid;                          /* workstation identifier */
 int *type;                          /* item type              */
 int *idrl;                          /* item data rec length   */
@@ -132,16 +132,16 @@ if (ggetgksm((Gint)*wkid,&result)) return;
 /*$F
  * giitm - Interpret Item
  *
-int *wkid;                          workstation identifier 
-int *midrl;                         max item data record   
-int *mldr;                          dim of data record     
-char *datarec;                      data record            
+int *wkid;                          workstation identifier
+int *midrl;                         max item data record
+int *mldr;                          dim of data record
+char *datarec;                      data record
  *
  * Returns: ANSI standard errors for this function.
  *
  * See also: ANSI standard p.143
  */
-grditm_ (wkid,midrl,mldr,datarec)   
+grditm_ (wkid,midrl,mldr,datarec)
 int *wkid;                          /* workstation identifier */
 int *midrl;                         /* max item data record   */
 int *mldr;                          /* dim of data record     */

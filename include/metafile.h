@@ -69,16 +69,16 @@ typedef Gpoint          *POINTPTR;
         0  - END ITEM
         2  - REDRAW ALL SEGMENTS ON WORKSTATION
         82 - CLOSE SEGMENT
-        
+
         XGKSM0
 */
 
 /* Suitable for Item type :
-        
+
         1  - CLEAR WORKSTAION
         3  - UPDATE WORKSTAION
         21 - POLYLINE INDEX
-        22 - LINETYPE 
+        22 - LINETYPE
         24 - POLYLINE COLOUR INDEX
         25 - POLYMARKER INDEX
         26 - MARKER TYPE
@@ -101,7 +101,7 @@ typedef struct {
 
 
 /* Suitable for Item Type :
-        
+
         4  - DEFERRAL STATE
         30 - TEXT FONT AND PRECISION
         36 - TEXT ALIGNMENT
@@ -117,7 +117,7 @@ typedef struct {
 
 
 /* Suitable for MESSAGE :
-        
+
         5 - XgksMoMessage
 */
 typedef struct {
@@ -128,7 +128,7 @@ typedef struct {
 
 
 /* Suitable for item type :
-        
+
         11 - POLYLINE
         12 - POLYMARKER
         14 - FILL AREA
@@ -141,7 +141,7 @@ typedef struct {
 
 
 /* Suitable for TEXT
-        
+
         13 - XgksMoText
 */
 typedef struct {
@@ -152,7 +152,7 @@ typedef struct {
 
 
 /* Suitablr for Cell Array
-        
+
         15 - XgksMoCellArray
 */
 typedef struct {
@@ -176,7 +176,7 @@ typedef struct {
 
 
 /* Suitable for CHARACTER VECTRO
-        
+
         34 - XgksMoSetCharVec
 */
 typedef struct {
@@ -196,8 +196,8 @@ typedef struct {
 
 
 /* Suitable fot item type :
-        
-        51 - POLYLINE REPRESENTATION 
+
+        51 - POLYLINE REPRESENTATION
         52 - POLYMARKER REPRESENTATION
 */
 typedef struct {
@@ -250,7 +250,7 @@ typedef struct {
 
 
 /* Suitable for item type :
-        
+
         61 - CLIPPING RECTANGLE
         71 - WORKSTATION WINDOW
         72 - WORKSTATION VIEWPORT

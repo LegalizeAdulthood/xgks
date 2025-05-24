@@ -30,7 +30,7 @@
  *	grqpk_ ()
  *	grqst_ ()
  *	grqsts_ ()
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -38,47 +38,47 @@
  *
  * August 31 1988
  *
- * $Header: inputreq.c,v 4.0 89/08/31 18:31:08 amy Exp $ 
+ * $Header: inputreq.c,v 4.0 89/08/31 18:31:08 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/inputreq.c,v $
- * 
+ *
  * $Log:	inputreq.c,v $
  * Revision 4.0  89/08/31  18:31:08  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.11  89/06/26  15:28:28  amy
- * DCR d1	Declare errfp external for use in error macros.  
+ * DCR d1	Declare errfp external for use in error macros.
  * 		Change references to errfpp to errfp.
- * 
+ *
  * Revision 1.10  89/06/16  08:10:04  bruce
  * PTR# c1175:	Corrected calls to realloc that were not storing the
  * 		pointer to the new memory.
- * 
+ *
  * Revision 1.9  89/05/04  17:49:57  bruce
  * PTR# c2065:	Changes were made to handle cases where more points
  * 		are given to device than alloted space allows.
- * 
+ *
  * Revision 1.8  89/03/31  11:15:57  bruce
  * Changed debug statement.
- * 
+ *
  * Revision 1.7  89/01/06  09:40:20  todd
  * Added extern's.
- * 
+ *
  * Revision 1.6  88/12/05  15:19:06  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.4  88/12/05  14:32:27  todd
  * Changes for code review II.
- * 
+ *
  * Revision 1.3  88/11/22  16:04:27  bhaim
  * Code Review changes
- * 
+ *
  * Revision 1.2  88/10/11  17:00:58  todd
  * Added Global_errnum initialization.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:03  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: inputreq.c,v 4.0 89/08/31 18:31:08 amy Exp $";
@@ -96,7 +96,7 @@ extern int currfortpoints;
 
 
 /*$F
- * grqlc - Request Locator 
+ * grqlc - Request Locator
  *
  * Parameters :
  * int *wkid;		workstation identifier
@@ -125,8 +125,8 @@ Gqloc response;
 
 debug ( ("Request Locator %d %d \n", *wkid, *lcdnr) );
 
-if (greqloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return; 
-  
+if (greqloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return;
+
 /* Reverse the sense of status */
 *stat = (int) (response.status) ? FORT_GNONE : FORT_GOK;
 
@@ -138,7 +138,7 @@ if (greqloc ((Gint) *wkid,(Gint) *lcdnr, &response)) return;
 
 
 /*$F
- * grqsk - Request Stroke 
+ * grqsk - Request Stroke
  *
  * Parameters :
  * int *wkid; 		workstation identifier
@@ -176,7 +176,7 @@ if (*n > currfortpoints)       /* Check amount of memory needed */
   {
    fortpoints = (Gpoint *)realloc(fortpoints,                   /* c1175 */
                                 (*n) * sizeof(Gpoint));         /* realloc more memory */
-   if (fortpoints == NULL)     /* If memory allocation unsuccessful call error routine */ 
+   if (fortpoints == NULL)     /* If memory allocation unsuccessful call error routine */
      {
       gerrorhand(300,errgreqstroke,(errfp)); 	/* d1 */
       currfortpoints = 0;
@@ -188,7 +188,7 @@ if (*n > currfortpoints)       /* Check amount of memory needed */
 
 response.stroke.points = (Gpoint *) fortpoints;
 
-if (greqstroke ((Gint) *wkid,(Gint) *skdnr, &response)) return; 
+if (greqstroke ((Gint) *wkid,(Gint) *skdnr, &response)) return;
 
 /* Reverse the sense of status */
 *stat = (int) (response.status) ? FORT_GNONE : FORT_GOK;
@@ -211,7 +211,7 @@ debug ( ("Request Stroke Completed") );
 
 
 /*$F
- * grqvl - Request Valuator 
+ * grqvl - Request Valuator
  *
  * Parameters :
  * int *wkid;		workstation identifier
@@ -236,8 +236,8 @@ Gqval response;
 
 debug ( ("Request Valuator %d %d \n", *wkid, *vldnr) );
 
-if (greqval ((Gint) *wkid,(Gint) *vldnr, &response)) return; 
-  
+if (greqval ((Gint) *wkid,(Gint) *vldnr, &response)) return;
+
 /* Reverse the sense of status */
 *stat = (int) (response.status) ? FORT_GNONE : FORT_GOK;
 
@@ -247,7 +247,7 @@ if (greqval ((Gint) *wkid,(Gint) *vldnr, &response)) return;
 
 
 /*$F
- * grqch - Request Choice 
+ * grqch - Request Choice
  *
  * Parameters :
  * int *wkid; 		workstation identifier
@@ -279,7 +279,7 @@ switch (response.status)
     case GC_OK : *stat = (int) FORT_GOK;
 	    break;
     case GC_NOCHOICE : *stat = (int) FORT_GNCHOI;
-	    break; 
+	    break;
     case GC_NONE : *stat = (int) FORT_GNONE;
 	    break;
     }
@@ -289,12 +289,12 @@ switch (response.status)
 
 
 /*$F
- * grqpk - Request Pick 
+ * grqpk - Request Pick
  *
  * Parameters :
  * int *wkid; 		workstation identifier
  * int *pkdnr; 		pick device number
- * int *stat;		status 
+ * int *stat;		status
  * int *sgna;		segment name
  * int *pkid; 		pick identifier
 
@@ -316,7 +316,7 @@ Gpick response;
 debug ( ("Request Pick %d %d \n", *wkid, *pkdnr) );
 
 if (greqpick ((Gint) *wkid,(Gint) *pkdnr, &response)) return;
-  
+
 switch (response.status)
     {
     case GP_OK: *stat = (int) FORT_GOK;
@@ -364,7 +364,7 @@ if (length > currforttext)
    {
     forttext = (Gchar *)realloc(forttext,(length) * sizeof(char));      /* c1175 */
     if (forttext == NULL)
-       { 
+       {
  	gerrorhand(300,errgreqstring,(errfp)); 	/* d1 */
         currforttext = 0;
         return;
@@ -374,8 +374,8 @@ if (length > currforttext)
     }
 response.string = (Gchar *) forttext;
 
-if (greqstring ((Gint) *wkid,(Gint) *stdnr, &response)) return; 
-  
+if (greqstring ((Gint) *wkid,(Gint) *stdnr, &response)) return;
+
 switch (response.status)
     {
     case GOK: *stat = (int) FORT_GOK;
@@ -388,7 +388,7 @@ debug(("response string = %s ",response.string));
 
 *lostr = (int) MIN(length,strlen(response.string));
 strncpy(str,(char *) response.string,*lostr);
-  
+
 }
 
 /*$F
@@ -422,7 +422,7 @@ if (length > currforttext)
    {
     forttext = (Gchar *)realloc(forttext,(length) * sizeof(char));      /* c1175 */
     if (forttext == NULL)
-       { 
+       {
  	gerrorhand(300,errgreqstring,(errfp)); 	/* d1 */
         currforttext = 0;
         return;
@@ -432,8 +432,8 @@ if (length > currforttext)
     }
 response.string = (Gchar *) forttext;
 
-if (greqstring ((Gint) *wkid,(Gint) *stdnr, &response)) return; 
-  
+if (greqstring ((Gint) *wkid,(Gint) *stdnr, &response)) return;
+
 switch (response.status)
     {
     case GOK: *stat = (int) FORT_GOK;
@@ -444,7 +444,7 @@ switch (response.status)
 
 debug(("response string = %s ",response.string));
 
-*lostr = MIN(80,strlen(response.string));  
+*lostr = MIN(80,strlen(response.string));
 strncpy(str,(char *) response.string,*lostr);
 
 }

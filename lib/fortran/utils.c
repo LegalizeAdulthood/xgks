@@ -24,8 +24,8 @@
  *
  * GKS Utility functions :
  *	gevtm - evaluate transformation matrix
- *	gactm - accumulate transformation 
- *        
+ *	gactm - accumulate transformation
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -33,76 +33,76 @@
  *
  * August 31 1988
  *
- * $Header: utils.c,v 4.0 89/08/31 18:37:34 amy Exp $ 
+ * $Header: utils.c,v 4.0 89/08/31 18:37:34 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/utils.c,v $
- * 
+ *
  * $Log:	utils.c,v $
  * Revision 4.0  89/08/31  18:37:34  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.19  89/06/26  16:13:13  amy
  * DCR d1	Declare errfp external for use in error macros.
  * 		Change references to errfpp to errfp.
- * 
+ *
  * Revision 1.18  89/04/06  13:41:15  bruce
  * PTR# c2064:	Modified and added #ifdef statements so DEBUG flags
  * 		would not cause problems when disabled.
- * 
+ *
  * Revision 1.17  89/03/15  20:40:08  bruce
  * PTR# c2043:	Error checking routine now set errind.
- * 
+ *
  * Revision 1.16  89/03/15  15:36:14  bruce
  * PTR c2051:	Corrections to gurec_().
- * 
+ *
  * Revision 1.15  89/03/07  17:32:50  amy
  * PTR c2024	gprec:  fixed unclosed comment.
- * 
+ *
  * Revision 1.14  88/12/27  14:36:54  todd
  * Added check for size of datarecord.
- * 
+ *
  * Revision 1.13  88/12/05  15:20:48  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.11  88/12/05  14:30:28  todd
  * Changes for Code review II.
- * 
+ *
  * Revision 1.10  88/11/21  08:49:33  owens
  * code review changes
- * 
+ *
  * Revision 1.9  88/11/18  11:40:33  owens
  * code review changes
- * 
+ *
  * Revision 1.8  88/11/17  11:25:46  todd
  * Corrected casting of *sw in Accumulate Trans Matrix.
- * 
+ *
  * Revision 1.7  88/11/16  10:20:45  todd
  * Removed extra call to gerrorhand.
  * Added check for ok return code so
  * a return is done before output parameters
  * are set.
- * 
+ *
  * Revision 1.6  88/11/14  06:36:01  todd
  * Added magic number code
- * 
+ *
  * Revision 1.5  88/11/07  11:40:03  todd
  * Checked out for testing.
- * 
+ *
  * Revision 1.1  88/10/14  10:51:09  david
  * Initial revision
- * 
+ *
  * Revision 1.4  88/10/11  17:04:36  todd
  * No changes.
- * 
+ *
  * Revision 1.3  88/10/06  09:50:53  todd
  * Added misplaced function gevtm_
- * 
+ *
  * Revision 1.2  88/09/27  08:32:24  todd
- * Added include for fortxgks.h 
- * 
+ * Added include for fortxgks.h
+ *
  * Revision 1.1  88/09/27  08:17:35  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: utils.c,v 4.0 89/08/31 18:37:34 amy Exp $";
@@ -113,11 +113,11 @@
 
 extern FILE *errfp;             /* d1 */
 
-#define DATARECWIDTH 80 
+#define DATARECWIDTH 80
 
 
 /*$F
- * gprec - Pack Data Record 
+ * gprec - Pack Data Record
  *
  *   int     *il        -  number of integer entries
  *   int     *ia        -  array containing integers entries
@@ -167,7 +167,7 @@ char    *datarec;
 	  + sizeof(float *)		/* -> to reals		*/
 	  + sizeof(int)			/* # of strings		*/
 	  + sizeof(char **)		/* -> to ->s to strings	*/
-	  + *sl	* sizeof(char **);	/* ->s to strings		*/ 
+	  + *sl	* sizeof(char **);	/* ->s to strings		*/
 	debug ( ("    header needs %d bytes \n", headerspace) );
 
 	/* integers */
@@ -187,9 +187,9 @@ char    *datarec;
 	space = headerspace + intspace + realspace + stringspace;
 	debug ( ("    total space needed id %d bytes \n", space) );
     }
-    
+
     if (space > (*mldr)*80)
-      { 
+      {
        *errind = 2001;          /* c2043 */
        gerrorhand(2001,errgprec,(errfp)); 	/* d1 */
        return;
@@ -224,7 +224,7 @@ char    *datarec;
     /* setup pointer to beginning of reals */
     realptr = (float *) intptr;
 
-    /* fill in pointer to reals  */ 
+    /* fill in pointer to reals  */
     pdr->floatptr = (*rl > 0) ? realptr : NULL;
 
     /* fill in the reals */
@@ -246,7 +246,7 @@ char    *datarec;
 
     /* for each string */
     debug ( ("    strings: \n") );
-    for (i=0; i<*sl; i++) 
+    for (i=0; i<*sl; i++)
     {
 #ifdef DEBUG
 	char *debugptr = strptr;
@@ -256,7 +256,7 @@ char    *datarec;
 	*(strptrptr++) = strptr;
 
 	/* copy the string ... */
-	for (j=0; j<lstr[i]; j++) 
+	for (j=0; j<lstr[i]; j++)
 	    *(strptr++) = *(fortstrptr++);
 
 	/* ... and NULL terminate it */
@@ -270,9 +270,9 @@ char    *datarec;
 #endif                  /* c2064 */
 
     *errind = 0;
-    
+
     /* note: although a little confusing, the +1 and -1 are correct */
-    /*       (pos-1)/width+1                                        */ 
+    /*       (pos-1)/width+1                                        */
     *ldr   = ((strptr - datarec -1 ) / DATARECWIDTH) + 1;
     debug ( ("    returning ldr %d \n", *ldr) );
 }
@@ -329,9 +329,9 @@ char *str;
     *errind = 2003;             /* c2043 */
     gerrorhand(2003,errgurec,(errfp)); 	/* d1 */
     return;
-   } 
+   }
  if (*ill < (pdrintnum(datarec))|| *irl < (pdrrealnum(datarec)) || *isl < (pdrstringnum(datarec))) /* c2051 */
-   {   
+   {
     *errind = 2001;             /* c2043 */
     gerrorhand(2001,errgurec,(errfp)); 	/* d1 */
     return;
@@ -343,10 +343,10 @@ char *str;
 
  for(i=0; i < *il; i++)
   ia[i] = (int) pdrintindex(datarec,i);
- 
+
  for(i=0; i < *rl; i++)
   ra[i] = (float) pdrrealindex(datarec,i);
- 
+
  strptr = (char **) str;
 
  for(i=0; i < *sl; i++)
@@ -354,14 +354,14 @@ char *str;
    strptr[i] =  pdrstringindex(datarec,i);
    lstr[i] = (int) strlen(strptr[i]);
   }
- 
+
 }
 
 /*$F
  * gevtm - evaluate transformation matrix
  *
  * float *x0   - reference point X
- * float *y0   - reference point Y 
+ * float *y0   - reference point Y
  * float *dx   - shift x
  *
  *
@@ -385,31 +385,31 @@ Gpoint ppoint,pshift,pscale;
 Gfloat result[2][3];
 
 debug ( ("Evaluate Transformation Matrix \n") );
- 
+
 COORDINATESWITCH(*sw,errgevaltran);
- 
+
 ppoint.x = *x0;
 ppoint.y = *y0;
 pshift.x = *dx;
 pshift.y = *dy;
 pscale.x = *fx;
 pscale.y = *fy;
- 
+
 if (gevaltran(&ppoint,&pshift, (Gfloat) *phi,&pscale, (Gcsw) *sw, (Gfloat *) result)) return;
- 
+
 MOVE_ARRAY_2X3_TO_1X6 (result,mout);
 
 }
 
 /*$F
- * gactm - accumulate transformation 
+ * gactm - accumulate transformation
  *
  * float *minp - input segment transformation
  * float *x0   - reference point X
- * float *y0   - reference point Y 
+ * float *y0   - reference point Y
  * float *dx   - shift x
  * float *dy   - shift y
- * float *phi  - rotation angle in radians 
+ * float *phi  - rotation angle in radians
  * float *fx   - scaling factor X
  * float *fy   - scaling factor Y
  * int   *sw   - coordinate switch GWC | GNDC
@@ -446,12 +446,12 @@ pshift.x = *dx;
 pshift.y = *dy;
 pscale.x = *fx;
 pscale.y = *fy;
- 
+
 MOVE_ARRAY_1X6_TO_2X3 (minp,temp_array);
- 
+
 if (gaccumtran ( (Gfloat *) temp_array, &ppoint, &pshift, (Gfloat) *phi, &pscale, (Gint) *sw, (Gfloat *) result)) return;
- 
+
 MOVE_ARRAY_2X3_TO_1X6 (result,mout);
 
 }
-    
+

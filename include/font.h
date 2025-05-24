@@ -32,7 +32,7 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  * font.h - vector fonts for UIGKS servers.
  *
  */
@@ -43,7 +43,7 @@
  *      s = character extent minimum
  *      S = character extent maximum
  *      m = move current position to
- *      d = draw to 
+ *      d = draw to
  *      e = end of character definition
  */
 struct vcharst {

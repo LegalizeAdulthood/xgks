@@ -48,7 +48,7 @@ Documentation:
 conforms to the proposed ANSI C binding for GKS (dated March 1986) and the
 ANSI standard GKS.  The C binding is found in doc/binding/Cbinding.src.
 The ANSI GKS specification may be obtained from ANSI.  There are two user
-documents.  The shorter is in the file doc/xgks.vdoc; it is Andrew Toolkit  
+documents.  The shorter is in the file doc/xgks.vdoc; it is Andrew Toolkit
 form; a troff version is in doc/xgks.trf.  (To print, use "ptroff xgks.trf".)
 There is also a man page form of this document, xgks.man.
 
@@ -61,8 +61,8 @@ Making:
 	Xgks can be installed on either a 4.3 system or an AIX system, for
 both RT and PS/2.  The make processes for these systems use imake files.
 Xgks makes just as a conventional X client does.  There are essentially three
-steps:  creating the Makefiles; creating the dependency lists; making the 
-libraries and fonts, and the demo programs.  The procedure is given for each 
+steps:  creating the Makefiles; creating the dependency lists; making the
+libraries and fonts, and the demo programs.  The procedure is given for each
 of the two systems.
 
 	Tar extract from tape into a directory that will contain all of
@@ -76,8 +76,8 @@ it is easiest if Xgks is placed in the config directory.
 	make depend			* create dependency lists
 	make				* make libraries and fonts, and demos
 
-	You may choose to install the libraries, fonts, and include file 
-containing the GKS types (for use by application programs) in a separate   
+	You may choose to install the libraries, fonts, and include file
+containing the GKS types (for use by application programs) in a separate
 directory.  To do this, the command is:
 
 	make install INSTALLHOME=<install directory>
@@ -94,7 +94,7 @@ If your installation does not have imake, there is a makefile for AIX in
 each subdir for doing a simple make.  These makefiles are called Makefile.AIX.
 This procedure includes installing the libraries, fonts, and include file in
 an installation directory.  You will need to have write access to this directory.
-By default, the installation directory is /usr/lib/xgks.  To make using 
+By default, the installation directory is /usr/lib/xgks.  To make using
 these makefiles:
 
 	make depend INSTALLHOME=<install path>       * make dependency lists
@@ -111,9 +111,9 @@ Note that fonts are dynamically loaded when first referenced.  Thus, the fonts
 must be installed on the machine where the Xgks application executes.
 
 The font path is compiled into the library.  However, it is possible to move
-the fonts without having to recompile the libraries.  In this case, set an 
-environment variable XGKSFontDir to the new path before executing an Xgks 
-application.  This variable setting will tell Xgks at runtime where to find the 
+the fonts without having to recompile the libraries.  In this case, set an
+environment variable XGKSFontDir to the new path before executing an Xgks
+application.  This variable setting will tell Xgks at runtime where to find the
 fonts.
 
 
@@ -124,7 +124,7 @@ minimally tested, i.e., the demo programs compile and ran correctly at an early
 stage of our testing.  This port was not retested prior to making this code
 available.
 
-	Xgks has also been ported to the Encore Multimax and Sun Unix 3.4.  
+	Xgks has also been ported to the Encore Multimax and Sun Unix 3.4.
 These ports have not been tested.  The library compiles, and based upon
 the changes to the demo programs made for the VAX port, the demos should also
 compile and run, but this has not been verified.

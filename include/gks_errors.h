@@ -32,12 +32,12 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  */
 
 /* clang-format off */
 
-/* 
+/*
  * States
  */
 #define ENOTGKCL        1       /* GKS not in proper state: GKS shall be in the state GKCL */
@@ -179,11 +179,11 @@
 #define ENOESCFN        180     /* Specified escape function is not supported */
 #define ESCIDINV        181     /* Specified escape function identification is invalid */
 #define EESCDATA        182     /* Contents of escape data record are invalid */
-/* 
+/*
  * Miscellaneous
 */
 #define EBDERRFL        200     /* Specified error file is invalid */
-/* 
+/*
  * System
 */
 #define EMEMSPAC        300     /* Storage overflow has occurred in GKS */

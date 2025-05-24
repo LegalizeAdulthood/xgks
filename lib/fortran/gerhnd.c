@@ -32,24 +32,24 @@
  *
  * $Header: gerhnd.c,v 4.0 89/08/31 18:14:34 amy Exp $
  *
- * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/gerhnd.c,v $ 
+ * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/gerhnd.c,v $
  *
  * $Log:	gerhnd.c,v $
  * Revision 4.0  89/08/31  18:14:34  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 4.0  89/08/31  18:05:27  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.3  89/03/15  18:14:43  amy
  * PTR c1130	gerhnd:  change definition of errfil to int.
- * 
+ *
  * Revision 1.2  89/01/14  14:01:24  todd
  * Corrected call to gerlog
- * 
+ *
  * Revision 1.1  88/12/01  11:50:01  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: gerhnd.c,v 4.0 89/08/31 18:14:34 amy Exp $";

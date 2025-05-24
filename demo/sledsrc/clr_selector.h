@@ -1,4 +1,4 @@
-/* 
+/*
  *              Copyright IBM Corporation 1989
  *
  *                      All Rights Reserved
@@ -52,7 +52,7 @@ extern ARROW sat_arrow;
 extern ARROW hue_arrow;
 
 extern IDX display_clr_picked; /* color picked up by user */
-extern IDX mixer_clr;          /* first color in mixer from 
+extern IDX mixer_clr;          /* first color in mixer from
                                            left to right */
 #define LEFT_CLR (mixer_clr)
 #define MIDDLE_CLR (mixer_clr + 1)

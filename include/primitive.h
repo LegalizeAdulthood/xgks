@@ -32,7 +32,7 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  * Define file for : GKS output primitive structures
  *
  */
@@ -112,7 +112,7 @@ typedef struct entry {
         } primi;
 } OUT_PRIMI;                    /* The structure for all output primitives */
 
-OUT_PRIMI *XgksAppendSegPrimi(OUT_PRIMI *primi); 
+OUT_PRIMI *XgksAppendSegPrimi(OUT_PRIMI *primi);
 OUT_PRIMI *XgksNewPrimi(void);
 void       XgksProcessPrimi(OUT_PRIMI *primi);
 

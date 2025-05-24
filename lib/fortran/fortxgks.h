@@ -28,35 +28,35 @@
  * May 30 1988
  *
  * $Header: fortxgks.h,v 4.1 89/09/06 12:29:10 amy Exp $
- * 
+ *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/fortxgks.h,v $
  *
  * $Log:	fortxgks.h,v $
  * Revision 4.1  89/09/06  12:29:10  amy
  * Remove #include of rtaixdefs.h.
- * 
+ *
  * Revision 4.0  89/09/01  09:55:14  amy
  * Fixed copyright.
- * 
+ *
  * Revision 4.0  89/09/01  09:52:09  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.17  89/06/26  16:32:10  amy
  * DCR d1	Include rtaixdefs.h.
  * 		Define constants for stdin and stdout.
  * 		Delete extern statement for errfpp.
- * 
+ *
  * Revision 1.16  89/04/06  13:42:13  bruce
  * PTR# c2064:	Modified and added #ifdef statements so DEBUG flags
  * 		would not cause problems when disabled.
- * 
+ *
  * Revision 1.15  89/03/15  18:56:05  amy
  * PTR c1130	Made external declarations of errfpp, retval, and global_errfil.
- * 
+ *
  * Revision 1.14  89/03/03  17:28:54  amy
  * PTR c2040	Removed unused typedefs Fort_Gcstat, Fort_Glastev,
  * 		Fort_Gpstat, and changed enum. value of  FORT_GNCHOI to 2.
- * 
+ *
  */
 
 #include "fortmac.h"

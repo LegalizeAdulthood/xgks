@@ -29,7 +29,7 @@
  *	gsfar_
  *	gspar_
  *	gscr_
- *        
+ *
  * David Berkowitz
  * Bruce Haimowitz
  * TCS Development
@@ -37,64 +37,64 @@
  *
  * August 31 1988
  *
- * $Header: rep.c,v 4.0 89/08/31 18:37:12 amy Exp $ 
+ * $Header: rep.c,v 4.0 89/08/31 18:37:12 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/fortran/RCS/rep.c,v $
- * 
+ *
  * $Log:	rep.c,v $
  * Revision 4.0  89/08/31  18:37:12  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 1.15  89/06/26  16:02:23  amy
  *  DCR d1	Declare errfp external for use in error macros.
  * 		Change references to errfpp to errfp.
- * 
+ *
  * Revision 1.14  89/06/16  08:10:43  bruce
  * PTR# c1175:	Corrected calls to realloc that were not storing the
  * 		pointer to the new memory.
- * 
+ *
  * Revision 1.13  89/06/06  09:56:24  bruce
  * PTR# c1179:	Made changes to character expansion field names for
  * 		AIX compiler.
- * 
+ *
  * Revision 1.12  89/04/07  09:54:59  bruce
  * PTR# c2044:	Corrected 2D handling of arrays.
- * 
+ *
  * Revision 1.11  89/03/16  10:25:34  amy
  * Removed Set Pattern Size and Reference Point functions-- they
  * were already in wsioutattr.c.
- * 
+ *
  * Revision 1.10  89/03/16  10:22:12  amy
  * PTR c1144	Added Set Pattern Size and Set Pattern Reference Point
  * 		functions.
- * 
+ *
  * Revision 1.9  89/01/06  09:00:00  bruce
  * Implemented pattern rep setting so user can specify rep as a subset block from
  * a larger 2-d array.  This seems to work properly, evenly though the verification
  * reports an error.  c2017.
- * 
+ *
  * Revision 1.8  88/12/27  14:37:36  todd
  * Added externs for global vars.
- * 
+ *
  * Revision 1.7  88/12/05  15:20:30  owens
  * changed errfp to errfpp
- * 
+ *
  * Revision 1.5  88/12/05  14:26:15  bhaim
  * Changes for Code II
- * 
+ *
  * Revision 1.4  88/11/14  09:28:26  bruce
  * Fixed type casting.
- * 
+ *
  * Revision 1.3  88/09/28  14:11:48  bruce
- * Added function prologues, added type casting for GKS and corrected variable 
+ * Added function prologues, added type casting for GKS and corrected variable
  * names.
- * 
+ *
  * Revision 1.2  88/09/27  11:27:29  todd
  * Removed misplaced functions.
- * 
+ *
  * Revision 1.1  88/09/27  08:17:28  todd
  * Initial revision
- * 
+ *
  */
 
   static char *rcsid = "$Header: rep.c,v 4.0 89/08/31 18:37:12 amy Exp $";
@@ -260,14 +260,14 @@ gsetfillrep ((Gint)*wkid, (Gint)*fai, &rep);
  *
  * See also: ANSI standard p.104
  */
-gspar_ (wkid,pai,dimx,dimy,isc,isr,dx,dy,colia)  
+gspar_ (wkid,pai,dimx,dimy,isc,isr,dx,dy,colia)
 int *wkid;
 int *pai;
 int *dimx,*dimy;
 int *isc,*isr;
 int *dx,*dy;
 int *colia;
-{ 
+{
 Gptbundl rep;
 Gint *parray;
 int sizeofmatrix;
@@ -280,7 +280,7 @@ sizeofmatrix = sizeof(Gint)*(*dx)*(*dy);	/* c2017 */
 if (sizeofmatrix > currfortint)       /* Check amount of memory needed */
   {
    fortint = (Gint *)realloc(fortint,sizeofmatrix); /* realloc more memory  c1175 */
-   if (fortint == NULL)     /* If memory allocation unsuccessful call error routine */ 
+   if (fortint == NULL)     /* If memory allocation unsuccessful call error routine */
      {
       gerrorhand(300,errgsetpatrep,(errfp)); 	/* d1 */
       return;

@@ -1,4 +1,4 @@
-/*  
+/*
  *              Copyright IBM Corporation 1989
  *
  *                      All Rights Reserved
@@ -467,7 +467,7 @@ void switch_number_popup_state(Gpoint *extent, int *state, Gpoint pt, int mini, 
             * 2.0 / 3.0
         + extent[MIN].y;
 
-    /* determine if either low order or 
+    /* determine if either low order or
            high order digit was picked */
 
     if (pt.y > y)

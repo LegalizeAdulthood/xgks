@@ -32,7 +32,7 @@
  * Author: Gregory Scott Rogers
  * Author: Sung Hsien Ching Kelvin
  * Author: Yu Pan
- * 
+ *
  * $Header: rshowfont.c,v 4.0 89/08/31 16:31:46 amy Exp $
  *
  * $Source: /andrew/Xgks/source/xgks.bld/src/fontdb/RCS/rshowfont.c,v $
@@ -40,16 +40,16 @@
  * $Log:	rshowfont.c,v $
  * Revision 4.0  89/08/31  16:31:46  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  * Revision 3.3  88/09/26  15:15:50  amy
  * MIT	Delete unused variables:  fd, size in main; x, y in DisplayFont.
- * 
+ *
  * Revision 3.2  88/08/19  13:04:19  amy
  * No additional changes in August tape version-- no changes made.
- * 
+ *
  * Revision 1.1  88/07/21  10:52:39  david
  * Initial revision
- *  
+ *
  *
  */
 

@@ -11,12 +11,12 @@ DESTDIR = .
 #CFLAGS = -O
 CFLAGS = -O -DDEBUG
 
-FFLAGS =  
+FFLAGS =
 
-LFLAGS = 
+LFLAGS =
 
 LLIBS  = ${MYLIB} ${GKSLIB} -lX11 -lm
- 
+
 all:		$(DESTDIR)/gksdemo
 
 $(DESTDIR)/gksdemo:	gksdemo.o ${MYLIB} ${GKSLIB}

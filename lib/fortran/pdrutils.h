@@ -35,10 +35,10 @@
  * $Log:	pdrutils.h,v $
  * Revision 4.0  89/09/01  09:55:18  amy
  * Fixed copyright.
- * 
+ *
  * Revision 4.0  89/09/01  09:52:16  amy
  * Changed IBM copyright for MIT distribution.
- * 
+ *
  *
  */
 

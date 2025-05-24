@@ -71,7 +71,7 @@ void draw_9000(Gint wsid)
 void do_9000_computer(void)
 {
         Gpoint pts[20];
-        
+
         gsetfillintstyle(GSOLID);
         gsetfillcolorind(BEIGE);
 
@@ -131,7 +131,7 @@ void do_9000_monitor(void)
         Gfloat x;
 
         gsetfillcolorind(BEIGE);
-        
+
         gsetfillintstyle(GSOLID);
 
         gsetlinecolorind(BLACK);
@@ -234,7 +234,7 @@ void do_9000_disk(void)
         Gpoint pts[20];
 
         gsetfillcolorind(0);
-        
+
         gsetfillintstyle(GSOLID);
 
         gsetlinecolorind(BEIGE);
@@ -309,7 +309,7 @@ void do_9000_disk(void)
 
 /* floppies*/
         gsetfillcolorind(BLACK);
-        
+
         gsetfillintstyle(GSOLID);
 
         gsetlinecolorind(BEIGE);
@@ -384,7 +384,7 @@ void do_9000_keyboard(void)
         Gfloat x, y;
 
         gsetfillcolorind(BEIGE);
-        
+
         gsetfillintstyle(GSOLID);
 
         gsetlinecolorind(BLACK);
@@ -450,7 +450,7 @@ void do_9000_keyboard(void)
                 pts[1].x = 37.0;        pts[1].y=y;
                 gpolyline(2, pts);
         }
-        
+
 /* esc to alt column */
         pts[0].x=37.5;  pts[0].y=2.0;
         pts[1].x=41.5;  pts[1].y=2.0;
