@@ -193,7 +193,7 @@ int XgksSIGIO_ON(Display *dpy)
     xProcessEvents(SIGIO);
     sigaction(SIGIO, &action, NULL);
     ioctl(ConnectionNumber(dpy), SIOCSPGRP, &pid);
-    ioctl(ConnectionNumber(dpy), FIOASYNC, &one);
+    return ioctl(ConnectionNumber(dpy), FIOASYNC, &one);
 }
 
 static int XgksExposeEvent(XEvent *xev, Display *dpy)
@@ -262,6 +262,7 @@ static int XgksExposeEvent(XEvent *xev, Display *dpy)
 
     /* enable the input devices */
     XgksIDevEnable(ws);
+    return 0;
 }
 
 static int XgksFocusInEvent(XEvent *xev, Display *dpy)
@@ -322,6 +323,7 @@ static int XgksFocusInEvent(XEvent *xev, Display *dpy)
         /*       managers will be at least partially responsible for        */
         /*       managing colormaps.  */
     }
+    return 0;
 }
 
 static int XgksFocusOutEvent(Display *dpy)
