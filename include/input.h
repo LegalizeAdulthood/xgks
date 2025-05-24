@@ -40,7 +40,6 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include "wslist.h"
 #include "xgks.h"
 
 /*
@@ -145,11 +144,13 @@ typedef enum {
         PROMPTMOVE
 } PromptStatus;
 
+struct WS_STATE_ENTRY;
+
 void XgksIDevAdd();
 INPUT_DEV *XgksIDevLookup(WS_STATE_ENTRY *ws, Gint dev, Giclass class);
 INPUT_DEV *XgksIDevNew(void);
 Gpstat XgksFindPickSeg(
-    WS_STATE_PTR ws,
+    WS_STATE_ENTRY *ws,
     Gpoint *ndcpt,
     Gpick *response,
     INPUT_DEV *idev,
