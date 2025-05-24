@@ -262,10 +262,19 @@ void XgksIProcessXEvent(XEvent *xev)
             case GLOCATOR:
                 ea = &idev->data.loc.initst.e_area;
                 if (InEchoArea)
+                {
                     if (breakhit)
+                    {
                         idev->breakhit = True;
-                    else if (xev->type != KeyPress)
-                        XgksLocUpdatePrompt(ws, idev, PROMPTMOVE, &dcpt, xmev, current_event_id);
+                    }
+                    else
+                    {
+                        if (xev->type != KeyPress)
+                        {
+                            XgksLocUpdatePrompt(ws, idev, PROMPTMOVE, &dcpt, xmev, current_event_id);
+                        }
+                    }
+                }
                 break;
             case GCHOICE:
                 ea = &idev->data.cho.initst.e_area;
