@@ -79,10 +79,11 @@
 
 void free_lists(void);
 void enq_comb_ob_list(COMB_OB *comb_ob, COMB_OB_PTR **list);
+COMB_OB_PTR *get_object_list(Gpoint *extent);
 
 #define EDIT_PICTURE_UNDO "edit picture undo menu item"
 
-extern Gfloat get_rot_angle();
+extern Gfloat get_rot_angle(void);
 
 static COMB_OB_PTR *undo_list = (COMB_OB_PTR *) NULL;
 static COMB_OB_PTR *new_list = (COMB_OB_PTR *) NULL;
@@ -609,8 +610,6 @@ void combine_exec(Gpoint pt)
     OBJECT *dup_object;
     Gpoint extent[2];
     COMB_OB_PTR *list;
-
-    extern COMB_OB_PTR *get_object_list();
 
     if (first_pt_picked == FALSE)
     {

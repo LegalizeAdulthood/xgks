@@ -1036,8 +1036,6 @@ void init_text_bundle_tbl(char *filename)
     IDX i;                /* index in text bundle table */
     int n;
 
-    extern char *get_char_str();
-
     /* open file containing text bundle tbl info */
 
     fd = fopen(filename, "r");

@@ -37,26 +37,22 @@
 #include "prompt.h"
 #include "screen_items.h"
 
-void photo(menu_item)
-    MENU_ITEM *menu_item;
+void photo(MENU_ITEM *menu_item)
 {
     hilite(menu_item->key);
     reprompt(0);
     unhilite(menu_item->key);
 }
 
-void four_by_five(menu_item)
-    MENU_ITEM *menu_item;
+void four_by_five(MENU_ITEM *menu_item)
 {
 }
 
-void eight_by_ten(menu_item)
-    MENU_ITEM *menu_item;
+void eight_by_ten(MENU_ITEM *menu_item)
 {
 }
 
-void konica_ft1(menu_item)
-    MENU_ITEM *menu_item;
+void konica_ft1(MENU_ITEM *menu_item)
 {
 }
 

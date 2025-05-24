@@ -45,8 +45,7 @@
 #include "prompt.h"
 #include "screen_items.h"
 
-extern char *read_char_str();
-extern OBJECT *read_object();
+OBJECT *read_object(FILE *fd, BOOLEAN *error);
 void read_palette_clrs(FILE *fd, Gcobundl **clrs, Gint *no_clrs, BOOLEAN *error);
 
 /*
@@ -285,10 +284,7 @@ void read_palette_clrs(FILE *fd, Gcobundl **clrs, Gint *no_clrs, BOOLEAN *error)
  *  returns:            (OBJECT *) - object
  */
 
-OBJECT *
-    read_object(fd, error)
-        FILE *fd;
-BOOLEAN *error;
+OBJECT *read_object(FILE *fd, BOOLEAN *error)
 {
     OBJECT *object;
     KEY key;

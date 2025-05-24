@@ -90,8 +90,6 @@ void read_menu(FILE *fd, MENU *parent_menu, MENU_ITEM *parent_menu_item)
     char *temp;               /* temp for next char str */
     int i, j, n;
 
-    extern char *get_char_str();
-
     /* set up parent and child links */
 
     menu_ptr = (MENU *) calloc(1, sizeof(MENU));
