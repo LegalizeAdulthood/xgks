@@ -285,8 +285,11 @@ void XgksIProcessXEvent(XEvent *xev)
                     fprintf(stderr, "XgksIProcessXEvent: calling XgksChoUpdatePrompt\n");
 #endif
                 if (InEchoArea)
+                {
                     if (breakhit)
+                    {
                         idev->breakhit = True;
+                    }
                     else
                     {
                         if (((idev->data.cho.initst.pet == 3) && (xev->type != KeyPress))
@@ -295,14 +298,21 @@ void XgksIProcessXEvent(XEvent *xev)
 
                             XgksChoUpdatePrompt(ws, idev, PROMPTMOVE, xmev, current_event_id);
                     }
+                }
                 break;
             case GVALUATOR:
                 ea = &idev->data.val.initst.e_area;
                 if (InEchoArea)
+                {
                     if (breakhit)
+                    {
                         idev->breakhit = True;
+                    }
                     else if (xev->type != KeyPress)
+                    {
                         XgksValUpdatePrompt(ws, idev, PROMPTMOVE, &dcpt, xmev, current_event_id);
+                    }
+                }
                 break;
             case GPICK:
                 ea = &idev->data.pic.initst.e_area;
@@ -315,29 +325,53 @@ void XgksIProcessXEvent(XEvent *xev)
                         ea->xmin, ea->xmax, ea->ymin, ea->ymax);
 #endif
                 if (InEchoArea)
+                {
                     if (breakhit)
+                    {
                         idev->breakhit = True;
-                    else if (xev->type != KeyPress)
-                        XgksPicUpdatePrompt(ws, idev, &dcpt, xmev, current_event_id);
+                    }
+                    else
+                    {
+                        if (xev->type != KeyPress)
+                        {
+                            XgksPicUpdatePrompt(ws, idev, &dcpt, xmev, current_event_id);
+                        }
+                    }
+                }
                 break;
             case GISTRING:
                 ea = &idev->data.str.initst.e_area;
                 if (InEchoArea)
+                {
                     if (breakhit)
+                    {
                         idev->breakhit = True;
+                    }
                     else
                     {
                         if (xev->type == KeyPress)
+                        {
                             XgksStrUpdatePrompt(ws, idev, PROMPTMOVE, (XKeyEvent *) xmev, current_event_id);
+                        }
                     }
+                }
                 break;
             case GISTROKE:
                 ea = &idev->data.stk.initst.e_area;
                 if (InEchoArea)
+                {
                     if (breakhit)
+                    {
                         idev->breakhit = True;
-                    else if (xev->type != KeyPress)
-                        XgksStkUpdatePrompt(ws, idev, PROMPTMOVE, &dcpt, xmev, current_event_id);
+                    }
+                    else
+                    {
+                        if (xev->type != KeyPress)
+                        {
+                            XgksStkUpdatePrompt(ws, idev, PROMPTMOVE, &dcpt, xmev, current_event_id);
+                        }
+                    }
+                }
                 break;
             default:
                 break;
