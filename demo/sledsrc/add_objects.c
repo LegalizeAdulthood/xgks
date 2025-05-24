@@ -965,7 +965,6 @@ void add_text_restart(MENU_ITEM *menu_item)
 void add_text_exec(Gpoint pt)
 {
     CHAR_OB *ch_ptr;
-    extern Gfloat get_char_width();
 
     if (is_pt_needed == TRUE)
     {

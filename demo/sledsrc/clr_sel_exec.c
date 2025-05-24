@@ -59,6 +59,7 @@ int arrow_picked(ARROW arrow, Gpoint pt);
 void adjust_middle_clr(void);
 void adjust_tuner_clr(void);
 void set_tuner_clr(Gcobundl rgb_clr);
+Gfloat find_hue(Gpoint center, Gpoint pt);
 
 /*
  *  colors_mitem_exec
@@ -218,7 +219,6 @@ void clr_wheel_area_exec(AREA area, IDX transno, Gpoint pt)
         1.0  /* value */
     };
     Gcobundl rgb_clr;
-    extern Gfloat find_hue();
 
     check_undo_flag();
 

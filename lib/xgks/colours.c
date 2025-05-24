@@ -366,7 +366,6 @@ int XgksMaxColours(char *server)
 {
     int i, colours;
     Display *dpy;
-    char *getenv();
 
     /* default server is in the Unix environment */
     if (server == NULL)
