@@ -15,7 +15,7 @@ add_library(xgks
     colours.c
     deferral_ws.c
     escape.c
-    event.c
+    event.h event.c 
     fillarea.c
     gdp.c
     gerrorhand.c
@@ -58,7 +58,6 @@ add_library(xgks
     x/xSet.c
     x/xtext.c
     x/xupdate.c
-    ../../include/event.h
     ../../include/fillarea.h
     ../../include/font.h
     ../../include/gks_defines.h
