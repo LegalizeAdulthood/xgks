@@ -672,9 +672,9 @@ typedef struct {
 
 /* Glntype - line type */
 /* The following are this implementation specific line style */
-#define GLN_LDASH       -3      /* Long dash (-- -- -- --) */
-#define GLN_DDOTDASH    -2      /* Double-Dot-Dash (.._.._.._) */
-#define GLN_SDASH       -1      /* short dash (-  -  -  -) */
+#define GLN_LDASH       (-3)    /* Long dash (-- -- -- --) */
+#define GLN_DDOTDASH    (-2)    /* Double-Dot-Dash (.._.._.._) */
+#define GLN_SDASH       (-1)    /* short dash (-  -  -  -) */
 /* The folowing are standard defined */
 #define GLN_SOLID       1
 #define GLN_DASH        2       /* medium dash (- - - - -) */
