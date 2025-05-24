@@ -422,7 +422,7 @@ Gint greqstroke(Gint ws_id, Gint dev, Gqstroke *response)
             (XMotionEvent *) NULL, -1);
 
     /* if user hit <break>, return GNONE, else return GOK */
-    if ((idev->breakhit == True))
+    if (idev->breakhit == True)
     {
         response->status = GNONE;
     }

@@ -517,7 +517,7 @@ Gint greqloc(Gint ws_id, Gint dev, Gqloc *response)
         XgksLocUpdatePrompt(ws, idev, PROMPTOFF, (Gpoint *) NULL,
             (XMotionEvent *) NULL, -1);
 
-    if ((idev->breakhit == True))
+    if (idev->breakhit == True)
     {
         response->status = GNONE;
     }
