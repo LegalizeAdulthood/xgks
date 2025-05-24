@@ -58,10 +58,7 @@ Gint XgksMaxColours(Gchar *ws_type);
  *
  * See also: ANSI Standard p.105
  */
-Gint gsetcolourrep(ws_id, idx, rep)
-    Gint ws_id;
-Gint idx;
-Gcobundl *rep;
+Gint gsetcolourrep(Gint ws_id, Gint idx, Gcobundl *rep)
 {
     WS_STATE_PTR ws;
     int i, status;
@@ -365,7 +362,7 @@ static int loadcache(Display *dpy, Gint index)
  * find the number of colour table entries supportted by an X server.
  * returns the number of entries or -1 if the server does not respond.
  */
-int XgksMaxColours(server) char *server;
+int XgksMaxColours(char *server)
 {
     int i, colours;
     Display *dpy;

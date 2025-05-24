@@ -822,9 +822,7 @@ Gint XgksChoUpdatePrompt(WS_STATE_ENTRY *ws, INPUT_DEV *idev,
 /*
  * Delete all structures used to maintain a choice logical input device.
  */
-void XgksChoDelete(ws, idev)
-    WS_STATE_ENTRY *ws;
-INPUT_DEV *idev;
+void XgksChoDelete(WS_STATE_ENTRY *ws, INPUT_DEV *idev)
 {
     int i;
     char **s;

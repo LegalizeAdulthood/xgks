@@ -684,13 +684,13 @@ Gint ginqdefloc(Gchar *type, Gint dev, Gdefloc *data)
  *  XgksLocUpdatePrompt - update the locator prompt
  */
 
-Gint XgksLocUpdatePrompt(ws, idev, pstate, newdcpt, xmev, event_id)
-    WS_STATE_ENTRY *ws;
-INPUT_DEV *idev;
-PromptStatus pstate;
-Gpoint *newdcpt;
-XMotionEvent *xmev;
-int event_id;
+Gint XgksLocUpdatePrompt(
+    WS_STATE_ENTRY *ws,
+    INPUT_DEV *idev,
+    PromptStatus pstate,
+    Gpoint *newdcpt,
+    XMotionEvent *xmev,
+    int event_id)
 {
     Gpoint ndcpt;
     Gloc *data;

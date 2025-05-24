@@ -146,7 +146,7 @@ typedef enum {
 
 typedef struct ws_struct WS_STATE_ENTRY;
 
-void XgksIDevAdd();
+void XgksIDevAdd(WS_STATE_ENTRY *ws, INPUT_DEV *idev);
 INPUT_DEV *XgksIDevLookup(WS_STATE_ENTRY *ws, Gint dev, Giclass class);
 INPUT_DEV *XgksIDevNew(void);
 Gpstat XgksFindPickSeg(

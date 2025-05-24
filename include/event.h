@@ -40,9 +40,9 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-void       XgksAwaitInterrupt(int);
+void       XgksAwaitInterrupt(int signum);
 
-extern int xXgksSIGIOStart();
+extern int xXgksSIGIOStart(WS_STATE_PTR ws);
 
 void XgksEnqueueEvent( Gint ws, Gint dev, Giclass class, char *data, int event_id );
 

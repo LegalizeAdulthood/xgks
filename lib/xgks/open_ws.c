@@ -39,6 +39,7 @@
  *
  */
 
+#include <stdlib.h>
 #include <string.h>
 
 #include "gks_implem.h"
@@ -101,7 +102,6 @@ Gint gopenws(Gint ws_id, Gchar *connection, Gchar *ws_type)
 {
     WS_STATE_PTR ws; /* workstation state list */
     EWSTYPE ewstype; /* corresponding enum-valued ws_type */
-    char *getenv();
     int status;
 
     /* check proper state */
@@ -364,9 +364,7 @@ Gint gclearws(Gint ws_id, Gclrflag control_flag)
  *
  *
  */
-static int XgksSetWsPtr(ws_id, ws)
-    Gint ws_id;
-WS_STATE_PTR ws;
+static int XgksSetWsPtr(Gint ws_id, WS_STATE_PTR ws)
 {
     Gint i;
 
@@ -387,8 +385,7 @@ WS_STATE_PTR ws;
  * return INVALID if there's no empty slot
  *
  */
-static int XgksAllocNewWs(ws_id)
-    Gint ws_id;
+static int XgksAllocNewWs(Gint ws_id)
 {
     Gint i;
 
@@ -407,8 +404,7 @@ static int XgksAllocNewWs(ws_id)
  * delete <ws_id> from openedws[] in gks state list by setting corresponding entry to INVALID
  *
  */
-static void XgksDeleteOpenWs(ws_id)
-    Gint ws_id;
+static void XgksDeleteOpenWs(Gint ws_id)
 {
     Gint i;
 

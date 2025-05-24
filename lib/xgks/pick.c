@@ -52,7 +52,7 @@
 /* As under current implementation only pet #1 and #3 are being supported */
 #define SUPPORTED_PICK_PROMPT(pet) (pet == 1 || pet == 3)
 
-extern void XgksAwaitInterrupt(int);
+extern void XgksAwaitInterrupt(int signum);
 
 /*$F
  * ginitpick(ws_id, dev, init, pet, area, record) - INITIALISE PICK
