@@ -167,7 +167,7 @@ int XgksSIGIO_OFF(Display *dpy)
         return 0;
 
     sigaction(SIGIO, &action, NULL);
-    ioctl(ConnectionNumber(dpy), FIOASYNC, &zero);
+    return ioctl(ConnectionNumber(dpy), FIOASYNC, &zero);
 }
 
 int XgksSIGIO_ON(Display *dpy)
