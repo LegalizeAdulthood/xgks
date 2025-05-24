@@ -52,8 +52,6 @@ void minmax(void);
 
 int main(int argc, char *argv[])
 {
-    double atof();
-
     Glimit w;
     Glimit v;
     Glimit wsw;

@@ -58,7 +58,6 @@ void SetColor(Gint hash);
 
 int main(int argc, char *argv[])
 {
-    double atof();
     int i;
     char *conn = (char *) NULL;
 

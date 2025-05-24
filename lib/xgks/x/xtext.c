@@ -780,7 +780,7 @@ int xXgksInqTextExtent(WS_STATE_PTR ws, TEXT_ST *tx, Gpoint ndc_points[5])
     Gchar *string;
     Gpoint atsndc;
     FONT *cfont;
-    Gfloat fsize, fwidth, xtrans = 0.0, ytrans = 0.0, xFyMin(), xFxMax(), xFyMax();
+    Gfloat fsize, fwidth, xtrans = 0.0, ytrans = 0.0;
     Gfloat Xmin, Xmax, Ymin, Ymax;
     Gfloat XminFirst, XmaxFirst, YminFirst, YmaxFirst;
     struct vcharst *cdef;

@@ -47,11 +47,7 @@
 int XgksSIGIO_OFF(Display *dpy);
 int XgksSIGIO_ON(Display *dpy);
 
-int xXgksSetColourRep(ws, idx, rep)
-    WS_STATE_PTR ws;
-int idx;
-Gcobundl *rep;
-
+int xXgksSetColourRep(WS_STATE_PTR ws, int idx, Gcobundl *rep)
 {
     Display *dpy;
     Window win;
@@ -163,12 +159,7 @@ Gcobundl *rep;
     return (0);
 }
 
-int xXgksInqColourRep(ws, idx, type, rep)
-    WS_STATE_PTR ws;
-int idx;
-Gqtype type;
-Gcobundl *rep;
-
+int xXgksInqColourRep(WS_STATE_PTR ws, int idx, Gqtype type, Gcobundl *rep)
 {
     Display *dpy;
     Colormap wclmp;

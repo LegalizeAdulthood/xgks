@@ -68,7 +68,6 @@ Gint result;
 
 int main(int argc, char *argv[])
 {
-    double atof();
     Gchar *conn = (char *) NULL;
     Gint i;
 
